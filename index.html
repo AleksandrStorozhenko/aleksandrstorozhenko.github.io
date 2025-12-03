@@ -3,106 +3,321 @@
 <head>
   <meta charset="utf-8">
   <title>Aleksandr Storozhenko</title>
-  <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal homepage of Aleksandr Storozhenko, M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics.">
+  <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aleksandr Storozhenko",
+    "url": "https://aleksandrstorozhenko.github.io/",
+    "email": "mailto:as7649@cs.princeton.edu",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Princeton University",
+      "sameAs": "https://www.princeton.edu/"
+    },
+    "jobTitle": "M.S.E. Student, Computer Science",
+    "description": "M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics.",
+    "address": {
+      "@type": "Country",
+      "name": "United States of America"
+    },
+    "knowsAbout": [
+      "Computer Science",
+      "Statistics",
+      "Mathematics",
+      "Data Structures and Algorithms"
+    ],
+    "memberOf": [
+      { "@type": "Organization", "name": "cs" },
+      { "@type": "Organization", "name": "stat" },
+      { "@type": "Organization", "name": "math" }
+    ],
+    "sameAs": [
+      "https://scholar.google.fr/citations?user=BWIwCTAAAAAJ&hl=fr",
+      "https://www.linkedin.com/in/aleksandr-storozhenko/",
+      "https://arxiv.org/a/aleksandrstorozhenko.html",
+      "https://github.com/AleksandrStorozhenko",
+      "https://www.cs.princeton.edu/people/grad"
+    ]
+  }
+  </script>
+
   <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
+      padding: 0;
       font-family: "Palatino Linotype", "Book Antiqua", Palatino,
                    "Times New Roman", serif;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    .page {
+      max-width: 780px;
       margin: 40px auto;
-      max-width: 760px;
-      color: #000;
+      padding: 32px 28px 36px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        margin: 16px;
+        padding: 20px 18px 24px;
+      }
+
+      body {
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
     }
 
     h1 {
       font-size: 32px;
-      margin: 0 0 0.4em 0;
+      margin: 0;
+      letter-spacing: 0.02em;
     }
 
     h2 {
-      font-size: 24px;
-      margin: 1.8em 0 0.4em 0;
+      font-size: 22px;
+      margin: 1.3em 0 0.35em;
+      border-bottom: 1px solid #e1e1e1;
+      padding-bottom: 0.25em;
     }
 
     p {
-      margin: 0.35em 0;
-    }
-
-    ul {
-      margin: 0.3em 0 0.5em 1.4em;
-      padding-left: 0;
-    }
-
-    li {
-      margin-bottom: 0.4em;
+      margin: 0.45em 0;
     }
 
     a {
-      color: #0000ee;
-      text-decoration: underline;
+      color: #0057c8;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 87, 200, 0.3);
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 1.2em 0 1.4em 0;
+    a:hover,
+    a:focus-visible {
+      border-bottom-color: currentColor;
     }
 
-    .pub-note-inline {
-      font-size: 14px;
+    .site-header {
+      margin-bottom: 0.8em;
+      border-bottom: 1px solid #e1e1e1;
+      padding-bottom: 0.9em;
+    }
+
+    .tagline {
+      margin: 0.4em 0 0.2em;
+      font-size: 0.98rem;
+      color: #555;
+    }
+
+    .contact {
+      margin: 0.2em 0 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .contact a {
+      border-bottom-style: dotted;
+    }
+
+    main {
+      margin-top: 1.0em;
+    }
+
+    section + section {
+      margin-top: 1.0em;
+    }
+
+    ul {
+      margin: 0.4em 0 0.4em 1.2em;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.25em;
+    }
+
+    .pub-list {
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    .pub-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-venue {
       font-style: italic;
-      margin-left: 0.6em;
+    }
+
+    .pub-links {
+      margin-left: 0.4em;
+    }
+
+    .pub-links a + a {
+      margin-left: 0.7em;
+    }
+
+    .meta-line {
+      font-size: 0.96rem;
+      color: #444;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #111;
+        color: #eaeaea;
+      }
+
+      .page {
+        background-color: #181818;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75);
+      }
+
+      h2 {
+        border-bottom-color: #333;
+      }
+
+      .site-header {
+        border-bottom-color: #333;
+      }
+
+      a {
+        color: #7dafff;
+        border-bottom-color: rgba(125, 175, 255, 0.4);
+      }
+
+      .contact,
+      .meta-line {
+        color: #c3c3c3;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="page">
+    <header class="site-header">
+      <h1>Aleksandr Storozhenko</h1>
+      <p class="tagline">
+        M.S.E. Student, Computer Science · Princeton University
+      </p>
+      <p class="contact">
+        E-mail:
+        <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
+      </p>
+    </header>
 
-<h1>Aleksandr Storozhenko</h1>
+    <main>
+      <section aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>
+          I am an M.S.E. student in Computer Science at Princeton University,
+          advised by <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
+          I am broadly interested in theoretical computer science and mathematics.
+        </p>
+      </section>
 
-<p>
-  I am an M.S.E. student in Computer Science at Princeton University,
-  advised by <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
-  I am interested in theoretical computer science and mathematics.
-</p>
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <ul>
+          <li>
+            2025–2027:
+            M.S.E. in Computer Science, <span class="meta-line">Princeton University</span>,
+            advised by Pravesh Kothari.
+          </li>
+          <li>
+            2024–2025:
+            Exchange student in Mathematics and Computer Science,
+            <span class="meta-line">EPFL</span>.
+          </li>
+          <li>
+            2022–2025:
+            B.Sc. in Mathematics and Computer Science, 
+            <span class="meta-line">École Polytechnique</span>, Summa Cum Laude.
+          </li>
+        </ul>
+      </section>
 
-<p>
-  E-Mail: as7649@princeton.edu
-</p>
+      <section aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications</h2>
+        <ul class="pub-list">
+          <li>
+            <span class="pub-title">
+              Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
+            </span><br>
+            <span class="meta-line">
+              Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer,
+              Aleksandr Storozhenko.
+            </span><br>
+            <span class="pub-venue">Preprint</span>, 2025.
+            <span class="pub-links">
+              <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
+            </span>
+          </li>
+          <li>
+            <span class="pub-title">
+              Conway’s Cosmological Theorem and Automata Theory
+            </span><br>
+            <span class="meta-line">
+              Pierre Lairez, Aleksandr Storozhenko.
+            </span><br>
+            <span class="pub-venue">The American Mathematical Monthly</span>, 2025.
+            <span class="pub-links">
+              <a href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>
+            </span>
+          </li>
+        </ul>
+      </section>
 
-<hr>
+      <section aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching</h2>
+        <ul>
+          <li>
+            Teaching Assistant, Princeton University –
+            COS 240: Reasoning about Computation, Fall 2025.
+          </li>
+        </ul>
+      </section>
 
-<h2>Education</h2>
-<ul>
-  <li>2025–2027: M.S.E. in Computer Science, Princeton University, advised by Pravesh Kothari.</li>
-  <li>2024–2025: Exchange student in Mathematics and Computer Science, EPFL.</li>
-  <li>2022–2025: B.Sc. in Mathematics and Computer Science, École Polytechnique, Summa Cum Laude.</li>
-</ul>
-
-<h2>Publications</h2>
-<ul>
-  <li>
-    <b>Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms</b><br>
-    Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer, Aleksandr Storozhenko.<br>
-    <i>Preprint</i>, 2025. <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>.
-  </li>
-  <li>
-    <b>Conway’s Cosmological Theorem and Automata Theory</b><br>
-    Pierre Lairez, Aleksandr Storozhenko.<br>
-    <i>The American Mathematical Monthly</i>, 2025.
-    <a href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>.
-  </li>
-</ul>
-
-<h2>Teaching</h2>
-<ul>
-  <li>Teaching Assistant, Princeton University – COS 240: Reasoning about Computation, Fall 2025.</li>
-</ul>
-  
-<h2>Industry Research Experience</h2>
-<ul>
-  <li>Marshall Wace — Incoming Quantitative Research Intern (Equities Team), Summer 2026</li>
-</ul>
-
+      <section aria-labelledby="industry-heading">
+        <h2 id="industry-heading">Industry Research Experience</h2>
+        <ul>
+          <li>
+            Marshall Wace – Incoming Quantitative Research Intern (Equities Team),
+            Summer 2026.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
