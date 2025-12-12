@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Aleksandr Storozhenko</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal homepage of Aleksandr Storozhenko, M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics.">
+  <meta name="description"
+        content="Personal homepage of Aleksandr Storozhenko, M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics.">
   <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4">
 
   <script type="application/ld+json">
@@ -49,7 +50,11 @@
 
   <style>
     :root {
-      color-scheme: light dark;
+      --bg: #f5f4f3;
+      --fg: #141414;
+      --muted: #8d8c8a;
+      --rule: #e5e2de;
+      --label-col: 120px;
     }
 
     * {
@@ -58,269 +63,366 @@
 
     body {
       margin: 0;
-      padding: 0;
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino,
-                   "Times New Roman", serif;
-      font-size: 16px;
-      line-height: 1.7;
-      background-color: #f5f5f5;
-      color: #222;
-    }
-
-    .page {
-      max-width: 780px;
-      margin: 40px auto;
-      padding: 32px 28px 36px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    @media (max-width: 600px) {
-      .page {
-        margin: 16px;
-        padding: 20px 18px 24px;
-      }
-
-      body {
-        font-size: 15px;
-      }
-
-      h1 {
-        font-size: 26px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-    }
-
-    h1 {
-      font-size: 32px;
-      margin: 0;
-      letter-spacing: 0.02em;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin: 1.3em 0 0.35em;
-      border-bottom: 1px solid #e1e1e1;
-      padding-bottom: 0.25em;
-    }
-
-    p {
-      margin: 0.45em 0;
-    }
-
-    a {
-      color: #0057c8;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(0, 87, 200, 0.3);
-    }
-
-    a:hover,
-    a:focus-visible {
-      border-bottom-color: currentColor;
-    }
-
-    .site-header {
-      margin-bottom: 0.8em;
-      border-bottom: 1px solid #e1e1e1;
-      padding-bottom: 0.9em;
-    }
-
-    .tagline {
-      margin: 0.4em 0 0.2em;
-      font-size: 0.98rem;
-      color: #555;
-    }
-
-    .contact {
-      margin: 0.2em 0 0;
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    .contact a {
-      border-bottom-style: dotted;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, -ui-sans-serif,
+                   "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.8;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
-      margin-top: 1.0em;
+      max-width: 1280px;
+      margin: 96px auto 136px;
+      padding: 0 64px;
+      display: flex;
+      gap: 104px;
+      align-items: flex-start;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 0.06em;
+      text-underline-offset: 0.18em;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* SIDEBAR WITH PHOTO + INFO */
+
+    .sidebar {
+      flex: 0 0 280px;
+      align-self: flex-start;
+      position: sticky;
+      top: 64px;
+    }
+
+    .profile {
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: #000;
+      margin-bottom: 32px;
+    }
+
+    .profile img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .sidebar-text {
+      padding-left: 4px;
+    }
+
+    .name-block {
+      margin-bottom: 20px;
+    }
+
+    .name-block h1 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .name-line {
+      display: block;
+      letter-spacing: 0.26em;
+    }
+
+    .name-block .subtitle {
+      margin: 0 0 4px;
+      font-size: 0.9rem;
+    }
+
+    .name-block .meta {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .sidebar-about {
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      font-size: 0.95rem;
+      line-height: 1.95;
+      max-width: 26rem;
+    }
+
+    .sidebar-about p {
+      margin: 0;
+    }
+
+    /* MAIN CONTENT */
+
+    .content {
+      flex: 1 1 auto;
+    }
+
+    section {
+      padding: 30px 0 34px;
+    }
+
+    section:first-of-type {
+      padding-top: 14px;
     }
 
     section + section {
-      margin-top: 1.0em;
+      border-top: 1px solid var(--rule);
     }
 
-    ul {
-      margin: 0.4em 0 0.4em 1.2em;
-      padding: 0;
+    .section-inner {
+      display: grid;
+      grid-template-columns: var(--label-col) minmax(0, 1fr);
+      column-gap: 52px;
+      align-items: flex-start;
     }
 
-    li {
-      margin-bottom: 0.25em;
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      padding-top: 4px;
+      white-space: nowrap;
     }
 
-    .pub-list {
-      list-style-type: none;
-      margin-left: 0;
+    .section-body {
+      max-width: 44rem;
     }
 
-    .pub-list li {
-      margin-bottom: 0.9em;
+    .section-body p {
+      margin: 0 0 10px;
     }
+
+    .entry {
+      margin-bottom: 20px;
+    }
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-title {
+      display: block;
+      font-size: 0.98rem;
+    }
+
+    .entry-sub {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .entry-sub + .entry-sub {
+      margin-top: 2px;
+    }
+
 
     .pub-title {
-      font-weight: 600;
+      transition: transform 120ms ease-out;
+    }
+    .pub-title:hover {
+      transform: translateX(2px);
     }
 
-    .pub-venue {
-      font-style: italic;
+    .pub-note {
+      font-size: 0.75em;
+      vertical-align: super;
+      margin-left: 0.15em;
     }
 
-    .pub-links {
-      margin-left: 0.4em;
+    .pub-footnote {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
 
-    .pub-links a + a {
-      margin-left: 0.7em;
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        gap: 40px;
+        margin: 72px auto 96px;
+        padding: 0 24px;
+      }
+
+      .sidebar {
+        position: static;
+        top: auto;
+      }
+
+      .name-block h1 {
+        font-size: 18px;
+        letter-spacing: 0.24em;
+      }
+
+      .section-inner {
+        grid-template-columns: 1fr;
+        row-gap: 6px;
+      }
+
+      .section-label {
+        padding-top: 0;
+      }
+
+      .section-body {
+        max-width: none;
+      }
     }
 
-    .meta-line {
-      font-size: 0.96rem;
-      color: #444;
-    }
-
-    @media (prefers-color-scheme: dark) {
+    @media (max-width: 480px) {
       body {
-        background-color: #111;
-        color: #eaeaea;
+        font-size: 14px;
       }
 
-      .page {
-        background-color: #181818;
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75);
-      }
-
-      h2 {
-        border-bottom-color: #333;
-      }
-
-      .site-header {
-        border-bottom-color: #333;
-      }
-
-      a {
-        color: #7dafff;
-        border-bottom-color: rgba(125, 175, 255, 0.4);
-      }
-
-      .contact,
-      .meta-line {
-        color: #c3c3c3;
+      .name-block h1 {
+        font-size: 17px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="site-header">
-      <h1>Aleksandr Storozhenko</h1>
-      <p class="tagline">
-        M.S.E. Student, Computer Science · Princeton University
-      </p>
-      <p class="contact">
-        E-mail:
-        <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
-      </p>
-    </header>
+<main>
 
-    <main>
-      <section aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="portrait.jpg" alt="Black and white portrait of Aleksandr Storozhenko">
+    </div>
+
+    <div class="sidebar-text">
+      <div class="name-block">
+        <h1>
+          <span class="name-line">Aleksandr</span>
+          <span class="name-line">Storozhenko</span>
+        </h1>
+        <p class="subtitle">
+          M.S.E. student, Computer Science · Princeton University
+        </p>
+        <p class="meta">
+          <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
+        </p>
+      </div>
+
+      <div class="sidebar-about">
         <p>
           I am an M.S.E. student in Computer Science at Princeton University,
-          advised by <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
+          advised by
+          <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
           I am broadly interested in theoretical computer science and mathematics.
         </p>
-      </section>
+      </div>
+    </div>
+  </aside>
 
-      <section aria-labelledby="education-heading">
-        <h2 id="education-heading">Education</h2>
-        <ul>
-          <li>
-            2025–2027:
-            M.S.E. in Computer Science, <span class="meta-line">Princeton University</span>,
-            advised by Pravesh Kothari.
-          </li>
-          <li>
-            2024–2025:
-            Exchange student in Mathematics and Computer Science,
-            <span class="meta-line">EPFL</span>.
-          </li>
-          <li>
-            2022–2025:
-            B.Sc. in Mathematics and Computer Science, 
-            <span class="meta-line">École Polytechnique</span>, Summa Cum Laude.
-          </li>
-        </ul>
-      </section>
+  <div class="content">
 
-      <section aria-labelledby="publications-heading">
-        <h2 id="publications-heading">Publications</h2>
-        <ul class="pub-list">
-          <li>
-            <span class="pub-title">
-              Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
-            </span><br>
-            <span class="meta-line">
-              Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer,
-              Aleksandr Storozhenko.
-            </span><br>
-            <span class="pub-venue">Preprint</span>, 2025.
-            <span class="pub-links">
-              <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
-            </span> 
-            </li>
-            <li>
-                <span class="pub-title">
-                    Conway’s Cosmological Theorem and Automata Theory
-                </span><br>
-                <span class="meta-line">
-                    Pierre Lairez, Aleksandr Storozhenko.
-                </span><br>
-                <span class="pub-venue">The American Mathematical Monthly</span>, 2025.
-                <span class="pub-links">
-                <a href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>
-                ·
-                <a href="https://github.com/CharlesCNorton/conway-verified">
-                    ROCQ formalization (thanks to Charles&nbsp;C.&nbsp;Norton)
-                </a>
-                </span>
-        </ul>
-      </section>
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Education</div>
+        <div class="section-body">
+          <div class="entry">
+            <span class="entry-title">
+              2025–2027 · M.S.E. in Computer Science
+            </span>
+            <span class="entry-sub">
+              Princeton University · Advisor: Pravesh Kothari
+            </span>
+          </div>
 
-      <section aria-labelledby="teaching-heading">
-        <h2 id="teaching-heading">Teaching</h2>
-        <ul>
-          <li>
-            Teaching Assistant, Princeton University –
-            COS 240: Reasoning about Computation, Fall 2025.
-          </li>
-        </ul>
-      </section>
+          <div class="entry">
+            <span class="entry-title">
+              2024–2025 · Exchange student in Mathematics and Computer Science
+            </span>
+            <span class="entry-sub">
+              EPFL
+            </span>
+          </div>
 
-      <section aria-labelledby="industry-heading">
-        <h2 id="industry-heading">Industry Research Experience</h2>
-        <ul>
-          <li>
-            Marshall Wace – Incoming Quantitative Research Intern (Equities Team),
-            Summer 2026.
-          </li>
-        </ul>
-      </section>
-    </main>
+          <div class="entry">
+            <span class="entry-title">
+              2022–2025 · B.Sc. in Mathematics and Computer Science
+            </span>
+            <span class="entry-sub">
+              École Polytechnique · Summa Cum Laude
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Publications</div>
+      <div class="section-body">
+        <div class="entry">
+          <span class="entry-title pub-title">
+            Rate‑optimal Community Detection near the KS Threshold via Node‑robust Algorithms
+          </span>
+          <span class="entry-sub">
+            Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer, Aleksandr Storozhenko.
+          </span>
+          <span class="entry-sub">
+            Preprint, 2025.
+            <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
+          </span>
+        </div>
+
+        <div class="entry">
+          <span class="entry-title pub-title">
+            Conway’s Cosmological Theorem and Automata Theory
+          </span>
+          <span class="entry-sub">
+            Pierre Lairez, Aleksandr Storozhenko.
+          </span>
+          <span class="entry-sub">
+            The American Mathematical Monthly, 2025.
+            <a href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>
+            ·
+            <a href="https://github.com/CharlesCNorton/conway-verified">ROCQ formalization</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Teaching</div>
+        <div class="section-body">
+          <div class="entry">
+            <span class="entry-title">
+              Teaching Assistant, Princeton University
+            </span>
+            <span class="entry-sub">
+              COS 240 · Reasoning about Computation · Fall 2025
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Industry</div>
+        <div class="section-body">
+          <div class="entry">
+            <span class="entry-title">
+              Marshall Wace
+            </span>
+            <span class="entry-sub">
+              Incoming Quantitative Research Intern (Equities Team), Summer 2026.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
+
+</main>
 </body>
 </html>
