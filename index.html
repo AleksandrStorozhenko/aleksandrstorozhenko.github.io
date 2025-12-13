@@ -91,7 +91,13 @@
       text-decoration: underline;
     }
 
-    /* SIDEBAR WITH PHOTO + INFO */
+    a.author-link {
+      text-decoration: none;
+    }
+    a.author-link:hover,
+    a.author-link:focus-visible {
+      text-decoration: underline;
+    }
 
     .sidebar {
       flex: 0 0 280px;
@@ -101,10 +107,16 @@
     }
 
     .profile {
-      border-radius: 4px;
+      border-radius: 14px;
       overflow: hidden;
-      border: 1px solid var(--rule);
-      background: #000;
+
+      background: var(--bg);
+
+      border: 1px solid rgba(20, 20, 20, 0.07);
+      box-shadow:
+        0 1px 0 rgba(20, 20, 20, 0.04),
+        0 14px 34px rgba(20, 20, 20, 0.08);
+
       margin-bottom: 32px;
     }
 
@@ -112,6 +124,8 @@
       display: block;
       width: 100%;
       height: auto;
+
+      filter: brightness(0.985) contrast(0.99) saturate(0.97);
     }
 
     .sidebar-text {
@@ -157,8 +171,6 @@
     .sidebar-about p {
       margin: 0;
     }
-
-    /* MAIN CONTENT */
 
     .content {
       flex: 1 1 auto;
@@ -221,7 +233,6 @@
     .entry-sub + .entry-sub {
       margin-top: 2px;
     }
-
 
     .pub-title {
       transition: transform 120ms ease-out;
@@ -290,7 +301,12 @@
 
   <aside class="sidebar">
     <div class="profile">
-      <img src="portrait.jpg" alt="Black and white portrait of Aleksandr Storozhenko">
+      <img
+        src="portrait.png"
+        alt="Portrait of Aleksandr Storozhenko"
+        loading="lazy"
+        decoding="async"
+      >
     </div>
 
     <div class="sidebar-text">
@@ -329,7 +345,8 @@
               2025–2027 · M.S.E. in Computer Science
             </span>
             <span class="entry-sub">
-              Princeton University · Advisor: Pravesh Kothari
+              Princeton University · Advisor:
+              <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>
             </span>
           </div>
 
@@ -354,40 +371,44 @@
       </div>
     </section>
 
-  <section>
-    <div class="section-inner">
-      <div class="section-label">Publications</div>
-      <div class="section-body">
-        <div class="entry">
-          <span class="entry-title pub-title">
-            Rate‑optimal Community Detection near the KS Threshold via Node‑robust Algorithms
-          </span>
-          <span class="entry-sub">
-            Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer, Aleksandr Storozhenko.
-          </span>
-          <span class="entry-sub">
-            Preprint, 2025.
-            <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
-          </span>
-        </div>
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Publications</div>
+        <div class="section-body">
+          <div class="entry">
+            <span class="entry-title pub-title">
+              Rate‑optimal Community Detection near the KS Threshold via Node‑robust Algorithms
+            </span>
+            <span class="entry-sub">
+              Jingqiu Ding,
+              <a class="author-link" href="https://huayiding.github.io/">Yiding Hua</a>,
+              Kasper Lindberg,
+              <a class="author-link" href="https://www.dsteurer.org/">David Steurer</a>,
+              Aleksandr Storozhenko.
+            </span>
+            <span class="entry-sub">
+              Preprint, 2025.
+              <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
+            </span>
+          </div>
 
-        <div class="entry">
-          <span class="entry-title pub-title">
-            Conway’s Cosmological Theorem and Automata Theory
-          </span>
-          <span class="entry-sub">
-            Pierre Lairez, Aleksandr Storozhenko.
-          </span>
-          <span class="entry-sub">
-            The American Mathematical Monthly, 2025.
-            <a href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>
-            ·
-            <a href="https://github.com/CharlesCNorton/conway-verified">ROCQ formalization</a>
-          </span>
+          <div class="entry">
+            <span class="entry-title pub-title">
+              Conway’s Cosmological Theorem and Automata Theory
+            </span>
+            <span class="entry-sub">
+              <a class="author-link" href="https://mathexp.eu/lairez/">Pierre Lairez</a>, Aleksandr Storozhenko.
+            </span>
+            <span class="entry-sub">
+              The American Mathematical Monthly, 2025.
+              <a href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>
+              ·
+              <a href="https://github.com/CharlesCNorton/conway-verified">ROCQ formalization</a>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <section>
       <div class="section-inner">
@@ -398,10 +419,10 @@
               Teaching Assistant, Princeton University
             </span>
             <span class="entry-sub">
-              COS 324 · Introduction to Machine Learning · Spring 2026
+              <a href="https://cos324.io/">COS 324 · Introduction to Machine Learning</a> · Spring 2026
             </span>
             <span class="entry-sub">
-              COS 240 · Reasoning about Computation · Fall 2025
+              <a href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">COS 240 · Reasoning about Computation</a> · Fall 2025
             </span>
           </div>
         </div>
