@@ -15,7 +15,7 @@
     "@type": "Person",
     "name": "Aleksandr Storozhenko",
     "url": "https://aleksandrstorozhenko.github.io/",
-    "email": "mailto:as7649@cs.princeton.edu",
+    "email": "mailto:as7649@princeton.edu",
     "affiliation": {
       "@type": "CollegeOrUniversity",
       "name": "Princeton University",
@@ -39,7 +39,7 @@
       { "@type": "Organization", "name": "math" }
     ],
     "sameAs": [
-      "https://scholar.google.fr/citations?user=BWIwCTAAAAAJ&hl=fr",
+      "https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en",
       "https://www.linkedin.com/in/aleksandr-storozhenko/",
       "https://arxiv.org/a/aleksandrstorozhenko.html",
       "https://github.com/AleksandrStorozhenko",
@@ -49,288 +49,347 @@
   </script>
 
   <style>
-    :root {
-      --bg: #f5f4f3;
-      --fg: #141414;
-      --muted: #8d8c8a;
-      --rule: #e5e2de;
+    :root{
+      --bg:#f5f4f3;
+      --fg:#141414;
+      --muted:#8d8c8a;
+      --muted2:#a7a6a4;
+      --rule:#e5e2de;
+
+      --sidebar-w: 320px;
       --label-col: 120px;
+      --content-max: 44rem;
+
+      --portrait-h: 280px;
+      --sidebar-top: 64px;
     }
 
-    * {
-      box-sizing: border-box;
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:-apple-system,BlinkMacSystemFont,system-ui,-ui-sans-serif,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+      line-height:1.8;
+      font-size:15px;
+      letter-spacing:0.01em;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, -ui-sans-serif,
-                   "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.8;
-      font-size: 15px;
-      letter-spacing: 0.01em;
-      -webkit-font-smoothing: antialiased;
+    main{
+      max-width:1280px;
+      margin:96px auto 136px;
+      padding:0 64px;
+      display:flex;
+      gap:92px;
+      align-items:flex-start;
     }
 
-    main {
-      max-width: 1280px;
-      margin: 96px auto 136px;
-      padding: 0 64px;
-      display: flex;
-      gap: 104px;
-      align-items: flex-start;
+    a{
+      color:inherit;
+      text-decoration:none;
+      text-decoration-thickness:0.06em;
+      text-underline-offset:0.18em;
+    }
+    a:hover{ text-decoration:underline; }
+    a:focus-visible{
+      outline:2px solid rgba(20,20,20,0.28);
+      outline-offset:3px;
+      border-radius:6px;
     }
 
-    a {
-      color: inherit;
-      text-decoration-thickness: 0.06em;
-      text-underline-offset: 0.18em;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    a.author-link {
-      text-decoration: none;
-    }
+    a.author-link{ text-decoration:none; }
     a.author-link:hover,
-    a.author-link:focus-visible {
-      text-decoration: underline;
+    a.author-link:focus-visible{ text-decoration:underline; }
+
+    a.hover-link{ text-decoration:none; }
+    a.hover-link:hover,
+    a.hover-link:focus-visible{ text-decoration:underline; }
+
+    a.pub-link{
+      text-decoration:underline;
+      text-decoration-thickness:0.06em;
+      text-underline-offset:0.18em;
+    }
+    a.pub-link:hover,
+    a.pub-link:focus-visible{
+      text-decoration-thickness:0.08em;
     }
 
-    .sidebar {
-      flex: 0 0 280px;
-      align-self: flex-start;
-      position: sticky;
-      top: 64px;
+    .sidebar{
+      flex:0 0 var(--sidebar-w);
+      align-self:flex-start;
+      position:sticky;
+      top:var(--sidebar-top);
     }
 
-    .profile {
-      border-radius: 14px;
-      overflow: hidden;
+    .sidebar-card{
+      display:flex;
+      flex-direction:column;
 
-      background: var(--bg);
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      border-radius:0;
+      overflow:visible;
 
-      border: 1px solid rgba(20, 20, 20, 0.07);
-      box-shadow:
-        0 1px 0 rgba(20, 20, 20, 0.04),
-        0 14px 34px rgba(20, 20, 20, 0.08);
-
-      margin-bottom: 32px;
+      min-height:auto;
     }
 
-    .profile img {
-      display: block;
-      width: 100%;
-      height: auto;
-
-      filter: brightness(0.985) contrast(0.99) saturate(0.97);
+    .profile-wrap{
+      padding:10px 22px 0;
+    }
+    .profile-wrap img{
+      display:block;
+      width:100%;
+      height:var(--portrait-h);
+      object-fit:cover;
+      border-radius:14px;
+      filter:brightness(0.985) contrast(0.99) saturate(0.97);
+      border:1px solid rgba(20,20,20,0.08);
     }
 
-    .sidebar-text {
-      padding-left: 4px;
+    .sidebar-content{
+      padding:14px 22px 0;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
     }
 
-    .name-block {
-      margin-bottom: 20px;
+    .sidebar-top-block{
+      padding-bottom:16px;
+      border-bottom:1px solid var(--rule);
     }
 
-    .name-block h1 {
-      margin: 0 0 10px;
-      font-size: 19px;
-      font-weight: 400;
-      text-transform: uppercase;
+    .sidebar-top-block h1{
+      margin:0 0 8px;
+      font-size:24px;
+      font-weight:600;
+      text-transform:none;
+      letter-spacing:0.01em;
+      line-height:1.15;
     }
 
-    .name-line {
-      display: block;
-      letter-spacing: 0.26em;
+    .name-line{
+      display:block;
+      letter-spacing:inherit;
     }
 
-    .name-block .subtitle {
-      margin: 0 0 4px;
-      font-size: 0.9rem;
+    .subtitle{
+      margin:0;
+      font-size:0.9rem;
+      line-height:1.55;
+    }
+    .subtitle .subtitle-sub{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:0.98em;
     }
 
-    .name-block .meta {
-      margin: 0;
-      font-size: 0.86rem;
-      color: var(--muted);
+    .contact{
+      margin:10px 0 0;
+      font-size:0.86rem;
+      color:var(--muted);
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:baseline;
+    }
+    .contact .sep{
+      color:var(--muted2);
+      user-select:none;
+    }
+    .contact a{
+      color:inherit;
+      text-decoration:none;
+    }
+    .contact a:hover,
+    .contact a:focus-visible{
+      color:var(--fg);
+      text-decoration:underline;
     }
 
-    .sidebar-about {
-      margin-top: 26px;
-      padding-top: 14px;
-      border-top: 1px solid var(--rule);
-      font-size: 0.95rem;
-      line-height: 1.95;
-      max-width: 26rem;
+    .sidebar-about{
+      font-size:0.94rem;
+      line-height:1.85;
+      margin:0;
+
+      text-align:justify;
+      text-justify:inter-word;
+      text-align-last:left;
+
+      -webkit-hyphens:auto;
+      hyphens:auto;
+    }
+    .sidebar-about p{ margin:0; }
+
+    .content{
+      flex:1 1 auto;
+      min-width:0;
     }
 
-    .sidebar-about p {
-      margin: 0;
+    section{ padding:28px 0 34px; }
+    section:first-of-type{ padding-top:10px; }
+    section + section{ border-top:1px solid var(--rule); }
+
+    .section-inner{
+      display:grid;
+      grid-template-columns:var(--label-col) minmax(0,1fr);
+      column-gap:52px;
+      align-items:flex-start;
     }
 
-    .content {
-      flex: 1 1 auto;
+    .section-label{
+      font-size:0.7rem;
+      text-transform:uppercase;
+      letter-spacing:0.22em;
+      color:var(--muted);
+      padding-top:4px;
+      white-space:nowrap;
     }
 
-    section {
-      padding: 30px 0 34px;
+    .section-body{ max-width:var(--content-max); }
+
+    .entry{ margin-bottom:20px; }
+    .entry:last-child{ margin-bottom:0; }
+
+    .entry-title{
+      display:block;
+      font-size:0.98rem;
     }
 
-    section:first-of-type {
-      padding-top: 14px;
+    .entry-sub{
+      display:block;
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+    .entry-sub + .entry-sub{ margin-top:2px; }
+
+    .pub-title{
+      transition:transform 120ms ease-out;
+    }
+    .pub-title:hover{ transform:translateX(2px); }
+
+    .teaching-line{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:baseline;
     }
 
-    section + section {
-      border-top: 1px solid var(--rule);
+    .teaching-line .course-link{
+      color:inherit;
+      text-decoration:none;
+      font-weight:400;
+    }
+    .teaching-line .course-link:hover,
+    .teaching-line .course-link:focus-visible{
+      text-decoration:underline;
     }
 
-    .section-inner {
-      display: grid;
-      grid-template-columns: var(--label-col) minmax(0, 1fr);
-      column-gap: 52px;
-      align-items: flex-start;
+    .course-code{
+      font-weight:600;
+      letter-spacing:0.01em;
     }
 
-    .section-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      padding-top: 4px;
-      white-space: nowrap;
+    .term{
+      color:var(--muted2);
+      font-size:0.95em;
+      white-space:nowrap;
+      margin-left:auto;
     }
 
-    .section-body {
-      max-width: 44rem;
+    @media (max-width: 1020px){
+      :root{ --sidebar-w: 308px; }
+      main{ gap:64px; padding:0 32px; }
     }
 
-    .section-body p {
-      margin: 0 0 10px;
-    }
-
-    .entry {
-      margin-bottom: 20px;
-    }
-    .entry:last-child {
-      margin-bottom: 0;
-    }
-
-    .entry-title {
-      display: block;
-      font-size: 0.98rem;
-    }
-
-    .entry-sub {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .entry-sub + .entry-sub {
-      margin-top: 2px;
-    }
-
-    .pub-title {
-      transition: transform 120ms ease-out;
-    }
-    .pub-title:hover {
-      transform: translateX(2px);
-    }
-
-    .pub-note {
-      font-size: 0.75em;
-      vertical-align: super;
-      margin-left: 0.15em;
-    }
-
-    .pub-footnote {
-      margin-top: 6px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 900px) {
-      main {
-        flex-direction: column;
-        gap: 40px;
-        margin: 72px auto 96px;
-        padding: 0 24px;
+    @media (max-width: 900px){
+      main{
+        flex-direction:column;
+        gap:40px;
+        margin:72px auto 96px;
+        padding:0 24px;
       }
-
-      .sidebar {
-        position: static;
-        top: auto;
+      .sidebar{
+        position:static;
+        top:auto;
+        width:100%;
+        flex:none;
       }
-
-      .name-block h1 {
-        font-size: 18px;
-        letter-spacing: 0.24em;
+      .section-inner{
+        grid-template-columns:1fr;
+        row-gap:6px;
       }
-
-      .section-inner {
-        grid-template-columns: 1fr;
-        row-gap: 6px;
-      }
-
-      .section-label {
-        padding-top: 0;
-      }
-
-      .section-body {
-        max-width: none;
-      }
+      .section-label{ padding-top:0; }
+      .section-body{ max-width:none; }
+      .term{ margin-left:0; }
     }
 
-    @media (max-width: 480px) {
-      body {
-        font-size: 14px;
-      }
+    @media (max-width: 480px){
+      body{ font-size:14px; }
+      :root{ --portrait-h: 240px; }
 
-      .name-block h1 {
-        font-size: 17px;
-      }
+      .profile-wrap{ padding:10px 18px 0; }
+      .sidebar-content{ padding:14px 18px 0; }
+
+      .sidebar-top-block h1{ font-size:21px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .pub-title{ transition:none; }
+      .pub-title:hover{ transform:none; }
     }
   </style>
 </head>
+
 <body>
 <main>
 
   <aside class="sidebar">
-    <div class="profile">
-      <img
-        src="portrait.png"
-        alt="Portrait of Aleksandr Storozhenko"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
+    <div class="sidebar-card">
 
-    <div class="sidebar-text">
-      <div class="name-block">
-        <h1>
-          <span class="name-line">Aleksandr</span>
-          <span class="name-line">Storozhenko</span>
-        </h1>
-        <p class="subtitle">
-          M.S.E. student, Computer Science · Princeton University
-        </p>
-        <p class="meta">
-          <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
-        </p>
+      <div class="profile-wrap">
+        <img
+          src="portrait.png"
+          alt="Portrait of Aleksandr Storozhenko"
+          loading="lazy"
+          decoding="async"
+        >
       </div>
 
-      <div class="sidebar-about">
-        <p>
-          I am an M.S.E. student in Computer Science at Princeton University,
-          advised by
-          <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
-          I am broadly interested in theoretical computer science and mathematics.
-        </p>
+      <div class="sidebar-content">
+        <div class="sidebar-top-block">
+          <h1>
+            <span class="name-line">Aleksandr</span>
+            <span class="name-line">Storozhenko</span>
+          </h1>
+
+          <p class="subtitle">
+            M.S.E. student, Computer Science
+            <span class="subtitle-sub">Princeton University</span>
+          </p>
+
+          <p class="contact" aria-label="Contact links">
+            <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
+            <span class="sep">·</span>
+            <a href="https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en">Google Scholar</a>
+          </p>
+        </div>
+
+        <div class="sidebar-about">
+          <p>
+            I am an M.S.E. student in Computer Science at Princeton University,
+            advised by
+            <a class="hover-link" href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
+            I am broadly interested in theoretical computer science and mathematics.
+          </p>
+        </div>
       </div>
+
     </div>
   </aside>
 
@@ -340,6 +399,7 @@
       <div class="section-inner">
         <div class="section-label">Education</div>
         <div class="section-body">
+
           <div class="entry">
             <span class="entry-title">
               2025–2027 · M.S.E. in Computer Science
@@ -354,9 +414,7 @@
             <span class="entry-title">
               2024–2025 · Exchange student in Mathematics and Computer Science
             </span>
-            <span class="entry-sub">
-              EPFL
-            </span>
+            <span class="entry-sub">EPFL</span>
           </div>
 
           <div class="entry">
@@ -367,6 +425,7 @@
               École Polytechnique · Summa Cum Laude
             </span>
           </div>
+
         </div>
       </div>
     </section>
@@ -375,6 +434,7 @@
       <div class="section-inner">
         <div class="section-label">Publications</div>
         <div class="section-body">
+
           <div class="entry">
             <span class="entry-title pub-title">
               Rate‑optimal Community Detection near the KS Threshold via Node‑robust Algorithms
@@ -388,7 +448,7 @@
             </span>
             <span class="entry-sub">
               Preprint, 2025.
-              <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
+              <a class="pub-link" href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
             </span>
           </div>
 
@@ -401,11 +461,12 @@
             </span>
             <span class="entry-sub">
               The American Mathematical Monthly, 2025.
-              <a href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>
+              <a class="pub-link" href="https://doi.org/10.1080/00029890.2025.2549225">DOI</a>
               ·
-              <a href="https://github.com/CharlesCNorton/conway-verified">ROCQ formalization</a>
+              <a class="pub-link" href="https://github.com/CharlesCNorton/conway-verified">ROCQ formalization</a>
             </span>
           </div>
+
         </div>
       </div>
     </section>
@@ -414,17 +475,27 @@
       <div class="section-inner">
         <div class="section-label">Teaching</div>
         <div class="section-body">
+
           <div class="entry">
             <span class="entry-title">
               Teaching Assistant, Princeton University
             </span>
-            <span class="entry-sub">
-              <a href="https://cos324.io/">COS 324 · Introduction to Machine Learning</a> · Spring 2026
+
+            <span class="entry-sub teaching-line">
+              <a class="course-link" href="https://cos324.io/">
+                <span class="course-code">COS 324</span> — Introduction to Machine Learning
+              </a>
+              <span class="term">Spring 2026</span>
             </span>
-            <span class="entry-sub">
-              <a href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">COS 240 · Reasoning about Computation</a> · Fall 2025
+
+            <span class="entry-sub teaching-line">
+              <a class="course-link" href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">
+                <span class="course-code">COS 240</span> — Reasoning about Computation
+              </a>
+              <span class="term">Fall 2025</span>
             </span>
           </div>
+
         </div>
       </div>
     </section>
@@ -433,14 +504,14 @@
       <div class="section-inner">
         <div class="section-label">Industry</div>
         <div class="section-body">
+
           <div class="entry">
-            <span class="entry-title">
-              Marshall Wace
-            </span>
+            <span class="entry-title">Marshall Wace</span>
             <span class="entry-sub">
               Incoming Quantitative Research Intern (Equities Team), Summer 2026.
             </span>
           </div>
+
         </div>
       </div>
     </section>
