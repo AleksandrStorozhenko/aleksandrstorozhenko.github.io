@@ -343,6 +343,74 @@
       .pub-title{ transition:none; }
       .pub-title:hover{ transform:none; }
     }
+    
+    details.coursework-details{
+      margin-top:2px; 
+    }
+
+    details.coursework-details summary{
+      list-style:none;
+      cursor:pointer;
+      user-select:none;
+
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+
+      color:var(--muted);
+      font-size:0.9rem;
+      line-height:1.75;
+
+      padding:0;
+    }
+
+    details.coursework-details summary::-webkit-details-marker{
+      display:none;
+    }
+
+    details.coursework-details summary::after{
+      content:"+";
+      margin-left:auto;
+      color:var(--muted2);
+      font-weight:600;
+    }
+    details.coursework-details[open] summary::after{
+      content:"–";
+    }
+
+    details.coursework-details summary:hover{
+      color:var(--fg);
+      text-decoration:underline;
+      text-decoration-thickness:0.06em;
+      text-underline-offset:0.18em;
+    }
+
+    details.coursework-details summary:focus-visible{
+      outline:2px solid rgba(20,20,20,0.28);
+      outline-offset:3px;
+      border-radius:8px;
+    }
+
+    ul.coursework-list{
+      list-style:none;
+      margin:8px 0 0;
+      padding:0;
+
+      color:var(--muted);
+      font-size:0.9rem;
+      line-height:1.75;
+    }
+
+    ul.coursework-list li{
+      display:grid;
+      grid-template-columns:86px minmax(0,1fr);
+      column-gap:12px;
+      align-items:baseline;
+    }
+
+    ul.coursework-list li + li{
+      margin-top:4px;
+    }
   </style>
 </head>
 
@@ -385,7 +453,7 @@
             I am an M.S.E. student in Computer Science at Princeton University,
             advised by
             <a class="hover-link" href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
-            I am broadly interested in theoretical computer science and mathematics. 
+            I am broadly interested in theoretical computer science and mathematics.
             Lately, I’ve been thinking about algorithmic aspects of discrepancy theory.
           </p>
         </div>
@@ -409,6 +477,18 @@
               Princeton University · Advisor:
               <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>
             </span>
+
+            <!-- Integrated under the Princeton degree (compact + collapsible) -->
+            <details class="coursework-details">
+              <summary>Selected graduate coursework</summary>
+              <ul class="coursework-list" aria-label="Selected graduate coursework">
+                <li><span class="course-code">ORF 523</span><span>Convex and Conic Optimization</span></li>
+                <li><span class="course-code">MAT 529</span><span>Probability in High Dimension</span></li>
+                <li><span class="course-code">MAT 577</span><span>The Probabilistic Method</span></li>
+                <li><span class="course-code">COS 598C</span><span>Sum-of-Squares Proofs and Efficient Algorithms</span></li>
+                <li><span class="course-code">COS 585</span><span>Information Theory</span></li>
+              </ul>
+            </details>
           </div>
 
           <div class="entry">
@@ -505,16 +585,16 @@
       <div class="section-inner">
         <div class="section-label">Industry</div>
         <div class="section-body">
-    
+
           <div class="entry">
             <span class="entry-title">Marshall Wace</span>
-    
+
             <span class="entry-sub teaching-line">
               <span>Quantitative Research Intern (incoming)</span>
               <span class="term">Summer 2026</span>
             </span>
           </div>
-    
+
         </div>
       </div>
     </section>
