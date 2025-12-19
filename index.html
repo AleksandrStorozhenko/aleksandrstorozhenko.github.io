@@ -140,13 +140,23 @@
     }
 
     .sidebar-about a,
-    .entry-sub a:not(.author-link):not(.course-link),
-    .entry-title a.title-link{
+    .entry-sub a:not(.author-link):not(.course-link){
       text-decoration:underline;
     }
     .sidebar-about a:hover,
-    .entry-sub a:not(.author-link):not(.course-link):hover,
-    .entry-title a.title-link:hover{
+    .entry-sub a:not(.author-link):not(.course-link):hover{
+      text-decoration-thickness:0.08em;
+    }
+
+    section[aria-labelledby="publications"] .entry-title a.title-link,
+    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link){
+      text-decoration:none;
+    }
+    section[aria-labelledby="publications"] .entry-title a.title-link:hover,
+    section[aria-labelledby="publications"] .entry-title a.title-link:focus-visible,
+    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):hover,
+    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):focus-visible{
+      text-decoration:underline;
       text-decoration-thickness:0.08em;
     }
 
@@ -247,6 +257,22 @@
     .contact a:focus-visible{
       color:var(--fg);
       text-decoration:underline;
+    }
+
+    .contact a.contact-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+    .contact .icon{
+      width:15px;
+      height:15px;
+      flex:0 0 auto;
+      opacity:0.88;
+    }
+    .contact a.contact-link:hover .icon,
+    .contact a.contact-link:focus-visible .icon{
+      opacity:1;
     }
 
     .sidebar-nav{
@@ -491,6 +517,66 @@
     ul.coursework-list li + li{
       margin-top:4px;
     }
+
+    .course-list-heading{
+      display:flex;
+      align-items:center;
+      gap:10px;
+
+      color:var(--fg);
+      font-size:0.9rem;
+      line-height:1.6;
+
+      padding:8px 10px;
+      margin:10px -10px 0;
+      border-radius:10px;
+      min-height:44px;
+
+      background:var(--hover-bg-strong);
+    }
+
+    ul.teaching-list{
+      list-style:none;
+      margin:8px 0 0;
+      padding:0;
+
+      color:var(--muted);
+      font-size:0.9rem;
+      line-height:1.75;
+    }
+
+    ul.teaching-list li{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) auto;
+      column-gap:14px;
+      align-items:baseline;
+    }
+
+    ul.teaching-list li + li{
+      margin-top:4px;
+    }
+
+    ul.teaching-list a.course-link{
+      display:grid;
+      grid-template-columns:86px minmax(0, 1fr);
+      column-gap:12px;
+      align-items:baseline;
+
+      color:inherit;
+      text-decoration:none;
+      font-weight:400;
+    }
+
+    ul.teaching-list a.course-link:hover,
+    ul.teaching-list a.course-link:focus-visible{
+      text-decoration:underline;
+    }
+
+    ul.teaching-list .term{
+      margin-left:0;
+      justify-self:end;
+      align-self:baseline;
+    }
   </style>
 </head>
 
@@ -525,15 +611,23 @@
             </p>
 
             <p class="contact" aria-label="Contact links">
-              <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
-              <span class="sep">·</span>
-              <a href="https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en">Google Scholar</a>
-              <!-- Optional extras:
-              <span class="sep">·</span>
-              <a href="https://github.com/AleksandrStorozhenko">GitHub</a>
-              <span class="sep">·</span>
-              <a href="https://www.linkedin.com/in/aleksandr-storozhenko/">LinkedIn</a>
-              -->
+              <a class="contact-link" href="mailto:as7649@princeton.edu">
+
+                <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>as7649@princeton.edu</span>
+              </a>
+
+              <a class="contact-link" href="https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en">
+                <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4 3 9l9 5 9-5-9-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M7 12v5c0 1.6 2.2 3 5 3s5-1.4 5-3v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 10v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+                <span>Google Scholar</span>
+              </a>
             </p>
           </div>
 
@@ -652,19 +746,23 @@
                 Teaching Assistant, Princeton University
               </span>
 
-              <span class="entry-sub teaching-line">
-                <a class="course-link" href="https://cos324.io/">
-                  <span class="course-code">COS 324</span> · Introduction to Machine Learning
-                </a>
-                <span class="term">Spring 2026</span>
-              </span>
+              <ul class="teaching-list" aria-label="Courses taught">
+                <li>
+                  <a class="course-link" href="https://cos324.io/">
+                    <span class="course-code">COS 324</span>
+                    <span>Introduction to Machine Learning</span>
+                  </a>
+                  <span class="term">Spring 2026</span>
+                </li>
 
-              <span class="entry-sub teaching-line">
-                <a class="course-link" href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">
-                  <span class="course-code">COS 240</span> · Reasoning about Computation
-                </a>
-                <span class="term">Fall 2025</span>
-              </span>
+                <li>
+                  <a class="course-link" href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">
+                    <span class="course-code">COS 240</span>
+                    <span>Reasoning about Computation</span>
+                  </a>
+                  <span class="term">Fall 2025</span>
+                </li>
+              </ul>
             </div>
 
           </div>
