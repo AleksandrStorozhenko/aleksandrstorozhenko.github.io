@@ -52,7 +52,8 @@
       --fg:#141414;
       --muted:#7f7e7c;
       --muted2:#9a9997;
-      --rule:#e5e2de;
+
+      --rule:#dbd7d2;
 
       --hover-bg: rgba(20,20,20,0.045);
       --hover-bg-strong: rgba(20,20,20,0.075);
@@ -62,8 +63,17 @@
       --label-col: 120px;
       --content-max: 44rem;
 
-      --portrait-h: 280px;
+      --portrait-h: 220px;
       --sidebar-top: 64px;
+
+      --accent: #2b6cb0;
+      --accent-soft: rgba(43,108,176,0.16);
+
+      --chip-bg: rgba(20,20,20,0.028);
+      --chip-bg-hover: rgba(20,20,20,0.055);
+      --chip-border: rgba(20,20,20,0.11);
+      --chip-border-hover: rgba(20,20,20,0.18);
+      --chip-shadow: 0 1px 0 rgba(20,20,20,0.04);
     }
 
     @media (prefers-color-scheme: dark){
@@ -77,6 +87,15 @@
         --hover-bg: rgba(244,243,242,0.06);
         --hover-bg-strong: rgba(244,243,242,0.10);
         --focus-ring: rgba(244,243,242,0.38);
+
+        --accent: #7fb4ff;
+        --accent-soft: rgba(127,180,255,0.18);
+
+        --chip-bg: rgba(244,243,242,0.06);
+        --chip-bg-hover: rgba(244,243,242,0.095);
+        --chip-border: rgba(244,243,242,0.14);
+        --chip-border-hover: rgba(244,243,242,0.22);
+        --chip-shadow: 0 1px 0 rgba(0,0,0,0.24);
       }
     }
 
@@ -322,14 +341,16 @@
 
     .section-label{
       margin:0;
-      font-size:0.72rem;
-      font-weight:600;
+      font-size:0.74rem;
+      font-weight:700;
       text-transform:uppercase;
-      letter-spacing:0.18em;
+      letter-spacing:0.20em;
       color:var(--muted);
       padding-top:4px;
       white-space:nowrap;
       scroll-margin-top: 24px;
+      border-left:3px solid var(--accent-soft);
+      padding-left:12px;
     }
 
     .section-body{ max-width:var(--content-max); }
@@ -340,6 +361,7 @@
     .entry-title{
       display:block;
       font-size:0.98rem;
+      font-variant-numeric: tabular-nums;
     }
 
     a.title-link{
@@ -369,26 +391,74 @@
       align-items:baseline;
     }
 
-    .teaching-line .course-link{
-      color:inherit;
-      text-decoration:none;
-      font-weight:400;
-    }
-    .teaching-line .course-link:hover,
-    .teaching-line .course-link:focus-visible{
-      text-decoration:underline;
-    }
-
-    .course-code{
-      font-weight:600;
-      letter-spacing:0.01em;
-    }
-
     .term{
       color:var(--muted2);
       font-size:0.95em;
       white-space:nowrap;
       margin-left:auto;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pub-links{
+      margin-top:8px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      color:var(--muted);
+    }
+
+    .pub-links a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--chip-border);
+      background:var(--chip-bg);
+      box-shadow:var(--chip-shadow);
+
+      color:inherit;
+      text-decoration:none;
+
+      font-size:0.82rem;
+      line-height:1.2;
+      font-weight:520;
+      letter-spacing:0.01em;
+
+      transition:
+        transform 120ms ease-out,
+        background-color 120ms ease-out,
+        border-color 120ms ease-out,
+        color 120ms ease-out;
+    }
+
+    .pub-links a:hover{
+      background:var(--chip-bg-hover);
+      border-color:var(--chip-border-hover);
+      color:var(--fg);
+      transform:translateY(-1px);
+      text-decoration:none;
+    }
+
+    .pub-links a:active{
+      transform:translateY(0px);
+    }
+
+    .pub-links a:focus-visible{
+      outline:2px solid var(--focus-ring);
+      outline-offset:3px;
+      text-decoration:none;
+    }
+
+    .pub-links .chip-ico{
+      width:14px;
+      height:14px;
+      flex:0 0 auto;
+      opacity:0.9;
+    }
+    .pub-links a:hover .chip-ico,
+    .pub-links a:focus-visible .chip-ico{
+      opacity:1;
     }
 
     @media (max-width: 1020px){
@@ -413,7 +483,14 @@
         grid-template-columns:1fr;
         row-gap:6px;
       }
-      .section-label{ padding-top:0; }
+      .section-label{
+        padding-top:0;
+        border-left:none;
+        padding-left:0;
+        border-bottom:1px solid var(--rule);
+        padding-bottom:8px;
+        margin-bottom:6px;
+      }
       .section-body{ max-width:none; }
 
       .teaching-line{
@@ -431,7 +508,7 @@
 
     @media (max-width: 480px){
       body{ font-size:14px; }
-      :root{ --portrait-h: 240px; }
+      :root{ --portrait-h: 200px; }
 
       .profile-wrap{ padding:10px 18px 0; }
       .sidebar-content{ padding:14px 18px 0; }
@@ -442,6 +519,8 @@
     @media (prefers-reduced-motion: reduce){
       .pub-title{ transition:none; }
       .pub-title:hover{ transform:none; }
+      .pub-links a{ transition:none; }
+      .pub-links a:hover{ transform:none; }
     }
 
     details.coursework-details{
@@ -516,23 +595,6 @@
 
     ul.coursework-list li + li{
       margin-top:4px;
-    }
-
-    .course-list-heading{
-      display:flex;
-      align-items:center;
-      gap:10px;
-
-      color:var(--fg);
-      font-size:0.9rem;
-      line-height:1.6;
-
-      padding:8px 10px;
-      margin:10px -10px 0;
-      border-radius:10px;
-      min-height:44px;
-
-      background:var(--hover-bg-strong);
     }
 
     ul.teaching-list{
@@ -612,7 +674,6 @@
 
             <p class="contact" aria-label="Contact links">
               <a class="contact-link" href="mailto:as7649@princeton.edu">
-
                 <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                   <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -657,10 +718,11 @@
                 2025–2027 · M.S.E. in Computer Science
               </span>
               <span class="entry-sub">
-                Princeton University · GPA: 4.0/4.0 · Advisor:
+                <!-- ONLY CHANGE: removed “GPA:” label -->
+                Princeton University · 4.0/4.0 · Advisor:
                 <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>
               </span>
-            
+
               <details class="coursework-details">
                 <summary>Selected graduate coursework</summary>
                 <ul class="coursework-list" aria-label="Selected graduate coursework">
@@ -701,20 +763,42 @@
             <div class="entry">
               <span class="entry-title pub-title">
                 <a class="title-link" href="https://doi.org/10.48550/ARXIV.2511.16613">
-                  Rate‑optimal Community Detection near the KS Threshold via Node‑robust Algorithms
+                  Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
                 </a>
               </span>
               <span class="entry-sub">
-                Jingqiu Ding,
+                <a class="author-link" href="https://semignorant.github.io/jingqiuding.github.io/">Jingqiu Ding</a>,
                 <a class="author-link" href="https://huayiding.github.io/">Yiding Hua</a>,
                 Kasper Lindberg,
                 <a class="author-link" href="https://www.dsteurer.org/">David Steurer</a>,
                 Aleksandr Storozhenko.
               </span>
-              <span class="entry-sub">
-                Preprint, 2025.
-                <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
-              </span>
+              <span class="entry-sub">Preprint, 2025.</span>
+
+              <div class="pub-links" aria-label="Links for Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms">
+                <a href="https://doi.org/10.48550/ARXIV.2511.16613">
+                  <svg class="chip-ico" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3 3 8l9 5 9-5-9-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M7 12v6c0 1.6 2.2 3 5 3s5-1.4 5-3v-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>arXiv</span>
+                </a>
+                <a href="https://arxiv.org/pdf/2511.16613.pdf">
+                  <svg class="chip-ico" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 3h7l3 3v15H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 13h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                  <span>PDF</span>
+                </a>
+                <a href="https://arxiv.org/bibtex/2511.16613">
+                  <svg class="chip-ico" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4h12v16H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M8.5 8h7M8.5 12h7M8.5 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                  <span>BibTeX</span>
+                </a>
+              </div>
             </div>
 
             <div class="entry">
@@ -726,10 +810,32 @@
               <span class="entry-sub">
                 <a class="author-link" href="https://mathexp.eu/lairez/">Pierre Lairez</a>, Aleksandr Storozhenko.
               </span>
-              <span class="entry-sub">
-                The American Mathematical Monthly, 2025.
-                <a href="https://doi.org/10.48550/arXiv.2409.20341">arXiv</a>
-              </span>
+              <span class="entry-sub">The American Mathematical Monthly, 2025.</span>
+
+              <div class="pub-links" aria-label="Links for Conway’s Cosmological Theorem and Automata Theory">
+                <a href="https://doi.org/10.48550/arXiv.2409.20341">
+                  <svg class="chip-ico" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3 3 8l9 5 9-5-9-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M7 12v6c0 1.6 2.2 3 5 3s5-1.4 5-3v-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>arXiv</span>
+                </a>
+                <a href="https://arxiv.org/pdf/2409.20341.pdf">
+                  <svg class="chip-ico" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 3h7l3 3v15H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 13h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                  <span>PDF</span>
+                </a>
+                <a href="https://arxiv.org/bibtex/2409.20341">
+                  <svg class="chip-ico" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4h12v16H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M8.5 8h7M8.5 12h7M8.5 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                  <span>BibTeX</span>
+                </a>
+              </div>
             </div>
 
           </div>
@@ -791,7 +897,6 @@
         </div>
       </section>
 
-      
       <section aria-labelledby="industry">
         <div class="section-inner">
           <h2 class="section-label" id="industry">Industry</h2>
