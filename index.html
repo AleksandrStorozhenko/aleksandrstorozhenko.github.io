@@ -140,22 +140,22 @@
     }
 
     .sidebar-about a,
-    .entry-sub a:not(.author-link):not(.course-link){
+    .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link){
       text-decoration:underline;
     }
     .sidebar-about a:hover,
-    .entry-sub a:not(.author-link):not(.course-link):hover{
+    .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link):hover{
       text-decoration-thickness:0.08em;
     }
 
     section[aria-labelledby="publications"] .entry-title a.title-link,
-    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link){
+    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link){
       text-decoration:none;
     }
     section[aria-labelledby="publications"] .entry-title a.title-link:hover,
     section[aria-labelledby="publications"] .entry-title a.title-link:focus-visible,
-    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):hover,
-    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):focus-visible{
+    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link):hover,
+    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link):focus-visible{
       text-decoration:underline;
       text-decoration-thickness:0.08em;
     }
@@ -163,6 +163,13 @@
     a.author-link{ text-decoration:none; }
     a.author-link:hover,
     a.author-link:focus-visible{ text-decoration:underline; }
+
+    a.instructor-link{ text-decoration:none; }
+    a.instructor-link:hover,
+    a.instructor-link:focus-visible{
+      text-decoration:underline;
+      text-decoration-thickness:0.08em;
+    }
 
     .sidebar{
       flex:0 0 var(--sidebar-w);
@@ -556,20 +563,33 @@
       margin-top:4px;
     }
 
-    ul.teaching-list a.course-link{
+    ul.teaching-list .course-info{
       display:grid;
-      grid-template-columns:86px minmax(0, 1fr);
+      grid-template-columns:86px minmax(0,1fr);
       column-gap:12px;
       align-items:baseline;
+      min-width:0;
+    }
+    ul.teaching-list .course-main{
+      min-width:0;
+    }
 
+    a.course-title-link{
       color:inherit;
       text-decoration:none;
       font-weight:400;
     }
-
-    ul.teaching-list a.course-link:hover,
-    ul.teaching-list a.course-link:focus-visible{
+    a.course-title-link:hover,
+    a.course-title-link:focus-visible{
       text-decoration:underline;
+    }
+
+    .course-meta{
+      display:block;
+      margin-top:2px;
+      color:var(--muted2);
+      font-size:0.92em;
+      line-height:1.55;
     }
 
     ul.teaching-list .term{
@@ -657,10 +677,10 @@
                 2025–2027 · M.S.E. in Computer Science
               </span>
               <span class="entry-sub">
-                Princeton University · GPA: 4.0/4.0 · Advisor:
+                Princeton University · 4.0/4.0 · Advisor:
                 <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>
               </span>
-            
+
               <details class="coursework-details">
                 <summary>Selected graduate coursework</summary>
                 <ul class="coursework-list" aria-label="Selected graduate coursework">
@@ -701,11 +721,11 @@
             <div class="entry">
               <span class="entry-title pub-title">
                 <a class="title-link" href="https://doi.org/10.48550/ARXIV.2511.16613">
-                  Rate‑optimal Community Detection near the KS Threshold via Node‑robust Algorithms
+                  Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
                 </a>
               </span>
               <span class="entry-sub">
-                Jingqiu Ding,
+                <a class="author-link" href="https://semignorant.github.io/jingqiuding.github.io/">Jingqiu Ding</a>,
                 <a class="author-link" href="https://huayiding.github.io/">Yiding Hua</a>,
                 Kasper Lindberg,
                 <a class="author-link" href="https://www.dsteurer.org/">David Steurer</a>,
@@ -748,18 +768,31 @@
 
               <ul class="teaching-list" aria-label="Courses taught">
                 <li>
-                  <a class="course-link" href="https://cos324.io/">
+                  <div class="course-info">
                     <span class="course-code">COS 324</span>
-                    <span>Introduction to Machine Learning</span>
-                  </a>
+                    <div class="course-main">
+                      <a class="course-title-link" href="https://cos324.io/">Introduction to Machine Learning</a>
+                      <span class="course-meta">
+                        Instructors:
+                        <a class="instructor-link" href="https://www.cs.princeton.edu/~vr23/">Vikram Ramaswamy</a>,
+                        <a class="instructor-link" href="https://liuzhuang13.github.io/">Zhuang Liu</a>
+                      </span>
+                    </div>
+                  </div>
                   <span class="term">Spring 2026</span>
                 </li>
 
                 <li>
-                  <a class="course-link" href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">
+                  <div class="course-info">
                     <span class="course-code">COS 240</span>
-                    <span>Reasoning about Computation</span>
-                  </a>
+                    <div class="course-main">
+                      <a class="course-title-link" href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">Reasoning about Computation</a>
+                      <span class="course-meta">
+                        Instructor:
+                        <a class="instructor-link" href="https://www.cs.princeton.edu/~zdvir">Zeev Dvir</a>
+                      </span>
+                    </div>
+                  </div>
                   <span class="term">Fall 2025</span>
                 </li>
               </ul>
@@ -791,7 +824,6 @@
         </div>
       </section>
 
-      
       <section aria-labelledby="industry">
         <div class="section-inner">
           <h2 class="section-label" id="industry">Industry</h2>
