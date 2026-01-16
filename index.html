@@ -308,8 +308,39 @@
       text-align:left;
       hyphens:none;
       overflow-wrap:break-word;
+      padding-top:2px;
     }
-    .sidebar-about p{ margin:0; }
+
+    .sidebar-about .about-p{
+      margin:0;
+      text-wrap:pretty;
+    }
+
+    .sidebar-about .about-p + .about-p{
+      margin-top:10px;
+    }
+
+    .sidebar-about .about-p1{
+      color:var(--fg);
+    }
+
+    .sidebar-about .about-p2{
+      color:var(--muted);
+    }
+
+    .sidebar-about .about-p3{
+      color:var(--muted);
+      margin-top:8px;
+    }
+
+    .sidebar-about a{
+      text-decoration:underline;
+      text-decoration-thickness:0.06em;
+      text-underline-offset:0.18em;
+    }
+    .sidebar-about a:hover{
+      text-decoration-thickness:0.08em;
+    }
 
     .content{
       flex:1 1 auto;
@@ -652,17 +683,22 @@
           </div>
 
           <div class="sidebar-about">
-            <p>
+            <p class="about-p about-p1">
               I am an M.S.E. student in Computer Science at Princeton University,
               advised by
               <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
+            </p>
+
+            <p class="about-p about-p2">
               Previously, I was an SSRF research fellow at ETH Zürich, working with
               <a href="https://www.dsteurer.org/">David Steurer</a>.
-              I am broadly interested in theoretical computer science and mathematics,
-              with recent interests in algorithmic aspects of discrepancy theory.
+            </p>
+
+            <p class="about-p about-p3">
+              I am broadly interested in theoretical computer science and mathematics.
             </p>
           </div>
-        </div>
+
 
       </div>
     </aside>
@@ -679,11 +715,10 @@
                 2025–2027 · M.S.E. in Computer Science
               </span>
               <span class="entry-sub">
-                Princeton University · 4.0/4.0 · Advisor:
-                <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>
+                Princeton University · 4.0/4.0 
               </span>
 
-              <details class="coursework-details">
+              <!-- <details class="coursework-details">
                 <summary>Selected graduate coursework</summary>
                 <ul class="coursework-list" aria-label="Selected graduate coursework">
                   <li><span class="course-code">ORF 523</span><span>Convex and Conic Optimization</span></li>
@@ -692,15 +727,15 @@
                   <li><span class="course-code">COS 598C</span><span>Sum-of-Squares Proofs and Efficient Algorithms</span></li>
                   <li><span class="course-code">COS 585</span><span>Information Theory</span></li>
                 </ul>
-              </details>
+              </details> -->
             </div>
 
-            <div class="entry">
+            <!--<div class="entry">
               <span class="entry-title">
                 2024–2025 · Exchange student in Mathematics and Computer Science
               </span>
               <span class="entry-sub">EPFL</span>
-            </div>
+            </div>-->
 
             <div class="entry">
               <span class="entry-title">
@@ -731,7 +766,7 @@
                 <a class="author-link" href="https://huayiding.github.io/">Yiding Hua</a>,
                 Kasper Lindberg,
                 <a class="author-link" href="https://www.dsteurer.org/">David Steurer</a>,
-                Aleksandr Storozhenko.
+                <b>AS</b>.
               </span>
               <span class="entry-sub">
                 Preprint, 2025.
@@ -746,7 +781,7 @@
                 </a>
               </span>
               <span class="entry-sub">
-                <a class="author-link" href="https://mathexp.eu/lairez/">Pierre Lairez</a>, Aleksandr Storozhenko.
+                <a class="author-link" href="https://mathexp.eu/lairez/">Pierre Lairez</a>, <b>AS</b>.
               </span>
               <span class="entry-sub">
                 The American Mathematical Monthly, 2025.
@@ -774,11 +809,6 @@
                     <span class="course-code">COS 324</span>
                     <div class="course-main">
                       <a class="course-title-link" href="https://cos324.io/">Introduction to Machine Learning</a>
-                      <span class="course-meta">
-                        Instructors:
-                        <a class="instructor-link" href="https://www.cs.princeton.edu/~vr23/">Vikram Ramaswamy</a>,
-                        <a class="instructor-link" href="https://liuzhuang13.github.io/">Zhuang Liu</a>
-                      </span>
                     </div>
                   </div>
                   <span class="term">Spring 2026</span>
@@ -789,10 +819,6 @@
                     <span class="course-code">COS 240</span>
                     <div class="course-main">
                       <a class="course-title-link" href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">Reasoning about Computation</a>
-                      <span class="course-meta">
-                        Instructor:
-                        <a class="instructor-link" href="https://www.cs.princeton.edu/~zdvir">Zeev Dvir</a>
-                      </span>
                     </div>
                   </div>
                   <span class="term">Fall 2025</span>
