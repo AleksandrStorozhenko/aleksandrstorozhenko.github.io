@@ -376,6 +376,25 @@
       line-height: 1.45;
     }
 
+    .pub-auth a.coauthor{
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .pub-auth a.coauthor:hover{
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 0.18em;
+    }
+
+    .pub-auth a.coauthor:focus-visible{
+      outline: none;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.2em;
+    }
+
+
     .badges{
       display:flex;
       flex-wrap:wrap;
@@ -409,6 +428,27 @@
       border-color: rgba(196,107,26,0.28);
       background: var(--accent-weak);
     }
+
+    .badge.preprint{
+      color: var(--muted2);
+      border-color: rgba(107,114,128,0.30);
+      background: rgba(107,114,128,0.10);
+    }
+    .badge.amm{
+      color: #8a5a2b;
+      border-color: rgba(138,90,43,0.32);
+      background: rgba(138,90,43,0.12);
+    }
+
+    @media (prefers-color-scheme: dark){
+      .badge.amm{
+        color: #f0c58a;
+        border-color: rgba(240,197,138,0.26);
+        background: rgba(240,197,138,0.10);
+      }
+    }
+
+
 
     .rows{ display:grid; gap:10px; margin-top: 6px; }
     .row{
@@ -511,12 +551,12 @@
                 </a>
               </h3>
               <p class="pub-auth">
-                Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer, <b>AS</b>.
+                <a class="coauthor" href="https://semignorant.github.io/jingqiuding.github.io/">Jingqiu Ding</a>, <a class="coauthor" href="https://huayiding.github.io/">Yiding Hua</a>, Kasper Lindberg, <a class="coauthor" href="https://www.dsteurer.org/">David Steurer</a>, <b>AS</b>.
               </p>
             </div>
             <div class="badges" aria-label="Publication links">
               <a class="badge blue" href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
-              <span class="badge warm">Preprint</span>
+              <span class="badge preprint">Preprint</span>
             </div>
           </article>
 
@@ -528,12 +568,12 @@
                 </a>
               </h3>
               <p class="pub-auth">
-                Pierre Lairez, <b>AS</b>.
+                <a class="coauthor" href="https://mathexp.eu/lairez/">Pierre Lairez</a>, <b>AS</b>.
               </p>
             </div>
             <div class="badges" aria-label="Publication links">
               <a class="badge blue" href="https://doi.org/10.48550/arXiv.2409.20341">arXiv</a>
-              <span class="badge">Amer. Math. Monthly</span>
+              <span class="badge amm">Amer. Math. Monthly</span>
             </div>
           </article>
 
