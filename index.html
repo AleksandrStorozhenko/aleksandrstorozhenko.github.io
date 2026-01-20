@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Aleksandr Storozhenko</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Personal homepage of Aleksandr Storozhenko, M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics.">
-  <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4">
-  <meta name="color-scheme" content="light dark">
+        content="Personal homepage of Aleksandr Storozhenko, M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics." />
+  <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4" />
+  <meta name="color-scheme" content="light dark" />
 
   <script type="application/ld+json">
   {
@@ -24,16 +24,8 @@
     },
     "jobTitle": "M.S.E. Student, Computer Science",
     "description": "M.S.E. student in Computer Science at Princeton University, advised by Pravesh Kothari. Previously an SSRF research fellow at ETH Zürich working with David Steurer. Interested in theoretical computer science and mathematics.",
-    "address": {
-      "@type": "Country",
-      "name": "United States of America"
-    },
-    "knowsAbout": [
-      "Computer Science",
-      "Statistics",
-      "Mathematics",
-      "Data Structures and Algorithms"
-    ],
+    "address": { "@type": "Country", "name": "United States of America" },
+    "knowsAbout": ["Computer Science","Statistics","Mathematics","Data Structures and Algorithms"],
     "sameAs": [
       "https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en",
       "https://www.linkedin.com/in/aleksandr-storozhenko/",
@@ -48,63 +40,87 @@
     :root{
       color-scheme: light dark;
 
-      --bg:#f5f4f3;
-      --fg:#141414;
-      --muted:#7f7e7c;
-      --muted2:#9a9997;
-      --rule:#e5e2de;
+      --bg: #f6f7fb;
+      --fg: #0f172a;
+      --muted: #4b5563;
+      --muted2:#6b7280;
 
-      --hover-bg: rgba(20,20,20,0.045);
-      --hover-bg-strong: rgba(20,20,20,0.075);
-      --focus-ring: rgba(20,20,20,0.32);
+      --card: rgba(255,255,255,0.78);
+      --card-solid: #ffffff;
+      --card-border: rgba(15, 23, 42, 0.10);
 
-      --sidebar-w: 320px;
-      --label-col: 120px;
-      --content-max: 44rem;
+      --shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+      --shadow-strong: 0 16px 34px rgba(15, 23, 42, 0.09);
 
-      --portrait-h: 280px;
-      --sidebar-top: 64px;
+      --link: #2563eb;
+      --ring: rgba(37, 99, 235, 0.35);
 
       --accent: #c46b1a;
       --accent-weak: rgba(196,107,26,0.16);
-      --accent-underline: rgba(196,107,26,0.55);
+
+      --radius: 18px;
+      --radius-sm: 12px;
+
+      --container: 960px;
+      --gutter: 22px;
+
+      --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text",
+              "Helvetica Neue", Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     }
 
     @media (prefers-color-scheme: dark){
       :root{
-        --bg:#11110f;
-        --fg:#f4f3f2;
-        --muted:#b6b4b1;
-        --muted2:#8f8d8a;
-        --rule:#2a2927;
+        --bg: #0b1020;
+        --fg: #eef2ff;
+        --muted: #c7cbe0;
+        --muted2: #aab0cf;
 
-        --hover-bg: rgba(244,243,242,0.06);
-        --hover-bg-strong: rgba(244,243,242,0.10);
-        --focus-ring: rgba(244,243,242,0.38);
+        --card: rgba(255,255,255,0.06);
+        --card-solid: rgba(255,255,255,0.06);
+        --card-border: rgba(255,255,255,0.12);
+
+        --shadow: 0 18px 40px rgba(0,0,0,0.36);
+        --shadow-strong: 0 22px 50px rgba(0,0,0,0.44);
+
+        --link: #86a8ff;
+        --ring: rgba(134, 168, 255, 0.50);
 
         --accent: #e08a2f;
         --accent-weak: rgba(224,138,47,0.20);
-        --accent-underline: rgba(224,138,47,0.65);
       }
     }
 
     *{ box-sizing:border-box; }
-
     html{ scroll-behavior:smooth; }
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-    }
+    @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 
     body{
       margin:0;
-      background:var(--bg);
-      color:var(--fg);
-      font-family:-apple-system,BlinkMacSystemFont,system-ui,-ui-sans-serif,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
-      line-height:1.75;
-      font-size:15px;
-      letter-spacing:0.01em;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
+      color: var(--fg);
+      font-family: var(--font);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+
+      background:
+        radial-gradient(900px 520px at 18% -8%, rgba(37,99,235,0.10), transparent 58%),
+        radial-gradient(900px 520px at 92% 0%, rgba(196,107,26,0.10), transparent 56%),
+        radial-gradient(1200px 900px at 50% 115%, rgba(15,23,42,0.06), transparent 55%),
+        var(--bg);
+    }
+
+    a{
+      color: var(--link);
+      text-decoration: none;
+      text-underline-offset: 0.18em;
+    }
+    a:hover{ text-decoration: underline; }
+    a:focus-visible{
+      outline: 2px solid var(--ring);
+      outline-offset: 3px;
+      border-radius: 10px;
     }
 
     .skip-link{
@@ -115,547 +131,333 @@
       background:var(--fg);
       color:var(--bg);
       border-radius:10px;
-      text-decoration:none;
       transform:translateY(-160%);
       transition:transform 140ms ease-out;
       z-index:999;
     }
-    .skip-link:focus{
-      transform:translateY(0);
-      outline:none;
+    .skip-link:focus{ transform:translateY(0); outline:none; }
+
+    .wrap{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 48px var(--gutter) 92px;
     }
 
-    main{
-      max-width:1280px;
-      margin:96px auto 136px;
-      padding:0 64px;
-      display:flex;
-      gap:92px;
-      align-items:flex-start;
+    .section{ margin-top: 22px; }
+    .section-title{
+      margin: 26px 6px 12px;
+      font-size: clamp(24px, 3.2vw, 30px);
+      font-weight: 740;
+      letter-spacing: -0.005em;
     }
 
-    a{
-      color:inherit;
-      text-decoration-color: transparent;
-      text-decoration-thickness:0.06em;
-      text-underline-offset:0.18em;
-      transition: color 120ms ease-out, text-decoration-color 120ms ease-out, background-color 120ms ease-out;
-    }
-    a:hover{
-      color:var(--fg);
-      text-decoration:underline;
-      text-decoration-color: var(--accent-underline);
-    }
-    a:focus-visible{
-      outline:2px solid var(--focus-ring);
-      outline-offset:3px;
-      border-radius:8px;
+    .card{
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      backdrop-filter: saturate(130%) blur(10px);
+      -webkit-backdrop-filter: saturate(130%) blur(10px);
     }
 
-    .sidebar-about a,
-    .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link){
-      text-decoration:underline;
-      text-decoration-color: var(--accent-underline);
-    }
-
-    .sidebar-about a:hover,
-    .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link):hover{
-      text-decoration-thickness:0.08em;
-    }
-
-    section[aria-labelledby="publications"] .entry-title a.title-link,
-    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link){
-      text-decoration:none;
-    }
-    section[aria-labelledby="publications"] .entry-title a.title-link:hover,
-    section[aria-labelledby="publications"] .entry-title a.title-link:focus-visible,
-    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link):hover,
-    section[aria-labelledby="publications"] .entry-sub a:not(.author-link):not(.course-link):not(.instructor-link):not(.course-title-link):focus-visible{
-      text-decoration:underline;
-      text-decoration-thickness:0.08em;
-      text-decoration-color: var(--accent-underline);
-    }
-
-    a.author-link{ text-decoration:none; }
-    a.author-link:hover,
-    a.author-link:focus-visible{ text-decoration:underline; }
-
-    a.instructor-link{ text-decoration:none; }
-    a.instructor-link:hover,
-    a.instructor-link:focus-visible{
-      text-decoration:underline;
-      text-decoration-thickness:0.08em;
-      text-decoration-color: var(--accent-underline);
-    }
-
-    .sidebar{
-      flex:0 0 var(--sidebar-w);
-      align-self:flex-start;
-      position:sticky;
-      top:var(--sidebar-top);
-    }
-
-    .sidebar-card{
-      display:flex;
-      flex-direction:column;
-      background:transparent;
-      border:none;
-      box-shadow:none;
-      border-radius:0;
-      overflow:visible;
-      min-height:auto;
-    }
-
-    .profile-wrap{
-      padding:10px 22px 0;
-    }
-    .profile-wrap img{
-      display:block;
-      width:100%;
-      height:var(--portrait-h);
-      object-fit:cover;
-      border-radius:14px;
-      border:1px solid rgba(20,20,20,0.08);
-      filter:brightness(0.985) contrast(0.99) saturate(0.97);
+    .card.light{
+      box-shadow: none;
+      background: rgba(255,255,255,0.62);
+      border-color: rgba(15, 23, 42, 0.08);
+      padding: 16px;
     }
     @media (prefers-color-scheme: dark){
-      .profile-wrap img{
-        border-color: rgba(244,243,242,0.12);
-        filter:none;
+      .card.light{
+        background: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.10);
       }
     }
 
-    .sidebar-content{
-      padding:14px 22px 0;
-      display:flex;
-      flex-direction:column;
-      gap:16px;
+    .card.pubs-card{
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(15, 23, 42, 0.14);
+    }
+    @media (prefers-color-scheme: dark){
+      .card.pubs-card{
+        border-color: rgba(255,255,255,0.15);
+      }
     }
 
-    .sidebar-top-block{
-      padding-bottom:16px;
-      border-bottom:1px solid var(--rule);
-      box-shadow: 0 1px 0 0 var(--accent-weak);
+    @media (prefers-reduced-transparency: reduce){
+      .card{ backdrop-filter:none; -webkit-backdrop-filter:none; background: var(--card-solid); }
+      .card.light{ background: var(--card-solid); }
     }
 
-    .sidebar-top-block h1{
-      margin:0 0 8px;
-      font-size:24px;
-      font-weight:600;
-      letter-spacing:0.01em;
-      line-height:1.15;
+    .hero{
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
     }
 
-    .name-line{ display:block; }
-
-    .subtitle{
-      margin:0;
-      font-size:0.9rem;
-      line-height:1.55;
-    }
-    .subtitle .subtitle-sub{
+    .hero-photo{
+      width: 210px;
+      height: 210px;
+      border-radius: 14px;
+      object-fit: cover;
       display:block;
-      margin-top:2px;
-      color:var(--muted);
-      font-size:0.98em;
+      border: 1px solid rgba(15,23,42,0.14);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.10);
+    }
+    @media (prefers-color-scheme: dark){
+      .hero-photo{ box-shadow: 0 14px 30px rgba(0,0,0,0.45); }
     }
 
-    .contact{
-      margin:10px 0 0;
-      font-size:0.86rem;
-      color:var(--muted);
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(34px, 4.7vw, 46px);
+      letter-spacing: -0.03em;
+      line-height: 1.04;
+      font-weight: 780;
+    }
+
+    .lede{
+      margin: 10px 0 12px;
+      color: var(--muted);
+      max-width: 66ch;
+      font-size: 1.02rem;
+    }
+
+    .focus-line{
+      margin: 8px 0 0;
+      max-width: 70ch;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .focus-line b{
+      font-weight: 720;
+      color: var(--fg);
+    }
+
+    .chips{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      align-items:baseline;
+      margin: 12px 0 6px;
+      padding:0;
+      list-style:none;
     }
-    .contact .sep{
-      color:var(--muted2);
-      user-select:none;
-    }
-    .contact a{
-      color:inherit;
-      text-decoration:none;
-      padding:2px 0;
-    }
-    .contact a:hover,
-    .contact a:focus-visible{
-      color:var(--fg);
-      text-decoration:underline;
-      text-decoration-color: var(--accent-underline);
-    }
-
-    .contact a.contact-link{
+    .chip{
       display:inline-flex;
       align-items:center;
-      gap:6px;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.80rem;
+      line-height: 1;
+      color: var(--muted2);
+      border: 1px solid rgba(15,23,42,0.10);
+      background: rgba(15,23,42,0.02);
     }
-    .contact .icon{
-      width:15px;
-      height:15px;
-      flex:0 0 auto;
-      opacity:0.88;
-    }
-    .contact a.contact-link:hover .icon,
-    .contact a.contact-link:focus-visible .icon{
-      opacity:1;
+    @media (prefers-color-scheme: dark){
+      .chip{ background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
     }
 
-    .sidebar-nav{
-      margin-top:12px;
+    .email-line{
+      margin: 12px 0 12px;
+      font-size: 0.95rem;
+      color: var(--muted2);
+      display:flex;
+      gap:10px;
+      align-items:baseline;
+      flex-wrap:wrap;
+    }
+    .email-k{
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      color: var(--muted2);
+      opacity: 0.85;
+    }
+
+    .btn-row{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 14px;
-      font-size:0.86rem;
-      color:var(--muted);
+      gap:10px;
+      margin-top: 10px;
     }
-    .sidebar-nav a{
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,0.12);
+      background: transparent;
+      color: var(--fg);
+      font-size: 0.92rem;
+      line-height: 1;
       text-decoration:none;
-      padding:2px 0;
+      transition: transform 120ms ease-out, background-color 120ms ease-out, border-color 120ms ease-out, box-shadow 120ms ease-out;
+      user-select:none;
     }
-    .sidebar-nav a:hover,
-    .sidebar-nav a:focus-visible{
-      color:var(--fg);
-      text-decoration:underline;
-      text-decoration-color: var(--accent-underline);
+    @media (prefers-color-scheme: dark){
+      .btn{ border-color: rgba(255,255,255,0.14); }
     }
-
-    .sidebar-about{
-      font-size:0.94rem;
-      line-height:1.75;
-      margin:0;
-      max-width:52ch;
-      text-align:left;
-      hyphens:none;
-      overflow-wrap:break-word;
-      padding-top:2px;
-    }
-
-    .sidebar-about .about-p{
-      margin:0;
-      text-wrap:pretty;
-    }
-
-    .sidebar-about .about-p + .about-p{
-      margin-top:10px;
-    }
-
-    .sidebar-about .about-p1{
-      color:var(--fg);
-    }
-
-    .sidebar-about .about-p2{
-      color:var(--muted);
-    }
-
-    .sidebar-about .about-p3{
-      color:var(--muted);
-      margin-top:8px;
-    }
-
-    .content{
-      flex:1 1 auto;
-      min-width:0;
-    }
-
-    section{ padding:28px 0 34px; }
-    section:first-of-type{ padding-top:10px; }
-    section + section{ border-top:1px solid var(--rule); }
-
-    .section-inner{
-      display:grid;
-      grid-template-columns:var(--label-col) minmax(0,1fr);
-      column-gap:52px;
-      align-items:flex-start;
-    }
-
-    .section-label{
-      margin:0;
-      font-size:0.72rem;
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:0.18em;
-      color:var(--muted);
-      padding-top:4px;
-      white-space:nowrap;
-      scroll-margin-top: 24px;
-      position:relative;
-    }
-    .section-label::before{
-      content:"";
-      display:inline-block;
-      width:10px;
-      height:2px;
-      background:var(--accent);
-      border-radius:999px;
-      margin:0 10px 3px 0;
-      vertical-align:middle;
-      opacity:0.9;
-    }
-
-    .section-body{ max-width:var(--content-max); }
-
-    .entry{ margin-bottom:20px; }
-    .entry:last-child{ margin-bottom:0; }
-
-    .entry-title{
-      display:block;
-      font-size:0.98rem;
-    }
-
-    a.title-link{
-      display:inline;
-      color:inherit;
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(37, 99, 235, 0.06);
+      border-color: rgba(37, 99, 235, 0.30);
+      box-shadow: 0 10px 20px rgba(15,23,42,0.06);
       text-decoration:none;
     }
-
-    .entry-sub{
-      display:block;
-      font-size:0.9rem;
-      color:var(--muted);
+    .btn.primary{
+      background: rgba(37, 99, 235, 0.10);
+      border-color: rgba(37, 99, 235, 0.34);
     }
-    .entry-sub + .entry-sub{ margin-top:2px; }
+
+    .year{
+      margin: 16px 6px 10px;
+      color: var(--muted2);
+      opacity: 0.85;
+      font-weight: 720;
+      letter-spacing: 0.02em;
+      font-family: var(--mono);
+      font-size: 0.88rem;
+    }
+
+    .pubs{ display: grid; gap: 12px; }
+
+    .pub{
+      display:flex;
+      gap: 14px;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 14px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(15,23,42,0.08);
+      background: rgba(255,255,255,0.55);
+      transition: transform 120ms ease-out, background-color 120ms ease-out, border-color 120ms ease-out;
+    }
+    @media (prefers-color-scheme: dark){
+      .pub{
+        border-color: rgba(255,255,255,0.10);
+        background: rgba(255,255,255,0.04);
+      }
+    }
+    .pub:hover{
+      transform: translateY(-1px);
+      border-color: rgba(37, 99, 235, 0.26);
+      background: rgba(37, 99, 235, 0.04);
+    }
+
+    .pub-main{ min-width:0; }
 
     .pub-title{
-      transition:transform 120ms ease-out;
+      margin: 0;
+      font-weight: 640;
+      letter-spacing: -0.012em;
+      line-height: 1.25;
+      font-size: 1.05rem;
     }
-    @media (hover: hover){
-      .pub-title:hover{ transform:translateX(2px); }
+    .pub-title a{ color: var(--link); text-decoration:none; }
+    .pub-title a:hover{ text-decoration: underline; }
+
+    .pub-auth{
+      margin: 6px 0 0;
+      color: var(--muted2);
+      opacity: 0.92;
+      font-size: 0.93rem;
+      line-height: 1.45;
     }
 
-    .pub-title a.title-link:hover{
-      text-decoration-color: var(--accent-underline);
-    }
-
-    .teaching-line{
+    .badges{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
-      align-items:baseline;
+      gap:8px;
+      justify-content:flex-end;
+      align-items:center;
+      flex:0 0 auto;
+      margin-left: 8px;
+      padding-top: 2px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      line-height: 1;
+      border: 1px solid var(--card-border);
+      color: var(--muted2);
+      opacity: 0.92;
+      background: transparent;
+      white-space: nowrap;
+    }
+    .badge.blue{
+      color: var(--link);
+      border-color: rgba(37, 99, 235, 0.26);
+      background: rgba(37, 99, 235, 0.08);
+    }
+    .badge.warm{
+      color: var(--accent);
+      border-color: rgba(196,107,26,0.28);
+      background: var(--accent-weak);
     }
 
-    .teaching-line .course-link{
-      color:inherit;
-      text-decoration:none;
-      font-weight:400;
+    .rows{ display:grid; gap:10px; margin-top: 6px; }
+    .row{
+      display:grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(15,23,42,0.08);
+      background: rgba(255,255,255,0.55);
     }
-    .teaching-line .course-link:hover,
-    .teaching-line .course-link:focus-visible{
-      text-decoration:underline;
-      text-decoration-color: var(--accent-underline);
+    @media (prefers-color-scheme: dark){
+      .row{ border-color: rgba(255,255,255,0.10); background: rgba(255,255,255,0.04); }
     }
-
-    .course-code{
-      font-weight:600;
-      letter-spacing:0.01em;
-    }
-
-    .term{
-      color:var(--muted2);
-      font-size:0.95em;
-      white-space:nowrap;
-      margin-left:auto;
-    }
-
-    @media (max-width: 1020px){
-      :root{ --sidebar-w: 308px; }
-      main{ gap:64px; padding:0 32px; }
+    .row-title{ font-weight: 680; }
+    .row-sub{ color: var(--muted); font-size: 0.94rem; margin-top: 2px; }
+    .row-term{
+      color: var(--muted2);
+      opacity: 0.70;
+      white-space: nowrap;
+      padding-top: 2px;
+      font-family: var(--mono);
+      font-size: 0.90rem;
     }
 
-    @media (max-width: 900px){
-      main{
-        flex-direction:column;
-        gap:40px;
-        margin:72px auto 96px;
-        padding:0 24px;
+    footer{
+      margin-top: 30px;
+      padding: 14px 6px 0;
+      color: var(--muted2);
+      opacity: 0.78;
+      font-size: 0.90rem;
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px){
+      .hero{
+        grid-template-columns: 1fr;
+        justify-items: start;
       }
-      .sidebar{
-        position:static;
-        top:auto;
-        width:100%;
-        flex:none;
-      }
-      .section-inner{
-        grid-template-columns:1fr;
-        row-gap:6px;
-      }
-      .section-label{ padding-top:0; }
-      .section-body{ max-width:none; }
-
-      .teaching-line{
-        display:grid;
-        grid-template-columns:minmax(0,1fr) auto;
-        gap:2px 14px;
-        align-items:start;
-      }
-      .term{
-        margin-left:0;
-        justify-self:end;
-        align-self:start;
-      }
+      .hero-photo{ width: 188px; height: 188px; }
+      .badges{ justify-content:flex-start; margin-left:0; }
+      .pub{ flex-direction: column; }
     }
-
     @media (max-width: 480px){
-      body{ font-size:14px; }
-      :root{ --portrait-h: 240px; }
-
-      .profile-wrap{ padding:10px 18px 0; }
-      .sidebar-content{ padding:14px 18px 0; }
-
-      .sidebar-top-block h1{ font-size:21px; }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .pub-title{ transition:none; }
-      .pub-title:hover{ transform:none; }
-    }
-
-    details.coursework-details{
-      margin-top:6px;
-    }
-
-    details.coursework-details summary{
-      list-style:none;
-      cursor:pointer;
-      user-select:none;
-
-      display:flex;
-      align-items:center;
-      gap:10px;
-
-      color:var(--muted);
-      font-size:0.9rem;
-      line-height:1.6;
-
-      padding:8px 10px;
-      margin:2px -10px 0;
-      border-radius:10px;
-      min-height:44px;
-    }
-
-    details.coursework-details summary::-webkit-details-marker{
-      display:none;
-    }
-
-    details.coursework-details summary::after{
-      content:"+";
-      margin-left:auto;
-      color:var(--muted2);
-      font-weight:700;
-    }
-    details.coursework-details[open] summary::after{
-      content:"–";
-    }
-
-    details.coursework-details summary:hover{
-      color:var(--fg);
-      background:var(--hover-bg);
-      text-decoration:none;
-    }
-
-    details.coursework-details[open] summary{
-      color:var(--fg);
-      background:var(--hover-bg-strong);
-    }
-
-    details.coursework-details summary:focus-visible{
-      outline:2px solid var(--focus-ring);
-      outline-offset:3px;
-    }
-
-    ul.coursework-list{
-      list-style:none;
-      margin:8px 0 0;
-      padding:0;
-
-      color:var(--muted);
-      font-size:0.9rem;
-      line-height:1.75;
-    }
-
-    ul.coursework-list li{
-      display:grid;
-      grid-template-columns:86px minmax(0,1fr);
-      column-gap:12px;
-      align-items:baseline;
-    }
-
-    ul.coursework-list li + li{
-      margin-top:4px;
-    }
-
-    .course-list-heading{
-      display:flex;
-      align-items:center;
-      gap:10px;
-
-      color:var(--fg);
-      font-size:0.9rem;
-      line-height:1.6;
-
-      padding:8px 10px;
-      margin:10px -10px 0;
-      border-radius:10px;
-      min-height:44px;
-
-      background:var(--hover-bg-strong);
-    }
-
-    ul.teaching-list{
-      list-style:none;
-      margin:8px 0 0;
-      padding:0;
-
-      color:var(--muted);
-      font-size:0.9rem;
-      line-height:1.75;
-    }
-
-    ul.teaching-list li{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr) auto;
-      column-gap:14px;
-      align-items:baseline;
-    }
-
-    ul.teaching-list li + li{
-      margin-top:4px;
-    }
-
-    ul.teaching-list .course-info{
-      display:grid;
-      grid-template-columns:86px minmax(0,1fr);
-      column-gap:12px;
-      align-items:baseline;
-      min-width:0;
-    }
-    ul.teaching-list .course-main{
-      min-width:0;
-    }
-
-    a.course-title-link{
-      color:inherit;
-      text-decoration:none;
-      font-weight:400;
-    }
-    a.course-title-link:hover,
-    a.course-title-link:focus-visible{
-      text-decoration:underline;
-      text-decoration-color: var(--accent-underline);
-    }
-
-    .course-meta{
-      display:block;
-      margin-top:2px;
-      color:var(--muted2);
-      font-size:0.92em;
-      line-height:1.55;
-    }
-
-    ul.teaching-list .term{
-      margin-left:0;
-      justify-self:end;
-      align-self:baseline;
+      .wrap{ padding: 34px 16px 70px; }
+      .hero{ padding: 18px; }
     }
   </style>
 </head>
@@ -663,244 +465,150 @@
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
 
-  <main>
+  <main class="wrap" id="content">
 
-    <aside class="sidebar">
-      <div class="sidebar-card">
+    <header class="hero" aria-label="Profile header">
+      <img
+        class="hero-photo"
+        src="portrait.png"
+        alt="Portrait of Aleksandr Storozhenko"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
 
-        <div class="profile-wrap">
-          <img
-            src="portrait.png"
-            alt="Portrait of Aleksandr Storozhenko"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          >
+      <div class="hero-right">
+        <h1>Aleksandr Storozhenko</h1>
+
+        <p class="lede">
+          I am an M.S.E. student in Computer Science at Princeton University, advised by
+          <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
+          Previously, I was an SSRF research fellow at ETH Zürich, working with
+          <a href="https://www.dsteurer.org/">David Steurer</a>.
+          I am broadly interested in theoretical computer science and mathematics.
+        </p>
+
+        <div class="email-line">
+          <span class="email-k">Email</span>
+          <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
         </div>
 
-        <div class="sidebar-content">
-          <div class="sidebar-top-block">
-            <h1>
-              <span class="name-line">Aleksandr</span>
-              <span class="name-line">Storozhenko</span>
-            </h1>
+      </div>
+    </header>
 
-            <p class="subtitle">
-              M.S.E. student, Computer Science
-              <span class="subtitle-sub">Princeton University</span>
-            </p>
+    <section class="section" aria-label="Publications">
+      <h2 class="section-title">Publications</h2>
 
-            <p class="contact" aria-label="Contact links">
-              <a class="contact-link" href="mailto:as7649@princeton.edu">
+      <div class="year">2025</div>
+      <div class="card pubs-card">
+        <div class="pubs">
 
-                <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                  <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>as7649@princeton.edu</span>
-              </a>
+          <article class="pub">
+            <div class="pub-main">
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.48550/ARXIV.2511.16613">
+                  Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
+                </a>
+              </h3>
+              <p class="pub-auth">
+                Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer, <b>AS</b>.
+              </p>
+            </div>
+            <div class="badges" aria-label="Publication links">
+              <a class="badge blue" href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
+              <span class="badge warm">Preprint</span>
+            </div>
+          </article>
 
-              <a class="contact-link" href="https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en">
-                <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4 3 9l9 5 9-5-9-5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                  <path d="M7 12v5c0 1.6 2.2 3 5 3s5-1.4 5-3v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M21 10v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-                <span>Google Scholar</span>
-              </a>
-            </p>
+          <article class="pub">
+            <div class="pub-main">
+              <h3 class="pub-title">
+                <a href="https://doi.org/10.48550/arXiv.2409.20341">
+                  Conway’s Cosmological Theorem and Automata Theory
+                </a>
+              </h3>
+              <p class="pub-auth">
+                Pierre Lairez, <b>AS</b>.
+              </p>
+            </div>
+            <div class="badges" aria-label="Publication links">
+              <a class="badge blue" href="https://doi.org/10.48550/arXiv.2409.20341">arXiv</a>
+              <span class="badge">Amer. Math. Monthly</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Teaching">
+      <h2 class="section-title">Teaching</h2>
+      <div class="card light">
+        <div class="rows">
+
+          <div class="row">
+            <div>
+              <div class="row-title">Teaching Assistant, Princeton University</div>
+              <div class="row-sub">
+                COS 324, <a href="https://cos324.io/">Introduction to Machine Learning</a>
+              </div>
+            </div>
+            <div class="row-term">Spring 2026</div>
           </div>
 
-          <div class="sidebar-about">
-            <p class="about-p about-p1">
-              I am an M.S.E. student in Computer Science at Princeton University,
-              advised by
-              <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
-            </p>
-
-            <p class="about-p about-p2">
-              Previously, I was an SSRF research fellow at ETH Zürich, working with
-              <a href="https://www.dsteurer.org/">David Steurer</a>.
-            </p>
-
-            <p class="about-p about-p3">
-              I am broadly interested in theoretical computer science and mathematics.
-            </p>
+          <div class="row">
+            <div>
+              <div class="row-title">Teaching Assistant, Princeton University</div>
+              <div class="row-sub">
+                COS 240, <a href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">Reasoning about Computation</a>
+              </div>
+            </div>
+            <div class="row-term">Fall 2025</div>
           </div>
 
         </div>
       </div>
-    </aside>
+    </section>
 
-    <div class="content" id="content">
-
-      <section aria-labelledby="education">
-        <div class="section-inner">
-          <h2 class="section-label" id="education">Education</h2>
-          <div class="section-body">
-
-            <div class="entry">
-              <span class="entry-title">
-                2025–2027 · M.S.E. in Computer Science
-              </span>
-              <span class="entry-sub">
-                Princeton University · 4.0/4.0
-              </span>
-
-              <!-- <details class="coursework-details">
-                <summary>Selected graduate coursework</summary>
-                <ul class="coursework-list" aria-label="Selected graduate coursework">
-                  <li><span class="course-code">ORF 523</span><span>Convex and Conic Optimization</span></li>
-                  <li><span class="course-code">MAT 529</span><span>Probability in High Dimension</span></li>
-                  <li><span class="course-code">MAT 577</span><span>The Probabilistic Method</span></li>
-                  <li><span class="course-code">COS 598C</span><span>Sum-of-Squares Proofs and Efficient Algorithms</span></li>
-                  <li><span class="course-code">COS 585</span><span>Information Theory</span></li>
-                </ul>
-              </details> -->
+    <section class="section" aria-label="Service">
+      <h2 class="section-title">Service</h2>
+      <div class="card light">
+        <div class="rows">
+          <div class="row">
+            <div>
+              <div class="row-title"><a href="https://theory.cs.princeton.edu/theorylunch/">Princeton Theory Lunch</a></div>
+              <div class="row-sub">Co-organizer</div>
             </div>
-
-            <!--<div class="entry">
-              <span class="entry-title">
-                2024–2025 · Exchange student in Mathematics and Computer Science
-              </span>
-              <span class="entry-sub">EPFL</span>
-            </div>-->
-
-            <div class="entry">
-              <span class="entry-title">
-                2022–2025 · B.Sc. in Mathematics and Computer Science
-              </span>
-              <span class="entry-sub">
-                École Polytechnique · Summa Cum Laude
-              </span>
-            </div>
-
+            <div class="row-term">Spring 2026</div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section aria-labelledby="publications">
-        <div class="section-inner">
-          <h2 class="section-label" id="publications">Publications</h2>
-          <div class="section-body">
-
-            <div class="entry">
-              <span class="entry-title pub-title">
-                <a class="title-link" href="https://doi.org/10.48550/ARXIV.2511.16613">
-                  Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
-                </a>
-              </span>
-              <span class="entry-sub">
-                <a class="author-link" href="https://semignorant.github.io/jingqiuding.github.io/">Jingqiu Ding</a>,
-                <a class="author-link" href="https://huayiding.github.io/">Yiding Hua</a>,
-                Kasper Lindberg,
-                <a class="author-link" href="https://www.dsteurer.org/">David Steurer</a>,
-                <b>AS</b>.
-              </span>
-              <span class="entry-sub">
-                Preprint, 2025.
-                <a href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
-              </span>
+    <section class="section" aria-label="Industry">
+      <h2 class="section-title">Industry</h2>
+      <div class="card light">
+        <div class="rows">
+          <div class="row">
+            <div>
+              <div class="row-title">Marshall Wace - Equities</div>
+              <div class="row-sub">Quantitative Research Intern (incoming)</div>
             </div>
-
-            <div class="entry">
-              <span class="entry-title pub-title">
-                <a class="title-link" href="https://doi.org/10.48550/arXiv.2409.20341">
-                  Conway’s Cosmological Theorem and Automata Theory
-                </a>
-              </span>
-              <span class="entry-sub">
-                <a class="author-link" href="https://mathexp.eu/lairez/">Pierre Lairez</a>, <b>AS</b>.
-              </span>
-              <span class="entry-sub">
-                The American Mathematical Monthly, 2025.
-                <a href="https://doi.org/10.48550/arXiv.2409.20341">arXiv</a>
-              </span>
-            </div>
-
+            <div class="row-term">Summer 2026</div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section aria-labelledby="teaching">
-        <div class="section-inner">
-          <h2 class="section-label" id="teaching">Teaching</h2>
-          <div class="section-body">
-
-            <div class="entry">
-              <span class="entry-title">
-                Teaching Assistant, Princeton University
-              </span>
-
-              <ul class="teaching-list" aria-label="Courses taught">
-                <li>
-                  <div class="course-info">
-                    <span class="course-code">COS 324</span>
-                    <div class="course-main">
-                      <a class="course-title-link" href="https://cos324.io/">Introduction to Machine Learning</a>
-                    </div>
-                  </div>
-                  <span class="term">Spring 2026</span>
-                </li>
-
-                <li>
-                  <div class="course-info">
-                    <span class="course-code">COS 240</span>
-                    <div class="course-main">
-                      <a class="course-title-link" href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">Reasoning about Computation</a>
-                    </div>
-                  </div>
-                  <span class="term">Fall 2025</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="service">
-        <div class="section-inner">
-          <h2 class="section-label" id="service">Service</h2>
-          <div class="section-body">
-
-            <div class="entry">
-              <span class="entry-title">
-                <a class="title-link" href="https://theory.cs.princeton.edu/theorylunch/">
-                  Princeton Theory Lunch
-                </a>
-              </span>
-
-              <span class="entry-sub teaching-line">
-                <span>Co-organizer</span>
-                <span class="term">Spring 2026</span>
-              </span>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="industry">
-        <div class="section-inner">
-          <h2 class="section-label" id="industry">Industry</h2>
-          <div class="section-body">
-
-            <div class="entry">
-              <span class="entry-title">Marshall Wace</span>
-
-              <span class="entry-sub teaching-line">
-                <span>Quantitative Research Intern (incoming)</span>
-                <span class="term">Summer 2026</span>
-              </span>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-    </div>
+    <footer aria-label="Footer">
+      <span>© <span id="y"></span> Aleksandr Storozhenko</span>
+      <span style="font-family: var(--mono);">Updated Jan 2026</span>
+    </footer>
 
   </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
