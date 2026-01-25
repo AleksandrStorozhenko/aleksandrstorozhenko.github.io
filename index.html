@@ -48,17 +48,12 @@
     --muted2:#6b7280;
 
     --card: #ffffff;
-    --card-solid: #ffffff;
     --card-border: rgba(15, 23, 42, 0.10);
 
     --shadow: 0 1px 0 rgba(15,23,42,0.04);
-    --shadow-strong: 0 2px 0 rgba(15,23,42,0.05);
 
     --link: #1f2f5c;
     --ring: rgba(31,47,92,0.25);
-
-    --accent: #6b4f2a;
-    --accent-weak: rgba(107,79,42,0.10);
 
     --radius: 14px;
     --radius-sm: 10px;
@@ -92,13 +87,11 @@
 
   a{
     color: var(--link);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.22em;
-    text-decoration-color: rgba(31,47,92,0.35);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(31,47,92,0.22);
   }
   a:hover{
-    text-decoration-color: rgba(31,47,92,0.70);
+    border-bottom-color: rgba(31,47,92,0.55);
   }
   a:focus-visible{
     outline: 2px solid var(--ring);
@@ -118,6 +111,7 @@
     transition:transform 140ms ease-out;
     z-index:999;
     text-decoration:none;
+    border-bottom: 0;
   }
   .skip-link:focus{ transform:translateY(0); outline:none; }
 
@@ -130,12 +124,11 @@
   .section{ margin-top: 26px; }
 
   .section-title{
-    margin: 28px 4px 12px;
+    margin: 30px 4px 12px;
     font-size: clamp(22px, 2.7vw, 28px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-weight: 750;
+    letter-spacing: -0.012em;
   }
-
   .section-title::after{
     content:"";
     display:block;
@@ -145,23 +138,18 @@
   }
 
   .card{
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 18px;
-  }
-
-  .card.light{
+    background: transparent;
+    border: 0;
+    border-radius: 0;
     box-shadow: none;
-    background: var(--card);
-    border-color: rgba(15,23,42,0.08);
-    padding: 16px;
+    padding: 0;
   }
-
+  .card.light,
   .card.pubs-card{
-    box-shadow: var(--shadow-strong);
-    border-color: rgba(15, 23, 42, 0.10);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
   }
 
   .hero{
@@ -175,7 +163,6 @@
     gap: 22px;
     align-items: start;
   }
-
   .hero-photo{
     width: 190px;
     height: 190px;
@@ -183,19 +170,16 @@
     object-fit: cover;
     display:block;
     border: 1px solid rgba(15,23,42,0.12);
-    box-shadow: none;
     filter: saturate(0.92) contrast(1.02);
   }
-
   .hero h1{
     margin: 0 0 10px;
     font-size: clamp(30px, 4.2vw, 42px);
-    line-height: 1.08;
-    font-weight: 760;
+    line-height: 1.06;
+    font-weight: 780;
     letter-spacing: -0.02em;
     font-family: var(--sans);
   }
-
   .lede{
     text-align: justify;
     margin: 10px 0 12px;
@@ -203,7 +187,6 @@
     max-width: 70ch;
     font-size: 1.01rem;
   }
-
   .email-line{
     margin: 12px 0 0;
     font-size: 0.95rem;
@@ -216,69 +199,65 @@
   }
   .email-k{
     font-weight: 700;
-    letter-spacing: 0.10em;
-    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
     text-transform: uppercase;
     color: var(--muted2);
     opacity: 0.85;
   }
 
+  .email-line a{
+    color: var(--link);
+    border-bottom-color: transparent;
+  }
+  .email-line a:hover{
+    border-bottom-color: rgba(31,47,92,0.45);
+  }
+
   .year{
     margin: 16px 6px 10px;
     color: var(--muted2);
-    opacity: 0.80;
+    opacity: 0.75;
     font-weight: 650;
     letter-spacing: 0.02em;
     font-family: var(--mono);
     font-size: 0.86rem;
   }
 
-  .pubs{ display: grid; gap: 12px; }
+  .pubs,
+  .rows{
+    margin: 8px 6px 0;
+    padding: 8px 0 0 14px;
+    border-left: 1px solid rgba(15,23,42,0.10);
+    display: grid;
+    gap: 0;
+  }
 
   .pub{
     display:flex;
     gap: 14px;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 14px 14px;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(15,23,42,0.08);
-    background: #fff;
-    transition: border-color 120ms ease-out;
+    padding: 10px 0;
   }
-  .pub:hover{
-    border-color: rgba(31,47,92,0.28);
-    background: #fff;
-    transform: none;
-  }
+  .pub + .pub{ border-top: 1px solid rgba(15,23,42,0.06); }
 
   .pub-main{ min-width:0; }
 
   .pub-title{
     margin: 0;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.25;
-    font-size: 1.05rem;
+    font-weight: 750;
+    letter-spacing: -0.012em;
+    line-height: 1.22;
+    font-size: 1.08rem;
     font-family: var(--sans);
   }
-  .pub-title a{
-    color: var(--link);
-    text-decoration-color: rgba(31,47,92,0.35);
-  }
-  .pub-title a,
-  .row-title a,
-  .pub-auth a.coauthor,
-  .row-sub a {
-    text-decoration: none;
-  }
 
-  .pub-title a:hover,
-  .row-title a:hover,
-  .pub-auth a.coauthor:hover,
-  .row-sub a:hover {
-    text-decoration: underline;
-    text-decoration-color: rgba(31,47,92,0.35);
+  .pub-title a{
+    border-bottom-color: transparent;
+  }
+  .pub-title a:hover{
+    border-bottom-color: rgba(31,47,92,0.45);
   }
 
   .pub-auth{
@@ -292,73 +271,107 @@
 
   .pub-auth a.coauthor{
     color: inherit;
-    text-decoration: none;
+    border-bottom-color: transparent;
   }
   .pub-auth a.coauthor:hover{
-    text-decoration: underline;
-    text-decoration-color: rgba(31,47,92,0.45);
+    color: var(--link);
+    border-bottom-color: rgba(31,47,92,0.35);
   }
 
   .badges{
     display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    justify-content:flex-end;
+    gap:10px;
     align-items:center;
     flex:0 0 auto;
-    margin-left: 8px;
+    margin-left: 12px;
     padding-top: 2px;
     font-family: var(--sans);
   }
+
   .badge{
-    display:inline-flex;
-    align-items:center;
-    padding: 4px 8px;
-    border-radius: 8px;
-    font-size: 0.78rem;
-    line-height: 1;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    border-radius: 0;
     border: 1px solid rgba(15,23,42,0.10);
+    background: transparent;
     color: var(--muted2);
-    background: rgba(15,23,42,0.02);
-    white-space: nowrap;
-    text-decoration:none;
-  }
-  .badge.blue{
-    color: var(--link);
-    border-color: rgba(31,47,92,0.20);
-    background: rgba(31,47,92,0.05);
-  }
-  .badge.preprint{
-    color: var(--muted2);
-    border-color: rgba(107,114,128,0.22);
-    background: rgba(107,114,128,0.06);
-  }
-  .badge.amm{
-    color: #5a3d21;
-    border-color: rgba(107,79,42,0.25);
-    background: rgba(107,79,42,0.06);
+    text-decoration: none;
+    display: inline-block;
   }
 
-  .rows{ display:grid; gap:10px; margin-top: 10px; }
+  .badge.blue{
+    color: #2f3a5a;
+    border-color: rgba(47,58,90,0.35);
+    font-weight: 500;
+  }
+
+  .badge.preprint{
+    color: #6b6f76;
+    border-color: rgba(107,111,118,0.35);
+    font-weight: 500;
+  }
+
+  .badge.amm{
+    color: #5a3d21;
+    border-color: rgba(90,61,33,0.45);
+    font-family: var(--font);
+    font-weight: 500;
+  }
+
+  .badge:hover{
+    border-color: currentColor;
+  }
+
   .row{
     display:grid;
     grid-template-columns: minmax(0,1fr) auto;
     gap: 12px;
-    padding: 12px 14px;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(15,23,42,0.08);
-    background: #fff;
+    padding: 10px 0;
     font-family: var(--sans);
   }
-  .row-title{ font-weight: 700; }
-  .row-sub{ color: var(--muted); font-size: 0.94rem; margin-top: 2px; }
+  .row + .row{ border-top: 1px solid rgba(15,23,42,0.06); }
+
+  .row-title{
+    font-weight: 750;
+    color: var(--fg);
+    letter-spacing: -0.01em;
+  }
+  .row-sub{
+    color: var(--muted);
+    font-size: 0.94rem;
+    margin-top: 2px;
+    line-height: 1.45;
+  }
   .row-term{
     color: var(--muted2);
-    opacity: 0.80;
+    opacity: 0.75;
     white-space: nowrap;
     padding-top: 2px;
     font-family: var(--mono);
     font-size: 0.88rem;
+  }
+
+  .section[aria-label="Teaching"] a,
+  .section[aria-label="News"] a{
+    color: inherit;
+    border-bottom-color: transparent;
+  }
+  .section[aria-label="Teaching"] a:hover,
+  .section[aria-label="News"] a:hover{
+    color: var(--link);
+    border-bottom-color: rgba(31,47,92,0.45);
+  }
+
+  .news-inline{
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .news-inline .k{
+    font-weight: 750;
+    color: var(--fg);
   }
 
   footer{
@@ -388,6 +401,7 @@
 
   @media (max-width: 560px){
     .wrap{ padding: 28px 14px 64px; }
+
     .hero{
       grid-template-columns: 1fr;
       text-align: center;
@@ -404,7 +418,7 @@
     .hero h1{
       margin: 6px 0 6px;
       font-size: 32px;
-      line-height: 1.08;
+      line-height: 1.06;
     }
     .lede{
       text-align: justify;
@@ -417,16 +431,22 @@
       font-size: 0.92rem;
       justify-content: center;
     }
+
     .row{
       grid-template-columns: 1fr;
       gap: 6px;
-      padding: 12px;
+      padding: 10px 0;
     }
     .row-term{
       justify-self: start;
       padding-top: 0;
       margin-top: 2px;
       font-size: 0.86rem;
+    }
+
+    .pubs, .rows{
+      margin-left: 4px;
+      padding-left: 12px;
     }
   }
 </style>
@@ -463,7 +483,6 @@
           <span class="email-k">Email</span>
           <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
         </div>
-
       </div>
     </header>
 
@@ -519,9 +538,9 @@
 
           <div class="row">
             <div>
-              <div class="row-title">Graduate Teaching Assistant, Princeton University</div>
+              <div class="row-title"><a href="https://princeton-cos324.github.io/">COS 324, Introduction to Machine Learning</a></div>
               <div class="row-sub">
-                COS 324, <a href="https://princeton-cos324.github.io/">Introduction to Machine Learning</a>
+                Graduate Teaching Assistant, Princeton University
               </div>
             </div>
             <div class="row-term">Spring 2026</div>
@@ -529,9 +548,9 @@
 
           <div class="row">
             <div>
-              <div class="row-title">Graduate Teaching Assistant, Princeton University</div>
+              <div class="row-title"><a href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">COS 240, Reasoning about Computation</a></div>
               <div class="row-sub">
-                COS 240, <a href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">Reasoning about Computation</a>
+                Graduate Teaching Assistant, Princeton University
               </div>
             </div>
             <div class="row-term">Fall 2025</div>
@@ -541,33 +560,30 @@
       </div>
     </section>
 
-    <section class="section" aria-label="Service">
-      <h2 class="section-title">Service</h2>
-      <div class="card light">
-        <div class="rows">
-          <div class="row">
-            <div>
-              <div class="row-title"><a href="https://theory.cs.princeton.edu/theorylunch/">Princeton TCS Seminar (Theory Lunch)</a></div>
-              <div class="row-sub">Co-organizer</div>
-            </div>
-            <div class="row-term">Spring 2026</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="section" aria-label="News">
+      <h2 class="section-title">News</h2>
 
-    <section class="section" aria-label="Industry">
-      <h2 class="section-title">Industry</h2>
-      <div class="card light">
-        <div class="rows">
-          <div class="row">
-            <div>
-              <div class="row-title">Quantitative Research Intern, Marshall Wace</div>
-              <div class="row-sub">Systematic Equity Research</div>
-            </div>
-            <div class="row-term">Summer 2026</div>
-          </div>
+      <div class="rows" role="list" aria-label="News list">
+
+        <div class="row" role="listitem">
+          <div class="news-inline"><span class="k">Service.</span> Co-organizer of the Princeton Theory Lunch (Spring 2026).</div>
+          <div class="row-term">2026-01</div>
         </div>
+
+        <div class="row" role="listitem">
+          <div class="news-inline"><span class="k">Industry.</span> Quantitative Research Intern, Marshall Wace (London), Summer 2026.</div>
+          <div class="row-term">2025-12</div>
+        </div>
+
+        <div class="row" role="listitem">
+          <div class="news-inline">
+            <span class="k">Preprint.</span>
+            <a href="https://doi.org/10.48550/ARXIV.2511.16613">Rate-optimal Community Detection near the KS Threshold</a>
+             posted on arXiv.
+          </div>
+          <div class="row-term">2025-11</div>
+        </div>
+
       </div>
     </section>
 
