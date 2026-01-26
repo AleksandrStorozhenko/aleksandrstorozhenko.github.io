@@ -42,21 +42,24 @@
   :root{
     color-scheme: light;
 
-    --bg: #fbfbf7;
+    --bg: #fbfaf6;
+    --panel: #ffffff;
     --fg: #0b1220;
-    --muted: #374151;
-    --muted2:#6b7280;
+    --fg-soft: #121a2b;
 
-    --card: #ffffff;
-    --card-border: rgba(15, 23, 42, 0.10);
+    --muted: #2f3a4a;
+    --muted2:#556070;
+    --faint: #7a8596;
 
-    --shadow: 0 1px 0 rgba(15,23,42,0.04);
+    --hairline: rgba(28, 32, 36, 0.10);
+    --hairline2: rgba(28, 32, 36, 0.06);
 
-    --link: #1f2f5c;
-    --ring: rgba(31,47,92,0.25);
+    --link: #163a63;
+    --link-underline: rgba(22,58,99,0.22);
+    --link-underline-hover: rgba(22,58,99,0.48);
+    --ring: rgba(22,58,99,0.22);
 
-    --radius: 14px;
-    --radius-sm: 10px;
+    --shadow: 0 1px 0 rgba(12, 18, 32, 0.05);
 
     --container: 920px;
     --gutter: 22px;
@@ -81,18 +84,18 @@
     text-rendering: optimizeLegibility;
 
     background:
-      linear-gradient(180deg, rgba(15,23,42,0.015), transparent 280px),
+      radial-gradient(1200px 600px at 20% -10%, rgba(22,58,99,0.035), transparent 60%),
+      radial-gradient(900px 500px at 90% 0%, rgba(120,72,36,0.030), transparent 55%),
       var(--bg);
   }
 
   a{
     color: var(--link);
     text-decoration: none;
-    border-bottom: 1px solid rgba(31,47,92,0.22);
+    border-bottom: 1px solid var(--link-underline);
+    text-underline-offset: 3px;
   }
-  a:hover{
-    border-bottom-color: rgba(31,47,92,0.55);
-  }
+  a:hover{ border-bottom-color: var(--link-underline-hover); }
   a:focus-visible{
     outline: 2px solid var(--ring);
     outline-offset: 3px;
@@ -133,86 +136,81 @@
     content:"";
     display:block;
     height:1px;
-    background: rgba(15,23,42,0.08);
+    background: var(--hairline);
     margin-top: 10px;
   }
 
-  .card{
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
-  }
-  .card.light,
-  .card.pubs-card{
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    padding: 0;
-  }
-
   .hero{
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 24px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+    padding: 10px 6px 0;
     display: grid;
     grid-template-columns: 190px minmax(0, 1fr);
     gap: 22px;
     align-items: start;
+
+    border-left: 1px solid var(--hairline);
+    padding-left: 14px;
   }
+
   .hero-photo{
     width: 190px;
     height: 190px;
-    border-radius: 10px;
+    border-radius: 12px;
     object-fit: cover;
     display:block;
-    border: 1px solid rgba(15,23,42,0.12);
-    filter: saturate(0.92) contrast(1.02);
+
+    border: 0;
+    box-shadow: var(--shadow);
+    filter: saturate(0.94) contrast(1.02);
   }
+
   .hero h1{
-    margin: 0 0 10px;
-    font-size: clamp(30px, 4.2vw, 42px);
-    line-height: 1.06;
-    font-weight: 780;
-    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-size: clamp(32px, 4.2vw, 44px);
+    line-height: 1.02;
+    font-weight: 820;
+    letter-spacing: -0.028em;
     font-family: var(--sans);
+    color: var(--fg);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.65);
   }
+
   .lede{
     text-align: justify;
     margin: 10px 0 12px;
     color: var(--muted);
-    max-width: 70ch;
-    font-size: 1.01rem;
+    max-width: 72ch;
+    font-size: 1.02rem;
   }
-  .email-line{
-    margin: 12px 0 0;
-    font-size: 0.95rem;
-    color: var(--muted2);
+
+  .hero .lede a{ border-bottom-color: transparent; }
+  .hero .lede a:hover{ border-bottom-color: var(--link-underline-hover); }
+
+  .hero-contact{
     display:flex;
-    gap:10px;
-    align-items:baseline;
-    flex-wrap:wrap;
+    gap: 14px;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--hairline2);
     font-family: var(--sans);
+    color: var(--muted2);
+    font-size: 0.95rem;
   }
-  .email-k{
-    font-weight: 700;
+  .hero-contact .k{
+    font-weight: 750;
     letter-spacing: 0.12em;
     font-size: 0.72rem;
     text-transform: uppercase;
-    color: var(--muted2);
     opacity: 0.85;
   }
-
-  .email-line a{
-    color: var(--link);
-    border-bottom-color: transparent;
-  }
-  .email-line a:hover{
-    border-bottom-color: rgba(31,47,92,0.45);
-  }
+  .hero-contact a{ border-bottom-color: transparent; }
+  .hero-contact a:hover{ border-bottom-color: var(--link-underline-hover); }
 
   .year{
     margin: 16px 6px 10px;
@@ -224,104 +222,12 @@
     font-size: 0.86rem;
   }
 
-  .pubs,
-  .rows{
+  .list{
     margin: 8px 6px 0;
     padding: 8px 0 0 14px;
-    border-left: 1px solid rgba(15,23,42,0.10);
+    border-left: 1px solid var(--hairline);
     display: grid;
     gap: 0;
-  }
-
-  .pub{
-    display:flex;
-    gap: 14px;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 10px 0;
-  }
-  .pub + .pub{ border-top: 1px solid rgba(15,23,42,0.06); }
-
-  .pub-main{ min-width:0; }
-
-  .pub-title{
-    margin: 0;
-    font-weight: 750;
-    letter-spacing: -0.012em;
-    line-height: 1.22;
-    font-size: 1.08rem;
-    font-family: var(--sans);
-  }
-
-  .pub-title a{
-    border-bottom-color: transparent;
-  }
-  .pub-title a:hover{
-    border-bottom-color: rgba(31,47,92,0.45);
-  }
-
-  .pub-auth{
-    margin: 6px 0 0;
-    color: var(--muted2);
-    opacity: 0.95;
-    font-size: 0.94rem;
-    line-height: 1.45;
-    font-family: var(--sans);
-  }
-
-  .pub-auth a.coauthor{
-    color: inherit;
-    border-bottom-color: transparent;
-  }
-  .pub-auth a.coauthor:hover{
-    color: var(--link);
-    border-bottom-color: rgba(31,47,92,0.35);
-  }
-
-  .badges{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    flex:0 0 auto;
-    margin-left: 12px;
-    padding-top: 2px;
-    font-family: var(--sans);
-  }
-
-  .badge{
-    padding: 2px 6px;
-    font-size: 0.75rem;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    border-radius: 0;
-    border: 1px solid rgba(15,23,42,0.10);
-    background: transparent;
-    color: var(--muted2);
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .badge.blue{
-    color: #2f3a5a;
-    border-color: rgba(47,58,90,0.35);
-    font-weight: 500;
-  }
-
-  .badge.preprint{
-    color: #6b6f76;
-    border-color: rgba(107,111,118,0.35);
-    font-weight: 500;
-  }
-
-  .badge.amm{
-    color: #5a3d21;
-    border-color: rgba(90,61,33,0.45);
-    font-family: var(--font);
-    font-weight: 500;
-  }
-
-  .badge:hover{
-    border-color: currentColor;
   }
 
   .row{
@@ -329,21 +235,45 @@
     grid-template-columns: minmax(0,1fr) auto;
     gap: 12px;
     padding: 10px 0;
+    align-items: start;
     font-family: var(--sans);
   }
-  .row + .row{ border-top: 1px solid rgba(15,23,42,0.06); }
+  .row + .row{ border-top: 1px solid var(--hairline2); }
 
   .row-title{
     font-weight: 750;
     color: var(--fg);
     letter-spacing: -0.01em;
+    line-height: 1.25;
   }
+  .row-title a{ border-bottom-color: transparent; }
+  .row-title a:hover{ border-bottom-color: var(--link-underline-hover); }
+
   .row-sub{
     color: var(--muted);
     font-size: 0.94rem;
     margin-top: 2px;
     line-height: 1.45;
   }
+
+  .pub-meta{
+    margin-top: 4px;
+    margin-left: 2px;
+
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    line-height: 1.3;
+
+    color: var(--muted2);
+    opacity: 0.88;
+    letter-spacing: 0.04em;
+    font-variant-caps: all-small-caps;
+  }
+  .pub-meta.journal{
+    color: rgba(22,58,99,0.92);
+    opacity: 0.90;
+  }
+
   .row-term{
     color: var(--muted2);
     opacity: 0.75;
@@ -353,15 +283,98 @@
     font-size: 0.88rem;
   }
 
-  .section[aria-label="Teaching"] a,
-  .section[aria-label="News"] a{
+  a.coauthor{
     color: inherit;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+  }
+
+  a.coauthor:hover,
+  a.coauthor:focus-visible{
+    color: var(--link);
+    border-bottom-color: var(--link-underline-hover);
+  }
+
+  .badge{
+    padding: 1px 6px 2px;
+    font-size: 0.72rem;
+    line-height: 1.1;
+
+    font-family: var(--sans);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.06em;
+
+    border-radius: 0;
+    border: 1px solid var(--hairline);
+    background: transparent;
+
+    color: var(--muted2);
+    opacity: 0.9;
+
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    top: -0.35em;
+  }
+
+  .badge.blue{
+    color: #1f3a5f;
+    border-color: rgba(31,58,95,0.35);
+    font-weight: 550;
+  }
+
+  .badge.preprint{
+    color: #6b7280;
+    border-color: rgba(107,114,128,0.35);
+    font-weight: 520;
+  }
+
+  .badge.amm{
+    color: #6b3f1d;
+    border-color: rgba(107,63,29,0.45);
+    font-family: var(--font);
+    font-weight: 520;
+  }
+
+  .badge:hover{
+    border-color: currentColor;
+    opacity: 1;
+  }
+
+  .meta{
+    display:flex;
+    gap: 10px;
+    align-items: baseline;
+    white-space: nowrap;
+    padding-top: 2px;
+
+    font-family: var(--mono);
+    font-size: 0.86rem;
+    color: var(--muted2);
+    opacity: 0.78;
+  }
+
+  .meta a{
+    color: var(--muted2);
     border-bottom-color: transparent;
   }
-  .section[aria-label="Teaching"] a:hover,
-  .section[aria-label="News"] a:hover{
+  .meta a:hover{
     color: var(--link);
-    border-bottom-color: rgba(31,47,92,0.45);
+    border-bottom-color: var(--link-underline-hover);
+  }
+
+  .meta a::before{ content:"["; opacity: 0.9; }
+  .meta a::after{ content:"]"; opacity: 0.9; }
+
+  .pub-note{
+    color: var(--muted2);
+    opacity: 0.85;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+  }
+  .pub-note::before{
+    content: " -- ";
+    opacity: 0.7;
   }
 
   .news-inline{
@@ -384,7 +397,7 @@
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
-    border-top: 1px solid rgba(15,23,42,0.08);
+    border-top: 1px solid var(--hairline);
     letter-spacing: 0.01em;
     font-family: var(--sans);
   }
@@ -393,44 +406,24 @@
     .hero{
       grid-template-columns: 1fr;
       justify-items: start;
+      padding-left: 12px;
     }
-    .hero-photo{ width: 176px; height: 176px; }
     .badges{ justify-content:flex-start; margin-left:0; }
-    .pub{ flex-direction: column; }
+    .hero-photo{ width: 176px; height: 176px; }
   }
 
   @media (max-width: 560px){
     .wrap{ padding: 28px 14px 64px; }
 
     .hero{
-      grid-template-columns: 1fr;
       text-align: center;
       align-items: center;
       justify-items: center;
-      padding: 18px 16px;
-      gap: 14px;
+      padding-left: 12px;
     }
-    .hero-photo{
-      width: 148px;
-      height: 148px;
-      margin: 0 auto;
-    }
-    .hero h1{
-      margin: 6px 0 6px;
-      font-size: 32px;
-      line-height: 1.06;
-    }
-    .lede{
-      text-align: justify;
-      max-width: 60ch;
-      margin: 8px 0 10px;
-      font-size: 0.98rem;
-    }
-    .email-line{
-      margin: 8px 0 4px;
-      font-size: 0.92rem;
-      justify-content: center;
-    }
+
+    .lede{ text-align: justify; }
+    .hero-contact{ justify-content: center; }
 
     .row{
       grid-template-columns: 1fr;
@@ -444,7 +437,15 @@
       font-size: 0.86rem;
     }
 
-    .pubs, .rows{
+    .meta{
+      justify-self: start;
+      padding-top: 0;
+      margin-top: 6px;
+      white-space: normal;
+      flex-wrap: wrap;
+    }
+
+    .list{
       margin-left: 4px;
       padding-left: 12px;
     }
@@ -473,14 +474,14 @@
 
         <p class="lede">
           I am an M.S.E. student in Computer Science at Princeton University, advised by
-          <a href="https://www.cs.princeton.edu/~kothari/">Pravesh Kothari</a>.
+          <a href="https://www.cs.princeton.edu/~kothari/">Pravesh K. Kothari</a>.
           Previously, I received a B.Sc. in Mathematics and Computer Science from École Polytechnique (l’X), graduating summa cum laude.
           During my undergraduate studies, I was an SSRF summer research fellow at ETH Zürich, where I worked with <a href="https://www.dsteurer.org/">David Steurer</a>.
           I am broadly interested in theoretical computer science.
         </p>
 
-        <div class="email-line">
-          <span class="email-k">Email</span>
+        <div class="hero-contact" aria-label="Contact links">
+          <span class="k">Email</span>
           <a href="mailto:as7649@princeton.edu">as7649@princeton.edu</a>
         </div>
       </div>
@@ -490,83 +491,88 @@
       <h2 class="section-title">Publications</h2>
 
       <div class="year">2025</div>
-      <div class="card pubs-card">
-        <div class="pubs">
 
-          <article class="pub">
-            <div class="pub-main">
-              <h3 class="pub-title">
-                <a href="https://doi.org/10.48550/ARXIV.2511.16613">
-                  Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
-                </a>
-              </h3>
-              <p class="pub-auth">
-                with <a class="coauthor" href="https://semignorant.github.io/jingqiuding.github.io/">Jingqiu Ding</a>, <a class="coauthor" href="https://huayiding.github.io/">Yiding Hua</a>, Kasper Lindberg, <a class="coauthor" href="https://www.dsteurer.org/">David Steurer</a>.
-              </p>
-            </div>
-            <div class="badges" aria-label="Publication links">
-              <a class="badge blue" href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
-              <span class="badge preprint">Preprint</span>
-            </div>
-          </article>
+      <div class="list">
 
-          <article class="pub">
-            <div class="pub-main">
-              <h3 class="pub-title">
-                <a href="https://doi.org/10.48550/arXiv.2409.20341">
-                  Conway’s Cosmological Theorem and Automata Theory
-                </a>
-              </h3>
-              <p class="pub-auth">
-                with <a class="coauthor" href="https://mathexp.eu/lairez/">Pierre Lairez</a>.
-              </p>
+        <div class="row">
+          <div>
+            <div class="row-title">
+              <a href="https://doi.org/10.48550/ARXIV.2511.16613">
+                Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms
+              </a>
             </div>
-            <div class="badges" aria-label="Publication links">
-              <a class="badge blue" href="https://doi.org/10.48550/arXiv.2409.20341">arXiv</a>
-              <span class="badge amm">Amer. Math. Monthly</span>
+            <div class="row-sub">
+              with <a class="coauthor" href="https://semignorant.github.io/jingqiuding.github.io/">Jingqiu Ding</a>,
+              <a class="coauthor" href="https://huayiding.github.io/">Yiding Hua</a>,
+              Kasper Lindberg,
+              <a class="coauthor" href="https://www.dsteurer.org/">David Steurer</a>.
             </div>
-          </article>
-
+          </div>
+          <div class="badges" aria-label="Publication links">
+            <a class="badge blue" href="https://doi.org/10.48550/ARXIV.2511.16613">arXiv</a>
+            <span class="badge preprint">Preprint</span>
+          </div>
         </div>
+
+        <div class="row">
+          <div>
+            <div class="row-title">
+              <a href="https://doi.org/10.48550/arXiv.2409.20341">
+                Conway’s Cosmological Theorem and Automata Theory
+              </a>
+            </div>
+            <div class="row-sub">
+              with <a class="coauthor" href="https://mathexp.eu/lairez/">Pierre Lairez</a>.
+            </div>
+          </div>
+          <div class="badges" aria-label="Publication links">
+            <a class="badge blue" href="https://doi.org/10.48550/arXiv.2409.20341">arXiv</a>
+            <span class="badge amm">Amer. Math. Monthly</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="section" aria-label="Teaching">
       <h2 class="section-title">Teaching</h2>
-      <div class="card light">
-        <div class="rows">
 
-          <div class="row">
-            <div>
-              <div class="row-title"><a href="https://princeton-cos324.github.io/">COS 324, Introduction to Machine Learning</a></div>
-              <div class="row-sub">
-                Graduate Teaching Assistant, Princeton University
-              </div>
+      <div class="list">
+
+        <div class="row">
+          <div>
+            <div class="row-title">
+              <a href="https://princeton-cos324.github.io/">COS 324, Introduction to Machine Learning</a>
             </div>
-            <div class="row-term">Spring 2026</div>
-          </div>
-
-          <div class="row">
-            <div>
-              <div class="row-title"><a href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">COS 240, Reasoning about Computation</a></div>
-              <div class="row-sub">
-                Graduate Teaching Assistant, Princeton University
-              </div>
+            <div class="row-sub">
+              Graduate Teaching Assistant, Princeton University
             </div>
-            <div class="row-term">Fall 2025</div>
           </div>
-
+          <div class="row-term">Spring 2026</div>
         </div>
+
+        <div class="row">
+          <div>
+            <div class="row-title">
+              <a href="https://www.cs.princeton.edu/courses/archive/fall25/cos240/">COS 240, Reasoning about Computation</a>
+            </div>
+            <div class="row-sub">
+              Graduate Teaching Assistant, Princeton University
+            </div>
+          </div>
+          <div class="row-term">Fall 2025</div>
+        </div>
+
       </div>
     </section>
 
     <section class="section" aria-label="News">
       <h2 class="section-title">News</h2>
 
-      <div class="rows" role="list" aria-label="News list">
+      <div class="list" role="list" aria-label="News list">
 
         <div class="row" role="listitem">
-          <div class="news-inline"><span class="k">Service.</span> Co-organizer of the Princeton Theory Lunch (Spring 2026).</div>
+          <div class="news-inline"><span class="k">Service.</span> Co-organizer of the Princeton Theory Lunch, Spring 2026.</div>
           <div class="row-term">2026-01</div>
         </div>
 
@@ -579,7 +585,7 @@
           <div class="news-inline">
             <span class="k">Preprint.</span>
             <a href="https://doi.org/10.48550/ARXIV.2511.16613">Rate-optimal Community Detection near the KS Threshold</a>
-             posted on arXiv.
+            posted on arXiv.
           </div>
           <div class="row-term">2025-11</div>
         </div>
