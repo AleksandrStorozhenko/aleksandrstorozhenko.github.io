@@ -109,6 +109,17 @@
 
     .photo-links{
       margin-top: 10px;
+      font-size: 14px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .photo-links .sep{
+      color: var(--muted);
+      user-select: none;
     }
 
     .scholar-link{
@@ -116,6 +127,16 @@
       align-items: center;
       gap: 6px;
       font-weight: 500;
+    }
+
+    .scholar-link .icon{
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .scholar-link img{
@@ -216,10 +237,23 @@
         />
         <div class="photo-links">
           <a class="scholar-link"
-             href="https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en"
-             target="_blank" rel="noopener">
+            href="https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en"
+            target="_blank" rel="noopener">
             <img src="https://scholar.google.com/favicon.ico" alt="" />
             Google Scholar
+          </a>
+
+          <span class="sep">|</span>
+
+          <a class="scholar-link" href="cv.pdf" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="M8 13h8"></path>
+              <path d="M8 17h8"></path>
+              <path d="M8 9h3"></path>
+            </svg>
+            CV
           </a>
         </div>
       </div>
