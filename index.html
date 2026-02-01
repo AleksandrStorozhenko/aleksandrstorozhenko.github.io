@@ -217,12 +217,23 @@
       }
       .rule{ display: none; }
     }
+
+    @media (max-width: 500px) {
+      .hero-links .sep:last-of-type {
+        display: none;
+      }
+
+      .hero-links a:last-of-type {
+        display: block;
+        margin-top: 6px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
   <main>
-    <!-- HERO -->
     <header class="hero">
       <img
         class="photo"
@@ -277,7 +288,6 @@
       </div>
     </header>
 
-    <!-- ABOUT -->
     <section>
       <div class="section-head">
         <h2>About</h2>
@@ -295,7 +305,6 @@
       <p>My research interests lie broadly in theoretical computer science.</p>
     </section>
 
-    <!-- PUBLICATIONS (your original structure) -->
     <section>
       <div class="section-head">
         <h2>Publications</h2>
@@ -323,7 +332,6 @@
       </ul>
     </section>
 
-    <!-- TEACHING -->
     <section>
       <div class="section-head">
         <h2>Teaching</h2>
@@ -340,7 +348,6 @@
       </ul>
     </section>
 
-    <!-- UPDATES -->
     <section>
       <div class="section-head">
         <h2>Updates</h2>
