@@ -3,6 +3,12 @@
   <url>
     <loc>https://aleksandrstorozhenko.github.io/</loc>
     <priority>1.0</priority>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-13</lastmod>
+  </url>
+
+  <url>
+    <loc>https://aleksandrstorozhenko.github.io/writings.html</loc>
+    <priority>0.8</priority>
+    <lastmod>2026-02-13</lastmod>
   </url>
 </urlset>
