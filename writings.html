@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Expository Notes | Aleksandr Storozhenko</title>
-  <meta name="description" content="Expository notes by Aleksandr Storozhenko." />
+  <meta name="description" content="Expository notes and course projects by Aleksandr Storozhenko." />
+  <link rel="canonical" href="https://aleksandrstorozhenko.github.io/writings.html" />
   <meta name="color-scheme" content="light" />
 
   <style>
@@ -19,80 +20,72 @@
       --link-hover:#1d4ed8;
 
       --max: 920px;
+      --max-narrow: 780px;
     }
 
     *{ box-sizing:border-box; }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); }
 
     body{
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
-      line-height: 1.8;
-      text-rendering: optimizeLegibility;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-kerning: normal;
-      font-feature-settings: "kern","liga","clig","calt";
     }
 
-    a{ color: var(--link); text-decoration:none; text-underline-offset: 3px; }
+    a{ color: var(--link); text-decoration:none; }
     a:hover{ color: var(--link-hover); text-decoration: underline; }
 
     main{
       max-width: var(--max);
-      margin: 64px auto 96px;
+      margin: 56px auto 96px;
       padding: 0 22px;
     }
 
-    /* subtle top nav, similar vibe to hero links */
+    .content{
+      max-width: var(--max-narrow);
+    }
+
     .topnav{
       font-size: 15px;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
+
     .topnav a{
       color: var(--muted);
       font-weight: 560;
-      text-decoration: none;
-      background-image: linear-gradient(to right, currentColor, currentColor);
-      background-size: 0% 1px;
-      background-repeat: no-repeat;
-      background-position: 0 100%;
-      padding-bottom: 2px;
-      transition: color 140ms ease, background-size 160ms ease;
-    }
-    .topnav a:hover{
-      color: var(--link-hover);
-      background-size: 100% 1px;
     }
 
     h1{
       margin: 0 0 10px 0;
-      font-size: 36px;
-      font-weight: 760;
+      font-size: 40px;
+      font-weight: 770;
       letter-spacing: -0.03em;
-      line-height: 1.15;
     }
 
     .intro{
       color: var(--muted);
+      margin: 0 0 30px 0;
       max-width: 78ch;
-      margin: 0 0 34px 0;
     }
+
+    section{ margin-top: 30px; }
 
     .section-head{
       display: grid;
       grid-template-columns: auto 1fr;
       align-items: center;
-      gap: 16px;
-      margin: 0 0 16px 0;
+      gap: 14px;
+      margin: 0 0 14px 0;
     }
 
     h2{
       margin: 0;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
+      font-size: 18px;
+      font-weight: 740;
+      letter-spacing: -0.01em;
     }
 
     .rule{
@@ -107,69 +100,116 @@
     }
 
     ul.notes > li{
-      margin: 0 0 14px 0;
+      margin: 0 0 16px 0;
     }
 
-    .note-title{
+    /* Expandable */
+    details{
+      margin-top: 4px;
+    }
+
+    summary{
+      list-style: none;
+      cursor: pointer;
       font-weight: 700;
+      line-height: 1.35;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary::after{
+      content: " (description)";
+      font-weight: 400;
+      color: var(--soft);
+      font-size: 14px;
+    }
+
+    details[open] summary::after{
+      content: " (hide)";
     }
 
     .note-meta{
-      margin-top: 2px;
+      margin-top: 3px;
       color: var(--soft);
+      font-size: 14px;
     }
 
-    .note-meta a{
-      color: var(--link);
+    .note-description{
+      margin-top: 10px;
+      color: var(--muted);
+      max-width: 72ch;
     }
 
     .footer{
-      margin-top: 44px;
-      padding-top: 18px;
+      margin-top: 36px;
+      padding-top: 16px;
       border-top: 1px solid var(--rule);
       color: var(--muted);
       font-size: 15px;
     }
 
     @media (max-width: 680px){
-      main{ margin-top: 44px; }
-      .section-head{ grid-template-columns: 1fr; gap: 10px; }
-      .rule{ display: none; }
+      h1{ font-size: 30px; }
+      .section-head{
+        grid-template-columns: 1fr;
+      }
+      .rule{ display:none; }
     }
   </style>
 </head>
 
 <body>
   <main>
-    <div class="topnav">
-      ← <a href="index.html">Homepage</a>
-    </div>
+    <div class="content">
+      <div class="topnav">
+        ← <a href="index.html">Homepage</a>
+      </div>
 
-    <h1>Expository Notes</h1>
+      <h1>Expository Notes</h1>
 
-    <p class="intro">
-      I’m starting a small collection of expository notes - mostly as a way to clarify ideas for myself and to practice writing.
-      If anything here is useful to others, that’s a bonus.
-    </p>
+      <p class="intro">
+        I’m starting a small collection of expository notes - mostly as a way to clarify ideas for myself and to practice writing.
+        If anything here is useful to others, that’s a bonus.
+      </p>
 
-    <div class="section-head">
-      <h2>Graduate notes</h2>
-      <div class="rule"></div>
-    </div>
-
-    <ul class="notes">
-      <li>
-        <div class="note-title">
-          <a href="#" onclick="return false;">TBD</a>
+      <section>
+        <div class="section-head">
+          <h2>Notes</h2>
+          <div class="rule"></div>
         </div>
-        <div class="note-meta">
-          TBD · TBD
-        </div>
-      </li>
-    </ul>
 
-    <div class="footer">
-      If you spot a mistake or have suggestions, feel free to email me.
+        <ul class="notes">
+          <li>
+            <details>
+              <summary>TBD</summary>
+              <div class="note-meta">
+                Class Title · Final Project · Spring 2026
+              </div>
+              <div class="note-description">
+                Short description placeholder. 
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>TBD</summary>
+              <div class="note-meta">
+                Class Title · Final Project · Spring 2026
+              </div>
+              <div class="note-description">
+                Short description placeholder.
+              </div>
+            </details>
+          </li>
+        </ul>
+      </section>
+
+      <div class="footer">
+        If you spot a mistake or have suggestions, feel free to <a href="mailto:as7649@princeton.edu">email me</a>.
+      </div>
     </div>
   </main>
 </body>
