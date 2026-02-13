@@ -25,14 +25,7 @@
     "jobTitle": "M.S.E. Student, Computer Science",
     "description": "M.S.E. student in Computer Science at Princeton University, advised by Pravesh Kothari. Previously an SSRF research fellow at ETH Zürich working with David Steurer. Interested in theoretical computer science and mathematics.",
     "address": { "@type": "Country", "name": "United States of America" },
-    "knowsAbout": ["Computer Science","Statistics","Mathematics","Data Structures and Algorithms"],
-    "sameAs": [
-      "https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en",
-      "https://www.linkedin.com/in/aleksandr-storozhenko/",
-      "https://arxiv.org/a/aleksandrstorozhenko.html",
-      "https://github.com/AleksandrStorozhenko",
-      "https://www.cs.princeton.edu/people/grad"
-    ]
+    "knowsAbout": ["Computer Science","Statistics","Mathematics","Data Structures and Algorithms"]
   }
   </script>
 
@@ -43,8 +36,13 @@
       --muted:#475569;
       --soft:#64748b;
       --rule:#e5e7eb;
+
       --link:#2563eb;
       --link-hover:#1d4ed8;
+
+      --meta:#334155;
+      --meta-accent:#1d4ed8;
+      --meta-sep:#c46b1a;
 
       --max: 920px;
 
@@ -64,6 +62,8 @@
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      font-kerning: normal;
+      font-feature-settings: "kern","liga","clig","calt";
     }
 
     a{ color: var(--link); text-decoration:none; text-underline-offset: 3px; }
@@ -97,30 +97,60 @@
     h1{
       margin: 0;
       font-size: 44px;
-      font-weight: 750;
+      font-weight: 760;
       letter-spacing: -0.03em;
       line-height: 1.12;
     }
 
-    .hero-links{
-      margin-top: 10px;
+    .hero-topline{
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 10px 12px;
-      color: var(--soft);
+      align-items: baseline;
+      gap: 10px 16px;
+    }
+
+    .hero-links{
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0;
+      padding-top: 4px;
+
+      font-size: 15px;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
     }
 
     .hero-links a{
       display: inline-flex;
-      align-items: center;
+      align-items: baseline;
+      gap: 7px;
+
+      color: var(--meta);
+      font-weight: 560;
+      text-decoration: none;
+
+      background-image: linear-gradient(to right, currentColor, currentColor);
+      background-size: 0% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      padding-bottom: 2px;
+      transition: color 140ms ease, background-size 160ms ease;
       white-space: nowrap;
-      color: var(--link);
     }
-    .hero-links a:hover{ color: var(--link-hover); }
+
+    .hero-links a:hover{
+      color: var(--meta-accent);
+      background-size: 100% 1px;
+    }
 
     .hero-links .sep{
-      color: var(--soft);
+      color: var(--meta-sep);
+      opacity: 0.9;
+      font-weight: 500;
+      margin: 0 2px;
+      transform: translateY(-1px);
       user-select: none;
     }
 
@@ -129,11 +159,12 @@
       height: 16px;
       stroke: currentColor;
       fill: none;
-      stroke-width: 2;
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
-      vertical-align: -3px;
-      margin-right: 6px;
+      opacity: 0.9;
+      transform: translateY(2px);
+      flex: 0 0 auto;
     }
 
     .hero-blurb{
@@ -171,16 +202,18 @@
       margin: 0;
       padding-left: 18px;
     }
+
     ul.publist > li{
       margin: 0 0 14px 0;
     }
+
     .title{ font-weight: 700; }
     .authors{ color: var(--muted); margin-top: 2px; }
     .venue{ margin-top: 2px; color: var(--soft); }
-    .links{ margin-top: 2px; }
 
     ul.simple{ margin: 0; padding-left: 18px; }
     ul.simple > li{ margin: 0 0 8px 0; }
+
     .section-lead{ margin: 0 0 10px 0; color: var(--text); }
 
     a.ptl-link { color: var(--link); }
@@ -195,14 +228,24 @@
         text-align: center;
         gap: 18px;
       }
-      h1{ font-size: 36px; }
-      .hero-links{ justify-content: center; }
+
+      h1{ font-size: 30px; }
+
+      .hero-topline{
+        justify-content: center;
+      }
+
+      .hero-links{
+        justify-content: center;
+      }
+
       .hero-blurb{ text-align: left; }
 
       .section-head{
         grid-template-columns: 1fr;
         gap: 10px;
       }
+
       .rule{ display: none; }
     }
   </style>
@@ -221,45 +264,37 @@
       />
 
       <div>
-        <h1>Aleksandr Storozhenko</h1>
+        <div class="hero-topline">
+          <h1>Aleksandr Storozhenko</h1>
 
-        <nav class="hero-links" aria-label="Profile links">
-          <a href="CV.pdf" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M8 13h8"/>
-              <path d="M8 17h8"/>
-              <path d="M8 9h2"/>
-            </svg>
-            CV
-          </a>
+          <nav class="hero-links" aria-label="Profile links">
+            <a href="CV.pdf" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6"/>
+                <path d="M8 13h8"/>
+                <path d="M8 17h8"/>
+                <path d="M8 9h2"/>
+              </svg>
+              CV
+            </a>
 
-          <span class="sep">|</span>
+            <span class="sep">/</span>
 
-          <a href="https://scholar.google.com/citations?user=BWIwCTAAAAAJ&hl=en" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3L1 9l11 6 9-4.91V17h2V9z"/>
-              <path d="M5 13v4c0 1.66 3.13 3 7 3s7-1.34 7-3v-4"/>
-            </svg>
-            Google Scholar
-          </a>
-
-          <span class="sep">|</span>
-
-          <a href="mailto:as7649@princeton.edu">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-              <path d="M22 6l-10 7L2 6"/>
-            </svg>
-            as7649@princeton.edu
-          </a>
-        </nav>
+            <a href="mailto:as7649@princeton.edu">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+                <path d="M22 6l-10 7L2 6"/>
+              </svg>
+              as7649@princeton.edu
+            </a>
+          </nav>
+        </div>
 
         <p class="hero-blurb">
           Hi! I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
           <a href="https://www.cs.princeton.edu/~kothari/">Pravesh K. Kothari</a>. Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique.
-          I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with <a href="https://www.dsteurer.org/">David Steurer</a>. 
+          I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with <a href="https://www.dsteurer.org/">David Steurer</a>.
           I am broadly interested in theoretical computer science.
         </p>
       </div>
@@ -275,18 +310,18 @@
         <li>
           <div class="title">Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms</div>
           <div class="authors">with Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer</div>
-          <div class="venue">Manuscript, 2025</div>
-          <div class="links">
-            <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank" rel="noopener">[arXiv]</a>
+          <div class="venue">
+            Manuscript, 2025 ·
+            <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank" rel="noopener">arXiv</a>
           </div>
         </li>
 
         <li>
           <div class="title">Conway’s Cosmological Theorem and Automata Theory</div>
           <div class="authors">with Pierre Lairez</div>
-          <div class="venue">American Mathematical Monthly, 2025</div>
-          <div class="links">
-            <a href="https://doi.org/10.48550/arXiv.2409.20341" target="_blank" rel="noopener">[arXiv]</a>
+          <div class="venue">
+            The American Mathematical Monthly, 2025 ·
+            <a href="https://doi.org/10.48550/arXiv.2409.20341" target="_blank" rel="noopener">arXiv</a>
           </div>
         </li>
       </ul>
@@ -315,10 +350,12 @@
       </div>
 
       <ul class="simple">
+        <li>A small (and growing) collection of expository notes can be found <a href="writings.html">here</a>.</li>
         <li>In Spring 2026 I am co-organizing the <a class="ptl-link" href="https://theory.cs.princeton.edu/theorylunch/">Princeton Theory Lunch</a>.</li>
         <li>In Summer 2026 I will be a Quantitative Research Intern at Marshall Wace.</li>
       </ul>
     </section>
+
   </main>
 </body>
 </html>
