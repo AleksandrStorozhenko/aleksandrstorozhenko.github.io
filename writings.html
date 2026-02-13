@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expository Notes | Aleksandr Storozhenko</title>
+  <meta name="description" content="Expository notes by Aleksandr Storozhenko." />
+  <meta name="color-scheme" content="light" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --soft:#64748b;
+      --rule:#e5e7eb;
+
+      --link:#2563eb;
+      --link-hover:#1d4ed8;
+
+      --max: 920px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); }
+
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-kerning: normal;
+      font-feature-settings: "kern","liga","clig","calt";
+    }
+
+    a{ color: var(--link); text-decoration:none; text-underline-offset: 3px; }
+    a:hover{ color: var(--link-hover); text-decoration: underline; }
+
+    main{
+      max-width: var(--max);
+      margin: 64px auto 96px;
+      padding: 0 22px;
+    }
+
+    /* subtle top nav, similar vibe to hero links */
+    .topnav{
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .topnav a{
+      color: var(--muted);
+      font-weight: 560;
+      text-decoration: none;
+      background-image: linear-gradient(to right, currentColor, currentColor);
+      background-size: 0% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      padding-bottom: 2px;
+      transition: color 140ms ease, background-size 160ms ease;
+    }
+    .topnav a:hover{
+      color: var(--link-hover);
+      background-size: 100% 1px;
+    }
+
+    h1{
+      margin: 0 0 10px 0;
+      font-size: 36px;
+      font-weight: 760;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .intro{
+      color: var(--muted);
+      max-width: 78ch;
+      margin: 0 0 34px 0;
+    }
+
+    .section-head{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 16px;
+      margin: 0 0 16px 0;
+    }
+
+    h2{
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .rule{
+      height: 1px;
+      background: var(--rule);
+      width: 100%;
+    }
+
+    ul.notes{
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    ul.notes > li{
+      margin: 0 0 14px 0;
+    }
+
+    .note-title{
+      font-weight: 700;
+    }
+
+    .note-meta{
+      margin-top: 2px;
+      color: var(--soft);
+    }
+
+    .note-meta a{
+      color: var(--link);
+    }
+
+    .footer{
+      margin-top: 44px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    @media (max-width: 680px){
+      main{ margin-top: 44px; }
+      .section-head{ grid-template-columns: 1fr; gap: 10px; }
+      .rule{ display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="topnav">
+      ← <a href="index.html">Homepage</a>
+    </div>
+
+    <h1>Expository Notes</h1>
+
+    <p class="intro">
+      I’m starting a small collection of expository notes - mostly as a way to clarify ideas for myself and to practice writing.
+      If anything here is useful to others, that’s a bonus.
+    </p>
+
+    <div class="section-head">
+      <h2>Graduate notes</h2>
+      <div class="rule"></div>
+    </div>
+
+    <ul class="notes">
+      <li>
+        <div class="note-title">
+          <a href="#" onclick="return false;">TBD</a>
+        </div>
+        <div class="note-meta">
+          Draft · (PDF here when ready)
+        </div>
+      </li>
+    </ul>
+
+    <div class="footer">
+      If you spot a mistake or have suggestions, feel free to email me.
+    </div>
+  </main>
+</body>
+</html>
