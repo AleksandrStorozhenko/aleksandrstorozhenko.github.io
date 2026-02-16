@@ -103,42 +103,10 @@
       margin: 0 0 16px 0;
     }
 
-    details{
-      margin-top: 4px;
-    }
-
-    summary{
-      list-style: none;
-      cursor: pointer;
-      font-weight: 450;
-      line-height: 1.35;
-    }
-
-    summary::-webkit-details-marker{
-      display:none;
-    }
-
-    summary::after{
-      content: " (description)";
-      font-weight: 400;
-      color: var(--soft);
-      font-size: 14px;
-    }
-
-    details[open] summary::after{
-      content: " (hide)";
-    }
-
     .note-meta{
       margin-top: 3px;
       color: var(--soft);
       font-size: 14px;
-    }
-
-    .note-description{
-      margin-top: 10px;
-      color: var(--muted);
-      max-width: 72ch;
     }
 
     .footer{
@@ -179,13 +147,26 @@
           <h2>Notes</h2>
           <div class="rule"></div>
         </div>
-          <ul class="notes">
-            <li>
-              <span style="font-weight:450; line-height:1.35;">
-                Coming soon …
-              </span>
-            </li>
-          </ul>
+
+        <ul class="notes">
+          <li>
+            <span style="font-weight:500; line-height:1.35;">
+              High-Dimensional Probability
+            </span>
+            <div class="note-meta">
+              MAT529 · Spring 2026 · In preparation
+            </div>
+          </li>
+
+          <li>
+            <span style="font-weight:500; line-height:1.35;">
+              Sum-of-Squares Proofs and Efficient Algorithms
+            </span>
+            <div class="note-meta">
+              COS 598C · Spring 2026 · In preparation
+            </div>
+          </li>
+        </ul>
       </section>
 
       <div class="footer">
