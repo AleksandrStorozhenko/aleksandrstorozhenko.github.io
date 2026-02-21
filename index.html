@@ -1,361 +1,185 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aleksandr Storozhenko</title>
-  <meta name="description"
-        content="Personal homepage of Aleksandr Storozhenko, M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics." />
-  <link rel="canonical" href="https://aleksandrstorozhenko.github.io/" />
-  <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4" />
-  <meta name="color-scheme" content="light" />
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        chtml: {
+          mtextInheritFont: true,
+          scale: 0.92
+        }
+      };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Aleksandr Storozhenko",
-    "url": "https://aleksandrstorozhenko.github.io/",
-    "email": "mailto:as7649@princeton.edu",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Princeton University",
-      "sameAs": "https://www.princeton.edu/"
-    },
-    "jobTitle": "M.S.E. Student, Computer Science",
-    "description": "M.S.E. student in Computer Science at Princeton University, advised by Pravesh Kothari. Previously an SSRF research fellow at ETH Zürich working with David Steurer. Interested in theoretical computer science and mathematics.",
-    "address": { "@type": "Country", "name": "United States of America" },
-    "knowsAbout": ["Computer Science","Statistics","Mathematics","Data Structures and Algorithms"]
-  }
-  </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --soft:#64748b;
-      --rule:#e5e7eb;
+    <title>Aleksandr Storozhenko</title>
+    <meta name="description"
+          content="Personal homepage of Aleksandr Storozhenko, M.S.E. student in Computer Science at Princeton University, interested in theoretical computer science and mathematics." />
+    <link rel="canonical" href="https://aleksandrstorozhenko.github.io/" />
+    <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4" />
+    <meta name="color-scheme" content="light" />
 
-      --link:#2563eb;
-      --link-hover:#1d4ed8;
-
-      --meta:#334155;
-      --meta-accent:#1d4ed8;
-      --meta-sep:#c46b1a;
-
-      --max: 920px;
-
-      --avatar: 168px;
-      --hero-gap: 34px;
-      --hero-top: 64px;
-      --section-gap: 40px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); }
-
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-kerning: normal;
-      font-feature-settings: "kern","liga","clig","calt";
-    }
-
-    a{ color: var(--link); text-decoration:none; text-underline-offset: 3px; }
-    a:hover{ color: var(--link-hover); text-decoration: underline; }
-
-    main{
-      max-width: var(--max);
-      margin: var(--hero-top) auto 96px;
-      padding: 0 22px;
-    }
-
-    .hero{
-      display: grid;
-      grid-template-columns: var(--avatar) 1fr;
-      gap: var(--hero-gap);
-      align-items: center;
-      margin-bottom: var(--section-gap);
-    }
-
-    .photo{
-      width: var(--avatar);
-      height: var(--avatar);
-      object-fit: cover;
-      object-position: 50% 28%;
-      border-radius: 15%;
-      background: #fff;
-      border: 1px solid var(--rule);
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
-    }
-
-    h1{
-      margin: 0;
-      font-size: 44px;
-      font-weight: 760;
-      letter-spacing: -0.03em;
-      line-height: 1.12;
-    }
-
-    .hero-topline{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 10px 16px;
-    }
-
-    .hero-links{
-      display: inline-flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 10px;
-      margin: 0;
-      padding-top: 4px;
-
-      font-size: 15px;
-      line-height: 1.2;
-      letter-spacing: 0.01em;
-    }
-
-    .hero-links a{
-      display: inline-flex;
-      align-items: baseline;
-      gap: 7px;
-
-      color: var(--meta);
-      font-weight: 560;
-      text-decoration: none;
-
-      background-image: linear-gradient(to right, currentColor, currentColor);
-      background-size: 0% 1px;
-      background-repeat: no-repeat;
-      background-position: 0 100%;
-      padding-bottom: 2px;
-      transition: color 140ms ease, background-size 160ms ease;
-      white-space: nowrap;
-    }
-
-    .hero-links a:hover{
-      color: var(--meta-accent);
-      background-size: 100% 1px;
-    }
-
-    .hero-links .sep{
-      color: var(--meta-sep);
-      opacity: 0.9;
-      font-weight: 500;
-      margin: 0 2px;
-      transform: translateY(-1px);
-      user-select: none;
-    }
-
-    .icon{
-      width: 16px;
-      height: 16px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      opacity: 0.9;
-      transform: translateY(2px);
-      flex: 0 0 auto;
-    }
-
-    .hero-blurb{
-      margin-top: 14px;
-      color: var(--muted);
-      max-width: 80ch;
-    }
-
-    section{ margin-top: 34px; }
-
-    .section-head{
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: center;
-      gap: 16px;
-      margin: 0 0 16px;
-    }
-
-    h2{
-      margin: 0;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .rule{
-      height: 1px;
-      background: var(--rule);
-      width: 100%;
-    }
-
-    p{ margin: 12px 0; }
-
-    ul.publist{
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    ul.publist > li{
-      margin: 0 0 14px 0;
-    }
-
-    .title{ font-weight: 700; }
-    .authors{ color: var(--muted); margin-top: 2px; }
-    .venue{ margin-top: 2px; color: var(--soft); }
-
-    ul.simple{ margin: 0; padding-left: 18px; }
-    ul.simple > li{ margin: 0 0 8px 0; }
-
-    .section-lead{ margin: 0 0 10px 0; color: var(--text); }
-
-    a.ptl-link { color: var(--link); }
-    a.ptl-link:hover { color: #E77500; text-decoration: underline; }
-
-    @media (max-width: 680px){
-      main{ margin-top: 44px; }
-
-      .hero{
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-        gap: 18px;
+    <style type="text/css">
+      body{
+        line-height: 1.5;
+        padding: 4em 1em;
+        width:800px;
+        margin-left:auto;
+        margin-right:auto;
+        font-size:1.05em;
       }
-
-      h1{ font-size: 30px; }
-
-      .hero-topline{
-        justify-content: center;
+      li{
+        margin: .9em 0;
       }
-
-      .hero-links{
-        justify-content: center;
+      a:link {
+        color: #0000EE;
+        text-decoration: none;
       }
-
-      .hero-blurb{ text-align: left; }
-
-      .section-head{
-        grid-template-columns: 1fr;
-        gap: 10px;
+      a:visited {
+        color: #0000EE;
+        text-decoration: none;
       }
+      .abstract-toggle{
+        cursor: pointer;
+        color: #0000EE;
+      }
+      .abstract-content{
+        display: none;
+        margin-top: .35em;
+        padding-left: 0.9em;
+        border-left: 2px solid #e5e5e5;
+        font-size: 0.98em;
+      }
+      .abstract-content mjx-container[jax="CHTML"][display="true"]{
+        margin: 0.7em 0 !important;
+      }
+            @media (max-width: 900px){
+        body{
+          width: auto;
+          max-width: 800px;
+          padding: 2.25em 1em;
+          font-size: 1.02em;
+        }
+      }
+      @media (max-width: 520px){
+        body{
+          padding: 1.5em 0.9em;
+          font-size: 1em;
+        }
+        h1{
+          margin: 0 0 0.6em 0;
+          font-size: 1.75em;
+          line-height: 1.15;
+        }
+        h2{
+          margin-top: 1.2em;
+          line-height: 1.2;
+        }
+        ol, ul{
+          padding-left: 1.2em;
+        }
+        li{
+          margin: 0.85em 0;
+        }
+        .abstract-content{
+          padding-left: 0.75em;
+          font-size: 0.97em;
+        }
+        p, li, a, div{
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+      }
+    </style>
+  </head>
 
-      .rule{ display: none; }
-    }
-  </style>
-</head>
+  <body>
 
-<body>
-  <main>
-    <header class="hero">
-      <img
-        class="photo"
-        src="portrait.jpg"
-        alt="Portrait of Aleksandr Storozhenko"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-      />
+    <h1> Aleksandr Storozhenko </h1>
 
-      <div>
-        <div class="hero-topline">
-          <h1>Aleksandr Storozhenko</h1>
+    <p>
+      Hi! I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
+      <a href="https://www.cs.princeton.edu/~kothari/" target="_blank">Pravesh K. Kothari</a>.
+      Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique.
+      I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with
+      <a href="https://www.dsteurer.org/" target="_blank">David Steurer</a>.
+      I am broadly interested in theoretical computer science.
+      Here is my <a href="CV.pdf" target="_blank">CV</a>.
+    </p>
 
-          <nav class="hero-links" aria-label="Profile links">
-            <a href="CV.pdf" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <path d="M14 2v6h6"/>
-                <path d="M8 13h8"/>
-                <path d="M8 17h8"/>
-                <path d="M8 9h2"/>
-              </svg>
-              CV
-            </a>
+    <br>
 
-            <span class="sep">/</span>
+    <h2 style="display:inline">Publications and Preprints</h2>
 
-            <a href="mailto:as7649@princeton.edu">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-                <path d="M22 6l-10 7L2 6"/>
-              </svg>
-              as7649@princeton.edu
-            </a>
-          </nav>
+    <ol reversed id="chronological">
+
+      <li>
+        Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms. With J. Ding, Y. Hua, K. Lindberg, D. Steurer, (2025).
+        <br>
+        <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank">[arXiv]</a>
+        <span class="abstract-toggle" onclick="toggleAbstract('abs2')">[Abstract]</span>
+        <div id="abs2" class="abstract-content">
+            We study community detection in the symmetric $k$-stochastic block model,
+            where $n$ nodes are evenly partitioned into $k$ clusters with intra- and inter-cluster connection probabilities $p$ and $q$, respectively. 
+            Our main result is a polynomial-time algorithm that achieves the minimax-optimal misclassification rate
+            \begin{equation*}
+              \exp \Bigl(-\bigl(1 \pm o(1)\bigr) \tfrac{C}{k}\Bigr),
+              \quad \text{where } \quad \qquad C = (\sqrt{pn}-\sqrt{qn})^2,
+            \end{equation*}
+            whenever $C \ge K\,k^2\,\log k$ for some universal constant $K$, matching the Kesten-Stigum (KS) threshold up to a $\log k$ factor.
+            Notably, this rate holds even when an adversary corrupts an $\eta \le \exp\bigl(- (1 \pm o(1)) \tfrac{C}{k}\bigr)$ fraction of the nodes.
+            <br><br>
+            To the best of our knowledge, the minimax rate was previously only attainable either via computationally inefficient procedures (Zhang and Zhou, 2015) or via polynomial-time algorithms that require strictly stronger assumptions such as $C \ge K k^3$ (Gao et al., 2017)..
+            In the node-robust setting, the best known algorithm requires the substantially stronger condition $C \ge K k^{102}$ (Liu and Moitra, 2022).
+            Our results close this gap by providing the first polynomial-time algorithm that achieves the minimax rate near the KS threshold in both settings.
+            <br><br>
+            Our work has two key technical contributions:
+            (1) we robustify majority voting via the Sum-of-Squares framework,
+            (2) we develop a novel graph bisectioning algorithm via robust majority voting, which allows us to significantly improve the misclassification rate to $1/\mathrm{poly}(k)$ for the initial estimation near the KS threshold.
         </div>
+      </li>
 
-        <p class="hero-blurb">
-          Hi! I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
-          <a href="https://www.cs.princeton.edu/~kothari/">Pravesh K. Kothari</a>. Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique.
-          I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with <a href="https://www.dsteurer.org/">David Steurer</a>.
-          I am broadly interested in theoretical computer science.
-        </p>
-      </div>
-    </header>
+      <li>
+        Conway’s Cosmological Theorem and Automata Theory. With P. Lairez. <br>
+        <em>The American Mathematical Monthly</em>, 132(9), 867–882, (2025).
+        <a href="https://www.tandfonline.com/doi/full/10.1080/00029890.2025.2549225" target="_blank">[Journal]</a>
+        <span class="abstract-toggle" onclick="toggleAbstract('abs1')">[Abstract]</span>
+        <div id="abs1" class="abstract-content">
+          John Conway proved that every audioactive sequence (a.k.a. look-and-say) decays into a compound of 94 elements, a statement he termed the cosmological theorem. The underlying audioactive process can be modeled by a finite-state machine, mapping one sequence of integers to another. Leveraging automata theory, we propose a new proof of Conway's theorem based on a few simple machines, using a computer to compose and minimize them.
+        </div>
+      </li>
 
-    <section>
-      <div class="section-head">
-        <h2>Publications</h2>
-        <div class="rule"></div>
-      </div>
+    </ol>
 
-      <ul class="publist">
-        <li>
-          <div class="title">Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms</div>
-          <div class="authors">with Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer</div>
-          <div class="venue">
-            Manuscript, 2025 ·
-            <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank" rel="noopener">arXiv</a>
-          </div>
-        </li>
+    <!--<<h2>Notes</h2>
+    <ul>
+      <li> <a href="" target="_blank">[PDF]</a></li>
+    </ul>-->
 
-        <li>
-          <div class="title">Conway’s Cosmological Theorem and Automata Theory</div>
-          <div class="authors">with Pierre Lairez</div>
-          <div class="venue">
-            The American Mathematical Monthly, 2025 ·
-            <a href="https://doi.org/10.48550/arXiv.2409.20341" target="_blank" rel="noopener">arXiv</a>
-          </div>
-        </li>
-      </ul>
-    </section>
+    <h2> Teaching </h2>
+    <p><em>Princeton University Graduate Teaching Assistant</em></p>
+    <p>COS 324: Introduction to Machine Learning, Spring 2026</p>
+    <p>COS 240: Reasoning about Computation, Fall 2025</p>
 
-    <section>
-      <div class="section-head">
-        <h2>Teaching</h2>
-        <div class="rule"></div>
-      </div>
+    <h2> Contact </h2>
+    <p>
+      Email: as7649@princeton.edu <br>
+      Office Hours (CS 003): Monday, 6-8pm
+    </p>
 
-      <p class="section-lead">
-        I have served as a graduate teaching assistant for the following courses at Princeton:
-      </p>
+    <script>
+      function toggleAbstract(id) {
+        var el = document.getElementById(id);
+        el.style.display = (el.style.display === "block") ? "none" : "block";
+      }
+    </script>
 
-      <ul class="simple">
-        <li>COS 324: Introduction to Machine Learning, Spring 2026.</li>
-        <li>COS 240: Reasoning about Computation, Fall 2025.</li>
-      </ul>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>Other</h2>
-        <div class="rule"></div>
-      </div>
-
-      <ul class="simple">
-        <!--<li>A small (and growing) collection of expository notes can be found <a href="writings.html">here</a>.</li>-->
-        <li>In Spring 2026, I am co-organizing the <a class="ptl-link" href="https://theory.cs.princeton.edu/theorylunch/">Princeton Theory Lunch</a>.</li>
-        <li>In Summer 2026, I will be a Quantitative Research Intern at Marshall Wace.</li>
-      </ul>
-    </section>
-
-  </main>
-</body>
+  </body>
 </html>
