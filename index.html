@@ -38,6 +38,7 @@
       li{
         margin: .9em 0;
       }
+
       a:link {
         color: #0000EE;
         text-decoration: none;
@@ -46,6 +47,20 @@
         color: #0000EE;
         text-decoration: none;
       }
+
+      a.author-link,
+      a.author-link:link,
+      a.author-link:visited{
+        color: inherit;
+        text-decoration: none;
+      }
+      a.author-link:hover,
+      a.author-link:focus-visible{
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+
       .abstract-toggle{
         cursor: pointer;
         color: #0000EE;
@@ -60,7 +75,8 @@
       .abstract-content mjx-container[jax="CHTML"][display="true"]{
         margin: 0.7em 0 !important;
       }
-            @media (max-width: 900px){
+
+      @media (max-width: 900px){
         body{
           width: auto;
           max-width: 800px;
@@ -106,12 +122,12 @@
 
     <p>
       Hi! I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
-      <a href="https://www.cs.princeton.edu/~kothari/" target="_blank">Pravesh K. Kothari</a>.
+      <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
       Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique.
       I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with
-      <a href="https://www.dsteurer.org/" target="_blank">David Steurer</a>.
+      <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
       I am broadly interested in theoretical computer science.
-      Here is my <a href="CV.pdf" target="_blank">CV</a>.
+      Here is my <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>.
     </p>
 
     <br>
@@ -121,10 +137,17 @@
     <ol reversed id="chronological">
 
       <li>
-        Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms. With J. Ding, Y. Hua, K. Lindberg, D. Steurer, (2025).
+        Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms.
+        With
+        <a class="author-link" href="https://semignorant.github.io/jingqiuding.github.io/" target="_blank" rel="noopener noreferrer">J. Ding</a>,
+        <a class="author-link" href="https://huayiding.github.io/" target="_blank" rel="noopener noreferrer">Y. Hua</a>,
+        K. Lindberg,
+        <a class="author-link" href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">D. Steurer</a>
+        (2025).
         <br>
-        <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank">[arXiv]</a>
+        <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank" rel="noopener noreferrer">[arXiv]</a>
         <span class="abstract-toggle" onclick="toggleAbstract('abs2')">[Abstract]</span>
+
         <div id="abs2" class="abstract-content">
             We study community detection in the symmetric $k$-stochastic block model,
             where $n$ nodes are evenly partitioned into $k$ clusters with intra- and inter-cluster connection probabilities $p$ and $q$, respectively. 
@@ -147,21 +170,20 @@
       </li>
 
       <li>
-        Conway’s Cosmological Theorem and Automata Theory. With P. Lairez. <br>
+        Conway’s Cosmological Theorem and Automata Theory.
+        With
+        <a class="author-link" href="https://mathexp.eu/lairez/" target="_blank" rel="noopener noreferrer">P. Lairez</a>.
+        <br>
         <em>The American Mathematical Monthly</em>, 132(9), 867-882, (2025).
-        <a href="https://www.tandfonline.com/doi/full/10.1080/00029890.2025.2549225" target="_blank">[Journal]</a>
+        <a href="https://www.tandfonline.com/doi/full/10.1080/00029890.2025.2549225" target="_blank" rel="noopener noreferrer">[Journal]</a>
         <span class="abstract-toggle" onclick="toggleAbstract('abs1')">[Abstract]</span>
+
         <div id="abs1" class="abstract-content">
           John Conway proved that every audioactive sequence (a.k.a. look-and-say) decays into a compound of 94 elements, a statement he termed the cosmological theorem. The underlying audioactive process can be modeled by a finite-state machine, mapping one sequence of integers to another. Leveraging automata theory, we propose a new proof of Conway's theorem based on a few simple machines, using a computer to compose and minimize them.
         </div>
       </li>
 
     </ol>
-
-    <!--<<h2>Notes</h2>
-    <ul>
-      <li> <a href="" target="_blank">[PDF]</a></li>
-    </ul>-->
 
     <h2> Teaching </h2>
     <p><em>Princeton University Graduate Teaching Assistant</em></p>
