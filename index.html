@@ -1,21 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        chtml: {
-          mtextInheritFont: true,
-          scale: 0.92
-        }
-      };
-    </script>
-    <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -25,16 +10,18 @@
     <link rel="canonical" href="https://aleksandrstorozhenko.github.io/" />
     <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4" />
     <meta name="color-scheme" content="light" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%23C9A86A'/><text x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='44' fill='white'>A</text></svg>">
 
     <style type="text/css">
       body{
         line-height: 1.5;
         padding: 4em 1em;
-        width:800px;
-        margin-left:auto;
-        margin-right:auto;
-        font-size:1.05em;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.05em;
       }
+
       li{
         margin: .9em 0;
       }
@@ -43,37 +30,23 @@
         color: #0000EE;
         text-decoration: none;
       }
+
       a:visited {
         color: #0000EE;
         text-decoration: none;
       }
 
-      a.author-link,
-      a.author-link:link,
-      a.author-link:visited{
-        color: inherit;
-        text-decoration: none;
-      }
-      a.author-link:hover,
-      a.author-link:focus-visible{
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 2px;
+      .publications-list{
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        line-height: normal;
+        list-style-type: disc;
+        padding-left: 40px;
+        margin-top: 0.8em;
       }
 
-      .abstract-toggle{
-        cursor: pointer;
-        color: #0000EE;
-      }
-      .abstract-content{
-        display: none;
-        margin-top: .35em;
-        padding-left: 0.9em;
-        border-left: 2px solid #e5e5e5;
-        font-size: 0.98em;
-      }
-      .abstract-content mjx-container[jax="CHTML"][display="true"]{
-        margin: 0.7em 0 !important;
+      .publications-list li{
+        margin: 1em 0;
       }
 
       @media (max-width: 900px){
@@ -84,30 +57,37 @@
           font-size: 1.02em;
         }
       }
+
       @media (max-width: 520px){
         body{
           padding: 1.5em 0.9em;
           font-size: 1em;
         }
+
         h1{
           margin: 0 0 0.6em 0;
           font-size: 1.75em;
           line-height: 1.15;
         }
+
         h2{
           margin-top: 1.2em;
           line-height: 1.2;
         }
+
         ol, ul{
           padding-left: 1.2em;
         }
+
         li{
           margin: 0.85em 0;
         }
-        .abstract-content{
-          padding-left: 0.75em;
-          font-size: 0.97em;
+
+        .publications-list{
+          padding-left: 1.2em;
+          font-size: 16px;
         }
+
         p, li, a, div{
           overflow-wrap: anywhere;
           word-break: break-word;
@@ -123,10 +103,10 @@
     <p>
       Hi! I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
       <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
-      Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique.
-      I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with
+      Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique. 
+      I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with 
       <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
-      I am broadly interested in theoretical computer science.
+      I am broadly interested in theoretical computer science and probability theory.
       Here is my <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>.
     </p>
 
@@ -134,74 +114,41 @@
 
     <h2 style="display:inline">Publications and Preprints</h2>
 
-    <ol reversed id="chronological">
+    <ul class="publications-list">
 
       <li>
-        Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms.
-        With
-        <a class="author-link" href="https://semignorant.github.io/jingqiuding.github.io/" target="_blank" rel="noopener noreferrer">J. Ding</a>,
-        <a class="author-link" href="https://huayiding.github.io/" target="_blank" rel="noopener noreferrer">Y. Hua</a>,
-        K. Lindberg,
-        <a class="author-link" href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">D. Steurer</a>
-        (2025).
+        <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank" rel="noopener noreferrer">Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms</a>
         <br>
-        <a href="https://doi.org/10.48550/ARXIV.2511.16613" target="_blank" rel="noopener noreferrer">[arXiv]</a>
-        <span class="abstract-toggle" onclick="toggleAbstract('abs2')">[Abstract]</span>
-
-        <div id="abs2" class="abstract-content">
-            We study community detection in the symmetric $k$-stochastic block model,
-            where $n$ nodes are evenly partitioned into $k$ clusters with intra- and inter-cluster connection probabilities $p$ and $q$, respectively. 
-            Our main result is a polynomial-time algorithm that achieves the minimax-optimal misclassification rate
-            \begin{equation*}
-              \exp \Bigl(-\bigl(1 \pm o(1)\bigr) \tfrac{C}{k}\Bigr),
-              \quad \text{where } \quad \qquad C = (\sqrt{pn}-\sqrt{qn})^2,
-            \end{equation*}
-            whenever $C \ge K\,k^2\,\log k$ for some universal constant $K$, matching the Kesten-Stigum (KS) threshold up to a $\log k$ factor.
-            Notably, this rate holds even when an adversary corrupts an $\eta \le \exp\bigl(- (1 \pm o(1)) \tfrac{C}{k}\bigr)$ fraction of the nodes.
-            <br><br>
-            To the best of our knowledge, the minimax rate was previously only attainable either via computationally inefficient procedures (Zhang and Zhou, 2015) or via polynomial-time algorithms that require strictly stronger assumptions such as $C \ge K k^3$ (Gao et al., 2017).
-            In the node-robust setting, the best known algorithm requires the substantially stronger condition $C \ge K k^{102}$ (Liu and Moitra, 2022).
-            Our results close this gap by providing the first polynomial-time algorithm that achieves the minimax rate near the KS threshold in both settings.
-            <br><br>
-            Our work has two key technical contributions:
-            (1) we robustify majority voting via the Sum-of-Squares framework,
-            (2) we develop a novel graph bisectioning algorithm via robust majority voting, which allows us to significantly improve the misclassification rate to $1/\mathrm{poly}(k)$ for the initial estimation near the KS threshold.
-        </div>
+        with Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer.
+        <br>
+        Submitted, 2026.
       </li>
 
       <li>
-        Conway’s Cosmological Theorem and Automata Theory.
-        With
-        <a class="author-link" href="https://mathexp.eu/lairez/" target="_blank" rel="noopener noreferrer">P. Lairez</a>.
+        <a href="https://www.tandfonline.com/doi/full/10.1080/00029890.2025.2549225" target="_blank" rel="noopener noreferrer">Conway’s Cosmological Theorem and Automata Theory</a>
         <br>
-        <em>The American Mathematical Monthly</em>, 132(9), 867-882, (2025).
-        <a href="https://www.tandfonline.com/doi/full/10.1080/00029890.2025.2549225" target="_blank" rel="noopener noreferrer">[Journal]</a>
-        <span class="abstract-toggle" onclick="toggleAbstract('abs1')">[Abstract]</span>
-
-        <div id="abs1" class="abstract-content">
-          John Conway proved that every audioactive sequence (a.k.a. look-and-say) decays into a compound of 94 elements, a statement he termed the cosmological theorem. The underlying audioactive process can be modeled by a finite-state machine, mapping one sequence of integers to another. Leveraging automata theory, we propose a new proof of Conway's theorem based on a few simple machines, using a computer to compose and minimize them.
-        </div>
+        with Pierre Lairez.
+        <br>
+        The American Mathematical Monthly, 132-9, 2025.
       </li>
 
-    </ol>
+    </ul>
 
-    <h2> Teaching </h2>
-    <p><em>Princeton University Graduate Teaching Assistant</em></p>
-    <p>COS 324: Introduction to Machine Learning, Spring 2026</p>
-    <p>COS 240: Reasoning about Computation, Fall 2025</p>
+    <h2>Teaching</h2>
+
+    <p><em>Princeton University Teaching Assistant</em></p>
+
+    <p>
+      COS 324: Introduction to Machine Learning, Spring 2026
+      <br>
+      COS 240: Reasoning about Computation, Fall 2025
+    </p>
 
     <h2> Contact </h2>
     <p>
       Email: as7649@princeton.edu <br>
       Office Hours (CS 003): Monday, 6-8pm
     </p>
-
-    <script>
-      function toggleAbstract(id) {
-        var el = document.getElementById(id);
-        el.style.display = (el.style.display === "block") ? "none" : "block";
-      }
-    </script>
 
   </body>
 </html>
