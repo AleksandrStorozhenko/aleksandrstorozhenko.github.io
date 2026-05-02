@@ -49,6 +49,38 @@
         margin: 1em 0;
       }
 
+      .teaching-section{
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        line-height: normal;
+        margin-top: 0.9em;
+      }
+
+      .teaching-role{
+        margin: 0 0 0.85em 0;
+        font-size: 16px;
+        line-height: normal;
+      }
+
+      .teaching-entry{
+        display: grid;
+        grid-template-columns: 6.5em 1fr;
+        column-gap: 1.2em;
+        margin: 0.65em 0;
+      }
+
+      .teaching-term{
+        white-space: nowrap;
+      }
+
+      .teaching-course{
+        display: block;
+      }
+
+      .teaching-instructor{
+        display: block;
+      }
+
       @media (max-width: 900px){
         body{
           width: auto;
@@ -88,6 +120,19 @@
           font-size: 16px;
         }
 
+        .teaching-entry{
+          display: block;
+          margin: 0.8em 0;
+        }
+
+        .teaching-term{
+          display: block;
+        }
+
+        .teaching-instructor{
+          display: block;
+        }
+
         p, li, a, div{
           overflow-wrap: anywhere;
           word-break: break-word;
@@ -103,10 +148,12 @@
     <p>
       Hi! I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
       <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
-      Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique. 
-      I also spent a summer at ETH Zürich as an SSRF research fellow, where I worked with 
+      My interests are broadly in theoretical computer science and probability theory.
+      Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique
+      and spent a summer at ETH Zürich as an SSRF research fellow, working with
       <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
-      I am broadly interested in theoretical computer science and probability theory.
+      I also help organise the 
+      <a href="https://theory.cs.princeton.edu/theorylunch/" target="_blank" rel="noopener noreferrer">Princeton Theory Lunch</a>.
       Here is my <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>.
     </p>
 
@@ -136,13 +183,25 @@
 
     <h2>Teaching</h2>
 
-    <p><em>Princeton University Teaching Assistant</em></p>
+    <div class="teaching-section">
+      <p class="teaching-role">Teaching Assistant, Princeton University</p>
 
-    <p>
-      COS 324: Introduction to Machine Learning, Spring 2026
-      <br>
-      COS 240: Reasoning about Computation, Fall 2025
-    </p>
+      <div class="teaching-entry">
+        <span class="teaching-term">Spring 2026</span>
+        <span class="teaching-course">
+          COS 324: Introduction to Machine Learning
+          <span class="teaching-instructor">Instructor: Zhuang Liu & Vikram V. Ramaswamy</span>
+        </span>
+      </div>
+
+      <div class="teaching-entry">
+        <span class="teaching-term">Fall 2025</span>
+        <span class="teaching-course">
+          COS 240: Reasoning about Computation
+          <span class="teaching-instructor">Instructor: Zeev Dvir</span>
+        </span>
+      </div>
+    </div>
 
     <h2> Contact </h2>
     <p>
