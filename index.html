@@ -14,7 +14,8 @@
 
     <style type="text/css">
       body{
-        line-height: 1.5;
+        font-family: "Times New Roman", Times, serif;
+        line-height: 1.45;
         padding: 4em 1em;
         width: 800px;
         margin-left: auto;
@@ -23,7 +24,7 @@
       }
 
       li{
-        margin: .9em 0;
+        margin: .85em 0;
       }
 
       a:link {
@@ -37,7 +38,6 @@
       }
 
       .authors-note{
-        font-family: "Times New Roman", Times, serif;
         font-size: 16px;
         font-style: italic;
         line-height: 135%;
@@ -45,7 +45,6 @@
       }
 
       .publications-list{
-        font-family: "Times New Roman", Times, serif;
         font-size: 16px;
         line-height: 135%;
         list-style-type: disc;
@@ -57,8 +56,20 @@
         margin: 1em 0;
       }
 
+      .venue{
+        font-weight: bold;
+      }
+
+      .venue-detail{
+        font-style: italic;
+      }
+
+      .presentation-note{
+        color: #8b1a1a;
+        font-style: italic;
+      }
+
       .teaching-section{
-        font-family: "Times New Roman", Times, serif;
         font-size: 16px;
         line-height: normal;
         margin-top: 0.9em;
@@ -94,14 +105,12 @@
           width: auto;
           max-width: 800px;
           padding: 2.25em 1em;
-          font-size: 1.02em;
         }
       }
 
       @media (max-width: 520px){
         body{
           padding: 1.5em 0.9em;
-          font-size: 1em;
         }
 
         h1{
@@ -123,13 +132,8 @@
           margin: 0.85em 0;
         }
 
-        .authors-note{
-          font-size: 16px;
-        }
-
         .publications-list{
           padding-left: 1.2em;
-          font-size: 16px;
         }
 
         .teaching-entry{
@@ -179,9 +183,9 @@
       <li>
         <a href="https://doi.org/10.48550/arXiv.2511.16613" target="_blank" rel="noopener noreferrer">Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms</a>
         <br>
-        with Jingqiu Ding, Yiding Hua, Kasper Lindberg, David Steurer.
+        with Jingqiu Ding, Yiding Hua, Kasper Lindberg, and David Steurer.
         <br>
-        COLT 2026.
+        <span class="venue">COLT 2026</span> <span class="venue-detail">(Proceedings of the 39th Annual Conference on Learning Theory)</span>.
       </li>
 
       <li>
@@ -189,7 +193,7 @@
         <br>
         with Pierre Lairez.
         <br>
-        The American Mathematical Monthly, 132-9, 2025.
+        <span class="venue">The American Mathematical Monthly</span>, Vol.132, No.9, 2025.
       </li>
 
     </ul>
@@ -203,7 +207,7 @@
         <span class="teaching-term">Spring 2026</span>
         <span class="teaching-course">
           COS 324: Introduction to Machine Learning
-          <span class="teaching-instructor">Instructor: Zhuang Liu & Vikram V. Ramaswamy</span>
+          <span class="teaching-instructor">Instructor: Zhuang Liu &amp; Vikram V. Ramaswamy</span>
         </span>
       </div>
 
@@ -219,7 +223,7 @@
     <h2> Contact </h2>
     <p>
       Email: as7649@princeton.edu <br>
-      Office Hours (CS 003): Monday, 6-8pm
+      Office Hours (CS 003): Monday, 6&ndash;8pm
     </p>
 
   </body>
