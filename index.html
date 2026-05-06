@@ -26,6 +26,9 @@
 
     body{
       margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
       background: var(--paper);
       color: var(--text);
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -40,11 +43,11 @@
       width: 765px;
       max-width: calc(100% - 44px);
       margin: 0 auto;
-      padding: 0;
+      padding: 40px 0 56px 0;
     }
 
     .top{
-      padding-top: 45px;
+      padding-top: 0;
     }
 
     h1{
@@ -183,20 +186,18 @@
     .contact{
       font-size: 15px;
       line-height: 1.45;
-      margin-bottom: 56px;
+      margin-bottom: 0;
     }
 
     @media (max-width: 700px){
       body{
+        display: block;
         font-size: 15px;
       }
 
       .container{
         max-width: calc(100% - 30px);
-      }
-
-      .top{
-        padding-top: 30px;
+        padding: 30px 0 44px 0;
       }
 
       h1{
@@ -236,7 +237,6 @@
           I also help organise the <a href="https://theory.cs.princeton.edu/theorylunch/" target="_blank" rel="noopener noreferrer">Princeton Theory Lunch</a>.
           Here is my <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>.
         </p>
-
       </div>
     </section>
 
