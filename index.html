@@ -1,230 +1,300 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Aleksandr Storozhenko</title>
-    <meta name="description"
-          content="Aleksandr Storozhenko. I am an M.S.E. student in Computer Science at Princeton University, advised by Pravesh K. Kothari." />
-    <link rel="canonical" href="https://aleksandrstorozhenko.github.io/" />
-    <meta name="google-site-verification" content="j7361eXUpASYnPJioqhsbG2UemNmVM7_UsiN9RzAmX4" />
-    <meta name="color-scheme" content="light" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%23C9A86A'/><text x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='44' fill='white'>A</text></svg>">
+  <title>Aleksandr Storozhenko</title>
+  <meta name="description" content="Aleksandr Storozhenko. M.S.E. student in Computer Science at Princeton University, advised by Pravesh K. Kothari.">
+  <link rel="canonical" href="https://aleksandrstorozhenko.github.io/">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%23C9A86A'/><text x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='44' fill='white'>A</text></svg>">
 
-    <style type="text/css">
+  <style>
+    :root{
+      --text: #222222;
+      --muted: #4f4f4f;
+      --rule: #e2e2e2;
+      --link: #006fbd;
+      --link-hover: #004f8a;
+      --paper: #ffffff;
+    }
+
+    html{
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body{
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.48;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .container{
+      width: 765px;
+      max-width: calc(100% - 44px);
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .top{
+      padding-top: 45px;
+    }
+
+    h1{
+      margin: 0;
+      font-size: 31px;
+      line-height: 1.16;
+      font-weight: 400;
+      letter-spacing: -0.028em;
+    }
+
+    h2{
+      margin: 32px 0 0 0;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 400;
+      letter-spacing: -0.018em;
+    }
+
+    hr{
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 13px 0 21px 0;
+    }
+
+    p{
+      margin: 0 0 14px 0;
+    }
+
+    a:link,
+    a:visited{
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover{
+      color: var(--link-hover);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .intro{
+      max-width: 755px;
+    }
+
+    .nav{
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    .nav a{
+      margin-right: 10px;
+    }
+
+    .sep{
+      color: #333;
+      margin-right: 10px;
+    }
+
+    .section{
+      margin-top: 32px;
+    }
+
+    .authors-note{
+      margin: 0 0 14px 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    ul.publications{
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul.publications li{
+      margin: 0 0 22px 0;
+    }
+
+    .paper-title{
+      font-size: 15px;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .authors,
+    .venue{
+      font-size: 14px;
+      line-height: 1.36;
+    }
+
+    .authors{
+      color: #262626;
+    }
+
+    .venue{
+      margin-top: 3px;
+    }
+
+    .venue strong{
+      font-weight: 600;
+    }
+
+    .venue-detail{
+      color: #333;
+      font-style: italic;
+    }
+
+    .teaching-section{
+      font-size: 14px;
+      line-height: 1.38;
+    }
+
+    .teaching-role{
+      margin: 0 0 11px 0;
+      font-size: 15px;
+    }
+
+    .teaching-entry{
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      column-gap: 18px;
+      margin: 9px 0;
+    }
+
+    .teaching-term{
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .teaching-course,
+    .teaching-instructor{
+      display: block;
+    }
+
+    .contact{
+      font-size: 15px;
+      line-height: 1.45;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 700px){
       body{
-        font-family: "Times New Roman", Times, serif;
-        line-height: 1.45;
-        padding: 4em 1em;
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 1.05em;
+        font-size: 15px;
       }
 
-      li{
-        margin: .85em 0;
+      .container{
+        max-width: calc(100% - 30px);
       }
 
-      a:link {
-        color: #0000EE;
-        text-decoration: none;
+      .top{
+        padding-top: 30px;
       }
 
-      a:visited {
-        color: #0000EE;
-        text-decoration: none;
+      h1{
+        font-size: 28px;
       }
 
-      .authors-note{
-        font-size: 16px;
-        font-style: italic;
-        line-height: 135%;
-        margin: 0.45em 0 0.1em 0;
-      }
-
-      .publications-list{
-        font-size: 16px;
-        line-height: 135%;
-        list-style-type: disc;
-        padding-left: 40px;
-        margin-top: 0.8em;
-      }
-
-      .publications-list li{
-        margin: 1em 0;
-      }
-
-      .venue{
-        font-weight: bold;
-      }
-
-      .venue-detail{
-        font-style: italic;
-      }
-
-      .presentation-note{
-        color: #8b1a1a;
-        font-style: italic;
-      }
-
-      .teaching-section{
-        font-size: 16px;
-        line-height: normal;
-        margin-top: 0.9em;
-      }
-
-      .teaching-role{
-        margin: 0 0 0.85em 0;
-        font-size: 16px;
-        line-height: normal;
+      h2{
+        margin-top: 28px;
       }
 
       .teaching-entry{
-        display: grid;
-        grid-template-columns: 6.5em 1fr;
-        column-gap: 1.2em;
-        margin: 0.65em 0;
+        display: block;
+        margin: 12px 0;
       }
 
       .teaching-term{
-        white-space: nowrap;
-      }
-
-      .teaching-course{
         display: block;
+        margin-bottom: 2px;
       }
+    }
+  </style>
+</head>
 
-      .teaching-instructor{
-        display: block;
-      }
+<body>
+  <main class="container">
+    <section class="top">
+      <h1>Aleksandr Storozhenko</h1>
+      <hr>
 
-      @media (max-width: 900px){
-        body{
-          width: auto;
-          max-width: 800px;
-          padding: 2.25em 1em;
-        }
-      }
+      <div class="intro">
+        <p>
+          I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
+          <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
+          My interests are broadly in theoretical computer science and probability theory. Previously, I earned a B.Sc. in
+          Mathematics and Computer Science from École Polytechnique and spent a summer at ETH Zürich as an SSRF
+          research fellow, working with <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
+          I also help organise the <a href="https://theory.cs.princeton.edu/theorylunch/" target="_blank" rel="noopener noreferrer">Princeton Theory Lunch</a>.
+          Here is my <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>.
+        </p>
 
-      @media (max-width: 520px){
-        body{
-          padding: 1.5em 0.9em;
-        }
-
-        h1{
-          margin: 0 0 0.6em 0;
-          font-size: 1.75em;
-          line-height: 1.15;
-        }
-
-        h2{
-          margin-top: 1.2em;
-          line-height: 1.2;
-        }
-
-        ol, ul{
-          padding-left: 1.2em;
-        }
-
-        li{
-          margin: 0.85em 0;
-        }
-
-        .publications-list{
-          padding-left: 1.2em;
-        }
-
-        .teaching-entry{
-          display: block;
-          margin: 0.8em 0;
-        }
-
-        .teaching-term{
-          display: block;
-        }
-
-        .teaching-instructor{
-          display: block;
-        }
-
-        p, li, a, div{
-          overflow-wrap: anywhere;
-          word-break: break-word;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <h1> Aleksandr Storozhenko </h1>
-
-    <p>
-      Hi! I am an M.S.E. student in Computer Science at Princeton University, where I am advised by
-      <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
-      My interests are broadly in theoretical computer science and probability theory.
-      Previously, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique
-      and spent a summer at ETH Zürich as an SSRF research fellow, working with
-      <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
-      I also help organise the 
-      <a href="https://theory.cs.princeton.edu/theorylunch/" target="_blank" rel="noopener noreferrer">Princeton Theory Lunch</a>.
-      Here is my <a href="CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>.
-    </p>
-
-    <br>
-
-    <h2 style="display:inline">Publications and Preprints</h2>
-    <p class="authors-note">Authors listed alphabetically.</p>
-
-    <ul class="publications-list">
-
-      <li>
-        <a href="https://doi.org/10.48550/arXiv.2511.16613" target="_blank" rel="noopener noreferrer">Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms</a>
-        <br>
-        with Jingqiu Ding, Yiding Hua, Kasper Lindberg, and David Steurer.
-        <br>
-        <span class="venue">COLT 2026</span> <span class="venue-detail">(Proceedings of the 39th Annual Conference on Learning Theory)</span>.
-      </li>
-
-      <li>
-        <a href="https://doi.org/10.48550/arXiv.2409.20341" target="_blank" rel="noopener noreferrer">Conway’s Cosmological Theorem and Automata Theory</a>
-        <br>
-        with Pierre Lairez.
-        <br>
-        <span class="venue">The American Mathematical Monthly</span>, Vol.132, No.9, 2025.
-      </li>
-
-    </ul>
-
-    <h2>Teaching</h2>
-
-    <div class="teaching-section">
-      <p class="teaching-role">Teaching Assistant, Princeton University</p>
-
-      <div class="teaching-entry">
-        <span class="teaching-term">Spring 2026</span>
-        <span class="teaching-course">
-          COS 324: Introduction to Machine Learning
-          <span class="teaching-instructor">Instructor: Zhuang Liu &amp; Vikram V. Ramaswamy</span>
-        </span>
       </div>
+    </section>
 
-      <div class="teaching-entry">
-        <span class="teaching-term">Fall 2025</span>
-        <span class="teaching-course">
-          COS 240: Reasoning about Computation
-          <span class="teaching-instructor">Instructor: Zeev Dvir</span>
-        </span>
+    <section class="section" id="publications">
+      <h2>Publications and Preprints</h2>
+      <hr>
+      <p class="authors-note">Authors listed alphabetically.</p>
+
+      <ul class="publications">
+        <li>
+          <div class="paper-title">
+            <a href="https://doi.org/10.48550/arXiv.2511.16613" target="_blank" rel="noopener noreferrer">Rate-optimal Community Detection near the KS Threshold via Node-robust Algorithms</a>
+          </div>
+          <div class="authors">with Jingqiu Ding, Yiding Hua, Kasper Lindberg, and David Steurer.</div>
+          <div class="venue"><strong>COLT 2026</strong> <span class="venue-detail">(Proceedings of the 39th Annual Conference on Learning Theory)</span>.</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://doi.org/10.48550/arXiv.2409.20341" target="_blank" rel="noopener noreferrer">Conway’s Cosmological Theorem and Automata Theory</a>
+          </div>
+          <div class="authors">with Pierre Lairez.</div>
+          <div class="venue"><strong>The American Mathematical Monthly</strong>, Vol. 132, No. 9, 2025.</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="teaching">
+      <h2>Teaching</h2>
+      <hr>
+
+      <div class="teaching-section">
+        <p class="teaching-role">Teaching Assistant, Princeton University</p>
+
+        <div class="teaching-entry">
+          <span class="teaching-term">Spring 2026</span>
+          <span class="teaching-course">
+            COS 324: Introduction to Machine Learning
+            <span class="teaching-instructor">Instructor: Zhuang Liu and Vikram V. Ramaswamy</span>
+          </span>
+        </div>
+
+        <div class="teaching-entry">
+          <span class="teaching-term">Fall 2025</span>
+          <span class="teaching-course">
+            COS 240: Reasoning about Computation
+            <span class="teaching-instructor">Instructor: Zeev Dvir</span>
+          </span>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <h2> Contact </h2>
-    <p>
-      Email: as7649@princeton.edu <br>
+    <section class="section contact" id="contact">
+      <h2>Contact</h2>
+      <hr>
+      Email: as7649@princeton.edu<br>
       Office Hours (CS 003): Monday, 6&ndash;8pm
-    </p>
-
-  </body>
+    </section>
+  </main>
+</body>
 </html>
