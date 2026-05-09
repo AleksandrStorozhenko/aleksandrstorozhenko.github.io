@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -98,6 +100,24 @@
 
     .intro p:last-child{
       margin-bottom: 0;
+    }
+
+
+    .bio{
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 175px;
+      column-gap: 34px;
+      align-items: start;
+    }
+
+    .portrait{
+      display: block;
+      width: 160px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: 50% 43%;
+      border-radius: 10px;
+      margin-top: 3px;
     }
 
     .nav{
@@ -216,6 +236,16 @@
         margin-top: 28px;
       }
 
+      .bio{
+        display: block;
+      }
+
+      .portrait{
+        width: 180px;
+        max-width: 100%;
+        margin: 18px 0 0 0;
+      }
+
       .teaching-entry{
         display: block;
         margin: 12px 0;
@@ -235,29 +265,24 @@
       <h1>Aleksandr Storozhenko</h1>
       <hr>
 
-      <div class="intro">
-        <p>
-          I am an M.S.E. student in Computer Science at Princeton University, advised by
-          <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
-          My research interests lie broadly in theoretical computer science and probability theory.
-        </p>
+      <div class="bio">
+        <div class="intro">
+          <p>
+            I am an M.S.E. student in Computer Science at Princeton University, advised by
+            <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
+            My research interests lie broadly in theoretical computer science and probability theory.
+            Before Princeton, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique. I also spent
+            a summer at ETH Zürich as an SSRF research fellow, where I worked with
+            <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
+            My CV is available <a href="CV.pdf" target="_blank" rel="noopener noreferrer">here</a>.
+          </p>
 
-        <p>
-          Before Princeton, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique. I also spent
-          a summer at ETH Zürich as an SSRF research fellow, where I worked with
-          <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
-        </p>
+          <p>
+           <b>News:</b> I will spend this summer as quantitative researcher at Marshall Wace. 
+          </p>
+        </div>
 
-        <p>
-          I help organise the
-          <a href="https://theory.cs.princeton.edu/theorylunch/" target="_blank" rel="noopener noreferrer">Princeton Theory Lunch</a>.
-          My CV is available <a href="CV.pdf" target="_blank" rel="noopener noreferrer">here</a>.
-        </p>
-
-        <p>
-          Apart from theoretical research, I enjoy working with real-world data, particularly noisy data.
-          In Summer 2026, I will be a quantitative research intern at Marshall Wace in London.
-        </p>
+        <img class="portrait" src="portrait1.jpg" alt="Portrait of Aleksandr Storozhenko">
       </div>
     </section>
 
