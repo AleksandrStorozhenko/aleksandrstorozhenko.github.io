@@ -183,29 +183,39 @@
 
     .teaching-section{
       font-size: 14px;
-      line-height: 1.38;
+      line-height: 1.42;
     }
 
     .teaching-role{
-      margin: 0 0 11px 0;
+      margin: 0 0 10px 0;
       font-size: 15px;
+      color: var(--text);
     }
 
-    .teaching-entry{
+    ul.teaching-list{
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul.teaching-list li{
       display: grid;
-      grid-template-columns: 92px 1fr;
+      grid-template-columns: 92px minmax(0, 1fr);
       column-gap: 18px;
-      margin: 9px 0;
+      margin: 6px 0;
     }
 
     .teaching-term{
-      color: #333;
+      color: var(--muted);
       white-space: nowrap;
     }
 
-    .teaching-course,
-    .teaching-instructor{
-      display: block;
+    .teaching-course{
+      color: var(--text);
+    }
+
+    .teaching-course-code{
+      font-weight: 500;
     }
 
     .contact{
@@ -278,14 +288,14 @@
         font-size: 13.5px;
       }
 
-      .teaching-entry{
+      ul.teaching-list li{
         display: block;
-        margin: 12px 0;
+        margin: 9px 0;
       }
 
       .teaching-term{
         display: block;
-        margin-bottom: 2px;
+        margin-bottom: 1px;
       }
     }
   </style>
@@ -347,21 +357,21 @@
       <div class="teaching-section">
         <p class="teaching-role">Teaching Assistant, Princeton University</p>
 
-        <div class="teaching-entry">
-          <span class="teaching-term">Spring 2026</span>
-          <span class="teaching-course">
-            COS 324: Introduction to Machine Learning
-            <span class="teaching-instructor">Instructor: Zhuang Liu and Vikram V. Ramaswamy</span>
-          </span>
-        </div>
+        <ul class="teaching-list">
+          <li>
+            <span class="teaching-term">Spring 2026</span>
+            <span class="teaching-course">
+              <span class="teaching-course-code">COS 324</span>: Introduction to Machine Learning
+            </span>
+          </li>
 
-        <div class="teaching-entry">
-          <span class="teaching-term">Fall 2025</span>
-          <span class="teaching-course">
-            COS 240: Reasoning about Computation
-            <span class="teaching-instructor">Instructor: Zeev Dvir</span>
-          </span>
-        </div>
+          <li>
+            <span class="teaching-term">Fall 2025</span>
+            <span class="teaching-course">
+              <span class="teaching-course-code">COS 240</span>: Reasoning about Computation
+            </span>
+          </li>
+        </ul>
       </div>
     </section>
 
