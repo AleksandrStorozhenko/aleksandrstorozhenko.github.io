@@ -9,15 +9,35 @@
   <link rel="canonical" href="https://aleksandrstorozhenko.github.io/">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%23C9A86A'/><text x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='44' fill='white'>A</text></svg>">
-
+  
   <style>
     :root{
-      --text: #222222;
-      --muted: #4f4f4f;
-      --rule: #e2e2e2;
-      --link: #006fbd;
-      --link-hover: #004f8a;
-      --paper: #ffffff;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-strong: #1d4ed8;
+      --badge-bg: #eef3ff;
+      --badge-border: rgba(37, 99, 235, 0.24);
+      --badge-muted-bg: #eef1f6;
+      --badge-muted-border: rgba(71, 85, 105, 0.22);
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow-lg: none;
+      --shadow-sm: none;
+      --content-max: 840px;
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+      --rule: var(--border);
+      --link: var(--accent);
+      --link-hover: var(--accent-strong);
+      --paper: var(--surface);
+    }
+
+    *,
+    *::before,
+    *::after{
+      box-sizing: border-box;
     }
 
     html{
@@ -29,13 +49,14 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: var(--paper);
+      background: var(--surface);
       color: var(--text);
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: var(--font-sans);
       font-size: 15px;
       line-height: 1.48;
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
 
@@ -54,7 +75,7 @@
       margin: 0;
       font-size: 31px;
       line-height: 1.16;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: -0.028em;
     }
 
@@ -62,7 +83,7 @@
       margin: 32px 0 0 0;
       font-size: 22px;
       line-height: 1.2;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: -0.018em;
     }
 
@@ -80,11 +101,22 @@
     a:visited{
       color: var(--link);
       text-decoration: none;
+      transition: color 200ms ease;
     }
 
     a:hover{
       color: var(--link-hover);
       text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+
+    a:focus-visible{
+      color: var(--accent-strong);
+      outline: 2px solid rgba(29, 78, 216, 0.55);
+      outline-offset: 3px;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
       text-underline-offset: 2px;
     }
 
@@ -109,11 +141,11 @@
 
     .portrait{
       display: block;
-      width: 155px;
+      width: 145px;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       object-position: 50% 43%;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-top: 3px;
     }
 
@@ -127,8 +159,8 @@
     }
 
     .sep{
-      color: #333;
-      margin-right: 10px;
+      color: var(--muted);
+      margin: 0 8px;
     }
 
     .section{
@@ -165,7 +197,7 @@
     }
 
     .authors{
-      color: #262626;
+      color: var(--text);
     }
 
     .venue{
@@ -177,7 +209,7 @@
     }
 
     .venue-detail{
-      color: #333;
+      color: var(--muted);
       font-style: italic;
     }
 
@@ -221,19 +253,31 @@
     .teaching-course-code a{
       color: var(--text);
       text-decoration: none;
-      border-bottom: 1px solid rgba(0, 111, 189, 0.28);
+      border-bottom: 1px solid rgba(37, 99, 235, 0.28);
     }
 
     .teaching-course-code a:hover{
       color: var(--text);
       text-decoration: none;
-      border-bottom-color: rgba(0, 111, 189, 0.45);
+      border-bottom-color: rgba(37, 99, 235, 0.45);
     }
 
     .contact{
       font-size: 15px;
       line-height: 1.45;
       margin-bottom: 0;
+    }
+
+    .contact hr{
+      margin: 11px 0 15px 0;
+    }
+
+    .contact p{
+      margin-bottom: 0;
+    }
+
+    .contact-label{
+      color: var(--muted);
     }
 
     @media (max-width: 700px){
@@ -285,7 +329,7 @@
         width: 118px;
         max-width: 38%;
         margin: 2px auto 0 auto;
-        border-radius: 10px;
+        border-radius: 12px;
       }
 
       .intro{
@@ -337,14 +381,15 @@
           <p>
             I am an M.S.E. student in Computer Science at Princeton University, advised by
             <a href="https://www.cs.princeton.edu/~kothari/" target="_blank" rel="noopener noreferrer">Pravesh K. Kothari</a>.
-            My research interests lie broadly in theoretical computer science and probability theory.
-            Before Princeton, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique. I also spent
-            a summer at ETH Zürich as an SSRF research fellow, where I worked with
+            I am broadly interested in theoretical computer science and probability theory.
+          </p>
+
+          <p>
+            Before Princeton, I earned a B.Sc. in Mathematics and Computer Science from École Polytechnique. I was also an
+            SSRF research fellow at ETH Zürich, where I worked with
             <a href="https://www.dsteurer.org/" target="_blank" rel="noopener noreferrer">David Steurer</a>.
             My CV is available <a href="CV.pdf" target="_blank" rel="noopener noreferrer">here</a>.
           </p>
-
-          <p><strong>News:</strong> I will spend this summer as a Quant Research Intern at Marshall Wace.</p>
         </div>
 
         <img class="portrait" src="portrait1.jpg" alt="Portrait of Aleksandr Storozhenko">
@@ -409,14 +454,9 @@
       <hr>
 
       <p>
-        Email: as7649@princeton.edu<br>
-        Office Hours (CS 003): Monday, 6&ndash;8pm
-      </p>
-
-      <p>
-        I help organize the
-        <a href="https://theory.cs.princeton.edu/theorylunch/" target="_blank" rel="noopener noreferrer">Princeton Theory Lunch</a>;
-        feel free to reach out if you would like to give a talk.
+        <span class="contact-label">Email:</span> as7649 [at] princeton [dot] edu<br>
+        <span class="contact-label">Profiles:</span>
+        <a href="https://scholar.google.fr/citations?user=BWIwCTAAAAAJ&hl=fr" target="_blank" rel="noopener noreferrer">Google Scholar</a><span class="sep">/</span><a href="https://dblp.org/pid/388/2671.html" target="_blank" rel="noopener noreferrer">DBLP</a>
       </p>
     </section>
   </main>
