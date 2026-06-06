@@ -16,12 +16,8 @@
       --surface: #ffffff;
       --text: #111827;
       --muted: #475569;
-      --accent: #2563eb;
-      --accent-strong: #1d4ed8;
-      --badge-bg: #eef3ff;
-      --badge-border: rgba(37, 99, 235, 0.24);
-      --badge-muted-bg: #eef1f6;
-      --badge-muted-border: rgba(71, 85, 105, 0.22);
+      --accent: #1f5fbf;
+      --accent-strong: #174a94;
       --border: rgba(15, 23, 42, 0.08);
       --shadow-lg: none;
       --shadow-sm: none;
@@ -250,16 +246,18 @@
       font-weight: 500;
     }
 
-    .teaching-course-code a{
-      color: var(--text);
+    .teaching-course-code a:link,
+    .teaching-course-code a:visited{
+      color: inherit;
       text-decoration: none;
-      border-bottom: 1px solid rgba(37, 99, 235, 0.28);
     }
 
-    .teaching-course-code a:hover{
-      color: var(--text);
-      text-decoration: none;
-      border-bottom-color: rgba(37, 99, 235, 0.45);
+    .teaching-course-code a:hover,
+    .teaching-course-code a:focus-visible{
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
     }
 
     .contact{
@@ -428,6 +426,7 @@
         <p class="teaching-role">Teaching Assistant, Princeton University</p>
 
         <ul class="teaching-list">
+
           <li>
             <span class="teaching-term">Spring 2026</span>
             <span class="teaching-course">
